@@ -1,0 +1,31 @@
+{
+  "id": "java-patrones-01-singleton",
+  "title": "Singleton",
+  "description": "Garantiza que una clase tenga solo una instancia y proporciona un punto de acceso global a ella.",
+  "language": "java",
+  "level": "patrones",
+  "estimatedMinutes": 35,
+  "nextLessonId": "java-patrones-02-factory",
+  "previousLessonId": "java-avanzado-04-hilos",
+  "contentBlocks": [
+    {
+      "type": "markdown",
+      "content": "### Introducción al Patrón Singleton\nEl patrón Singleton es un patrón de diseño creacional que asegura que una clase solo tenga una instancia y proporciona un método de clase (estático) para obtener esa instancia. Esto puede parecer un concepto simple, pero es muy poderoso y útil en ciertas situaciones.\n\n### ¿Qué es el Patrón Singleton?\nImagina que tienes una casa con una sola llave. No importa cuántas personas quieran entrar en la casa, solo hay una llave que puede abrir la puerta. De la misma manera, el patrón Singleton garantiza que solo haya una instancia de una clase, y proporciona una forma de acceder a esa instancia desde cualquier parte del programa.\n\n### Tipos de Singleton\nExisten varios tipos de Singleton, incluyendo:\n* **Singleton eager**: La instancia se crea cuando se carga la clase.\n* **Singleton lazy**: La instancia se crea solo cuando se necesita por primera vez.\n* **Singleton thread-safe**: La instancia se crea de manera segura en entornos multihilo.\n\n### Definición del Patrón Singleton\nEl patrón Singleton se define mediante tres elementos clave:\n1. **Variable estática privada**: Almacena la única instancia de la clase.\n2. **Constructor privado**: Evita que se creen instancias adicionales de la clase.\n3. **Método público estático**: Proporciona acceso a la única instancia de la clase.\n\n### Ejemplo de Código\n```java\n// Ejemplo de Singleton eager\npublic class Configuracion {\n    private static Configuracion instancia = new Configuracion();\n    private Configuracion() {}\n    public static Configuracion getInstance() {\n        return instancia;\n    }\n}\n\n// Ejemplo de Singleton lazy\npublic class Configuracion {\n    private static Configuracion instancia;\n    private Configuracion() {}\n    public static Configuracion getInstance() {\n        if (instancia == null) {\n            instancia = new Configuracion();\n        }\n        return instancia;\n    }\n}\n```\n\n### Implementación del Patrón Singleton\nAhora que has entendido el concepto del patrón Singleton, es hora de implementarlo. A continuación, te proporcionaré un código base y te pediré que completes las partes faltantes.\n\n### Código Base\n```java\nclass Configuracion {\n    // 1. Añade la variable estática privada 'instancia'\n    \n    // 2. Haz el constructor privado\n    public Configuracion() {\n    }\n    \n    // 3. Crea el método public static Configuracion getInstance()\n    \n}\n\npublic class Main {\n    public static void main(String[] args) {\n        // Obtén la instancia y comprueba que ambas variables apuntan al mismo objeto\n        // Configuracion c1 = Configuracion.getInstance();\n        // Configuracion c2 = Configuracion.getInstance();\n        // System.out.println(c1 == c2); // Debe imprimir true\n    }\n}\n```\n\n### Tu Turno\nAhora es tu turno. En el editor de código que está debajo, escribe lo siguiente:\n1. Añade la variable estática privada `instancia` en la clase `Configuracion`.\n2. Haz el constructor privado en la clase `Configuracion`.\n3. Crea el método `public static Configuracion getInstance()` en la clase `Configuracion`.\nUna vez que hayas escrito el código, haz clic en el botón verde **\"▶ Ejecutar Código\"** para ver el resultado en la Terminal interactiva. Recuerda que el objetivo es que la variable `c1` y `c2` apunten al mismo objeto, lo que se indica con un `true` en la impresión. ¡Buena suerte!"
+    },
+    {
+      "type": "code-editor",
+      "config": {
+        "language": "java",
+        "theme": "vs-dark",
+        "readOnly": false,
+        "hints": [
+          "El constructor debe ser privado: private Configuracion() {}",
+          "Declara una variable estática privada para la instancia: private static Configuracion instancia;",
+          "Crea un método estático público getInstance() que inicialice la instancia solo si es nula y la retorne."
+        ],
+        "initialCode": "class Configuracion {\n    // 1. Añade la variable estática privada 'instancia'\n    \n    // 2. Haz el constructor privado\n    public Configuracion() {\n    }\n    \n    // 3. Crea el método public static Configuracion getInstance()\n    \n}\n\npublic class Main {\n    public static void main(String[] args) {\n        // Obtén la instancia y comprueba que ambas variables apuntan al mismo objeto\n        // Configuracion c1 = Configuracion.getInstance();\n        // Configuracion c2 = Configuracion.getInstance();\n        // System.out.println(c1 == c2); // Debe imprimir true\n    }\n}",
+        "solutionCode": "class Configuracion {\n    private static Configuracion instancia;\n    \n    private Configuracion() {\n    }\n    \n    public static Configuracion getInstance() {\n        if (instancia == null) {\n            instancia = new Configuracion();\n        }\n        return instancia;\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Configuracion c1 = Configuracion.getInstance();\n        Configuracion c2 = Configuracion.getInstance();\n        System.out.println(c1 == c2);\n    }\n}"
+      }
+    }
+  ]
+}

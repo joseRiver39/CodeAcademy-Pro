@@ -1,0 +1,31 @@
+{
+  "id": "java-intermedio-03-herencia",
+  "title": "Herencia",
+  "description": "Reutiliza código creando clases hijas que heredan propiedades y métodos de clases padre.",
+  "language": "java",
+  "level": "intermedio",
+  "estimatedMinutes": 30,
+  "nextLessonId": "java-intermedio-04-polimorfismo",
+  "previousLessonId": "java-intermedio-02-encapsulamiento",
+  "contentBlocks": [
+    {
+      "type": "markdown",
+      "content": "### Introducción a la Herencia\nLa herencia es un concepto fundamental en la programación orientada a objetos que permite a una clase derivar propiedades y métodos de otra clase. Esto se logra mediante el uso de la palabra reservada `extends`. La clase que hereda se conoce como clase hija, mientras que la clase de la que se hereda se llama clase padre.\n\n### ¿Qué es la Herencia?\nLa herencia es como una relación familiar. Imagine que tiene un padre que es un excelente cocinero y quiere enseñarle a su hijo a cocinar. En lugar de empezar desde cero, el hijo puede aprender las recetas básicas de su padre y luego agregar sus propias creaciones. De esta manera, el hijo hereda el conocimiento y las habilidades de su padre y puede mejorar o especializar lo que ha aprendido.\n\n### Tipos de Herencia\nExisten varios tipos de herencia, incluyendo:\n* Herencia simple: Una clase hija hereda de una sola clase padre.\n* Herencia múltiple: Una clase hija hereda de varias clases padre (no soportado en todos los lenguajes de programación).\n* Herencia jerárquica: Una clase hija hereda de una clase padre que a su vez hereda de otra clase padre.\n\n### Definición de la Herencia\nLa herencia se define utilizando la palabra reservada `extends` seguida del nombre de la clase padre. La clase hija hereda todos los atributos y métodos de la clase padre y puede agregar nuevos o redefinir los existentes.\n\n### Ejemplo de Herencia\n```java\n// Clase padre\nclass Animal {\n    public void comer() {\n        System.out.println(\"Comiendo...\");\n    }\n}\n\n// Clase hija que hereda de Animal\nclass Perro extends Animal {\n    public void ladrar() {\n        System.out.println(\"Guau\");\n    }\n}\n\n// Instanciación de la clase hija y llamada a los métodos\npublic class Main {\n    public static void main(String[] args) {\n        Perro perro = new Perro();\n        perro.comer(); // Heredado de Animal\n        perro.ladrar(); // Definido en Perro\n    }\n}\n```\n\n### Aplicaciones de la Herencia\nLa herencia es útil para:\n* Reutilizar código: Evita la duplicación de código y facilita la creación de clases relacionadas.\n* Establecer relaciones: Define una jerarquía de clases y facilita la comprensión de las relaciones entre ellas.\n\n### Siguiente Paso\nAhora es tu turno. En el editor de código que está debajo, escribe lo siguiente:\n1. Crea una clase `Perro` que herede de `Animal` usando 'extends'.\n2. Agrega un método `ladrar` que imprima \"Guau\".\n3. Instancia un `Perro` y llama a los métodos `comer()` y `ladrar()`.\n\nUna vez que hayas escrito el código, haz clic en el botón verde **\"▶ Ejecutar Código\"** para ver el resultado en la Terminal interactiva. ¡Buena suerte!"
+    },
+    {
+      "type": "code-editor",
+      "config": {
+        "language": "java",
+        "theme": "vs-dark",
+        "readOnly": false,
+        "hints": [
+          "Para heredar usa: class Perro extends Animal",
+          "Llama al método heredado: miPerro.comer();",
+          "Llama al método propio: miPerro.ladrar();"
+        ],
+        "initialCode": "class Animal {\n    public void comer() {\n        System.out.println(\"Comiendo...\");\n    }\n}\n\n// 1. Crea una clase Perro que herede de Animal usando 'extends'\n// 2. Agrega un método 'ladrar' que imprima \"Guau\"\n\n\npublic class Main {\n    public static void main(String[] args) {\n        // 3. Instancia un Perro y llama a los métodos comer() y ladrar()\n        \n    }\n}",
+        "solutionCode": "class Animal {\n    public void comer() {\n        System.out.println(\"Comiendo...\");\n    }\n}\n\nclass Perro extends Animal {\n    public void ladrar() {\n        System.out.println(\"Guau\");\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Perro miPerro = new Perro();\n        miPerro.comer();\n        miPerro.ladrar();\n    }\n}"
+      }
+    }
+  ]
+}

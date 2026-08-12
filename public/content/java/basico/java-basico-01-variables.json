@@ -1,0 +1,31 @@
+{
+  "id": "java-basico-01-variables",
+  "title": "Variables y Tipos de Datos en Java",
+  "description": "Aprende a declarar variables y los tipos primitivos fundamentales.",
+  "language": "java",
+  "level": "basico",
+  "estimatedMinutes": 10,
+  "nextLessonId": "java-basico-02-operadores",
+  "previousLessonId": null,
+  "contentBlocks": [
+    {
+      "type": "markdown",
+      "content": "### Introducción a las Variables en Java\nUna variable es un espacio en memoria reservado para almacenar un valor. En otras palabras, es como una caja de mudanza donde puedes guardar objetos o valores para usarlos más adelante. Al igual que una caja de mudanza tiene un etiquetado que indica qué hay dentro, en programación, el tipo de dato de una variable indica qué tipo de valor puede contener.\n\n### ¿Para qué sirven las Variables?\nLas variables sirven para almacenar y manipular datos en un programa. Sin ellas, no podríamos guardar ni recuperar información, lo que haría que nuestros programas fueran muy limitados. Las variables permiten a los programas tomar decisiones basadas en los valores almacenados, realizar cálculos y mostrar resultados.\n\n### Tipos de Variables en Java\nEn Java, debemos indicarle explícitamente a la \"caja\" qué tipo de dato va a guardar. Existen dos categorías principales: **Primitivas** y **De Referencia**.\n\nLas **Variables Primitivas** almacenan valores básicos directamente. Existen 8 tipos primitivos en Java:\n- `byte`: Números enteros muy pequeños (de -128 a 127).\n- `short`: Números enteros pequeños.\n- `int`: Números enteros comunes (ej. `25`, `-100`).\n- `long`: Números enteros extremadamente grandes.\n- `float`: Números con decimales de precisión simple (ej. `3.14f`).\n- `double`: Números con decimales de doble precisión (ej. `3.14159`).\n- `boolean`: Valores lógicos de verdadero o falso (`true` o `false`).\n- `char`: Un solo carácter (ej. `'a'`, `'?'`).\n\nLas **Variables de Referencia** almacenan direcciones a objetos más complejos (ej. `String` para guardar textos como `\"Hola Mundo\"`).\n\n### Declaración de Variables\nEn Java, el tipo de dato debe ser declarado explícitamente antes de usar una variable. Esto significa que debes especificar si una variable es un `int`, un `double`, etc., antes de asignarle un valor. La sintaxis básica para declarar una variable es `tipoDeDato nombreDeLaVariable;`.\n\n### Ejemplo de Declaración de Variable\n```java\nint miEdad;\n```\nEn este ejemplo, `miEdad` es el nombre de la variable, y `int` es el tipo de dato, indicando que `miEdad` puede almacenar valores enteros.\n\n### Asignación de Valor a una Variable\nUna vez declarada, puedes asignar un valor a la variable usando el operador de asignación `=`. Por ejemplo:\n```java\nmiEdad = 25;\n```\nAhora, la variable `miEdad` tiene el valor `25`.\n\n### Uso de Variables en Código\nPuedes usar las variables en expresiones, para realizar cálculos, o para mostrar su valor. Por ejemplo:\n```java\nSystem.out.println(miEdad);\n```\nEste código imprime el valor de `miEdad` en la consola.\n\n### Analogía con el Mundo Real\nPiensa en una variable como una casilla de correo. La casilla de correo tiene una dirección (el nombre de la variable) y puede contener una carta (el valor de la variable). Al igual que puedes enviar y recibir cartas a través de la casilla de correo, puedes asignar y recuperar valores de una variable en tu programa.\n\n### Práctica\nAhora es tu turno. En el editor de código que está debajo, escribe lo siguiente:\n```java\npublic class Main {\n    public static void main(String[] args) {\n        // Declara un entero llamado 'edad' y asignale el valor 25\n        int edad = 25;\n        \n        System.out.println(edad);\n    }\n}\n```\nUna vez que hayas escrito el código, haz clic en el botón verde **\"▶ Ejecutar Código\"** para ver el resultado en la Terminal interactiva. Esto te permitirá ver cómo se imprime el valor de la variable `edad` en la consola. ¡No te olvides de verificar el resultado para asegurarte de que todo esté funcionando correctamente!"
+    },
+    {
+      "type": "code-editor",
+      "config": {
+        "language": "java",
+        "theme": "vs-dark",
+        "readOnly": false,
+        "hints": [
+          "En Java, para guardar un número entero se usa la palabra clave `int`, seguida del nombre de la variable.",
+          "La sintaxis completa es: `int nombreVariable = valor;`. No olvides el punto y coma al final.",
+          "Para declarar la variable `edad` con el valor 25, escribe exactamente: `int edad = 25;`"
+        ],
+        "initialCode": "public class Main {\n    public static void main(String[] args) {\n        // Declara un entero llamado 'edad' y asignale el valor 25\n        \n        System.out.println(edad);\n    }\n}",
+        "solutionCode": "public class Main {\n    public static void main(String[] args) {\n        int edad = 25;\n        System.out.println(edad);\n    }\n}"
+      }
+    }
+  ]
+}

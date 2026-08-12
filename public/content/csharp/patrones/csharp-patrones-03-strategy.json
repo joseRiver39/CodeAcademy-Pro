@@ -1,0 +1,31 @@
+{
+  "id": "csharp-patrones-03-strategy",
+  "title": "Strategy",
+  "description": "Encapsula algoritmos intercambiables.",
+  "language": "csharp",
+  "level": "patrones",
+  "estimatedMinutes": 45,
+  "nextLessonId": "csharp-patrones-04-observer",
+  "previousLessonId": "csharp-patrones-02-factory",
+  "contentBlocks": [
+    {
+      "type": "markdown",
+      "content": "### Introducción a Strategy\nEl patrón de diseño Strategy es una forma de encapsular algoritmos intercambiables, lo que permite cambiar el comportamiento de un objeto inyectando diferentes clases que implementan una interfaz común. Esto nos da la flexibilidad de modificar el comportamiento de un objeto sin necesidad de modificar su estructura interna.\n\n### ¿Qué es Strategy?\nImagina que tienes un negocio de entrega de paquetes y quieres ofrecer diferentes opciones de pago a tus clientes. Puedes tener una clase `Carrito` que se encarga de procesar el pago, pero en lugar de tener un método `ProcesarPago` que esté acoplado a una sola forma de pago, puedes crear una interfaz `IPago` que defina el comportamiento de pago. Luego, puedes crear clases concretas como `PagoTarjeta` y `PagoPayPal` que implementen esta interfaz. De esta manera, puedes cambiar el comportamiento de pago del carrito inyectando diferentes clases que implementan la interfaz `IPago`.\n\n### Analogía del mundo real\nUna variable es como una caja de mudanza. Puedes meter diferentes objetos en la caja, pero la caja en sí misma no cambia. De la misma manera, un objeto que utiliza el patrón Strategy es como una caja que puede contener diferentes algoritmos, pero la caja en sí misma no cambia.\n\n### Tipos de Strategy\nExisten diferentes tipos de Strategy, pero el más común es el patrón de diseño Strategy puro, que se utiliza para encapsular algoritmos intercambiables. También existe el patrón de diseño Strategy de estado, que se utiliza para cambiar el estado de un objeto.\n\n### Definición\nLa definición de Strategy se basa en la creación de una interfaz que define el comportamiento que se quiere cambiar. Luego, se crean clases concretas que implementan esta interfaz. Finalmente, se crea un objeto que utiliza el patrón Strategy y se le inyecta la clase concreta que se desea utilizar.\n\n### Ejemplo de código\n```csharp\n// Definimos la interfaz IPago\npublic interface IPago\n{\n    void ProcesarPago(decimal monto);\n}\n\n// Definimos la clase PagoTarjeta que implementa IPago\npublic class PagoTarjeta : IPago\n{\n    public void ProcesarPago(decimal monto)\n    {\n        Console.WriteLine($\"Procesando pago de {monto} con tarjeta\");\n    }\n}\n\n// Definimos la clase PagoPayPal que implementa IPago\npublic class PagoPayPal : IPago\n{\n    public void ProcesarPago(decimal monto)\n    {\n        Console.WriteLine($\"Procesando pago de {monto} con PayPal\");\n    }\n}\n\n// Definimos la clase Carrito que utiliza el patrón Strategy\npublic class Carrito\n{\n    private IPago _estrategia;\n\n    public void SetEstrategia(IPago estrategia)\n    {\n        _estrategia = estrategia;\n    }\n\n    public void ProcesarPago(decimal monto)\n    {\n        _estrategia.ProcesarPago(monto);\n    }\n}\n```\n\n### Siguiente paso\nAhora es tu turno. En el editor de código que está debajo, escribe lo siguiente:\n```csharp\nusing System;\n\n// 1. Define IPago, PagoTarjeta, PagoPayPal\n\n// 2. Crea Carrito con set_Estrategia y ProcesarPago\n\nclass Program\n{\n    static void Main()\n    {\n        // 3. Ejecútalo\n        Carrito carrito = new Carrito();\n        carrito.SetEstrategia(new PagoTarjeta());\n        carrito.ProcesarPago(100);\n        \n        carrito.SetEstrategia(new PagoPayPal());\n        carrito.ProcesarPago(200);\n    }\n}\n```\nRecuerda que, una vez escribas el código, debes hacer clic en el botón verde **\"▶ Ejecutar Código\"** para ver el resultado en la Terminal interactiva. Esto te permitirá ver cómo se procesan los pagos con diferentes estrategias. ¡Buena suerte!"
+    },
+    {
+      "type": "code-editor",
+      "config": {
+        "language": "csharp",
+        "theme": "vs-dark",
+        "readOnly": false,
+        "hints": [
+          "Define IPago con void Pagar(int monto).",
+          "Implementa PagoTarjeta y PagoPayPal.",
+          "Crea una clase Contexto que reciba IPago y lo ejecute."
+        ],
+        "initialCode": "using System;\n\n// 1. Define IPago, PagoTarjeta, PagoPayPal\n\n// 2. Crea Carrito con set_Estrategia y ProcesarPago\n\nclass Program {\n    static void Main() {\n        // 3. Ejecútalo\n    }\n}",
+        "solutionCode": "using System;\n\ninterface IPago { void Pagar(int monto); }\n\nclass PagoTarjeta : IPago { public void Pagar(int monto) { Console.WriteLine($\"Pagado {monto} con Tarjeta\"); } }\nclass PagoPayPal : IPago { public void Pagar(int monto) { Console.WriteLine($\"Pagado {monto} con PayPal\"); } }\n\nclass Carrito {\n    private IPago _pago;\n    public Carrito(IPago pago) { _pago = pago; }\n    public void SetEstrategia(IPago pago) { _pago = pago; }\n    public void Procesar(int monto) { _pago.Pagar(monto); }\n}\n\nclass Program {\n    static void Main() {\n        var c = new Carrito(new PagoTarjeta());\n        c.Procesar(100);\n        c.SetEstrategia(new PagoPayPal());\n        c.Procesar(50);\n    }\n}"
+      }
+    }
+  ]
+}

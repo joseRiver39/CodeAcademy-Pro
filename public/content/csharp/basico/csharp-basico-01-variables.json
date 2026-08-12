@@ -1,0 +1,31 @@
+{
+  "id": "csharp-basico-01-variables",
+  "title": "Variables y Tipos de Datos",
+  "description": "Aprende cómo declarar variables y utilizar tipos de datos en C#.",
+  "language": "csharp",
+  "level": "basico",
+  "estimatedMinutes": 15,
+  "nextLessonId": "csharp-basico-02-operadores",
+  "previousLessonId": null,
+  "contentBlocks": [
+    {
+      "type": "markdown",
+      "content": "### Introducción a Variables en C#\nEn programación, una variable es como una caja de mudanza donde puedes almacenar un valor. Al igual que una caja de mudanza tiene una etiqueta para identificar lo que hay dentro, una variable tiene un nombre que te permite referirte a ella en tu código. En C#, todas las variables deben tener un tipo declarado, lo que significa que debes especificar qué tipo de valor se almacenará en la variable.\n\n### Tipos de Datos en C#\nC# tiene varios tipos de datos que puedes utilizar, incluyendo:\n* `int`: para números enteros, como 1, 2, 3, etc.\n* `string`: para texto, como \"Hola mundo\".\n* `bool`: para valores booleanos, como true o false.\n\nEstos tipos de datos son fundamentales para almacenar y manipular información en tu programa.\n\n### Declaración de Variables\nPara declarar una variable en C#, debes especificar el tipo de dato y el nombre de la variable. Por ejemplo:\n```csharp\nstring saludo = \"Hola mundo\";\nint numero = 42;\n```\nEn este ejemplo, `saludo` es una variable de tipo `string` que almacena el texto \"Hola mundo\", y `numero` es una variable de tipo `int` que almacena el valor 42.\n\n### Uso de `var`\nEn algunos casos, puedes utilizar la palabra clave `var` para que el compilador infiera el tipo de dato de la variable. Por ejemplo:\n```csharp\nvar edad = 25;\n```\nEn este caso, el compilador infiere que `edad` es una variable de tipo `int` porque se le ha asignado el valor 25, que es un número entero.\n\n### Ventajas de Utilizar Variables\nLas variables son fundamentales en programación porque te permiten almacenar y manipular información de manera eficiente. Al utilizar variables, puedes:\n\n* Almacenar valores que se utilizan en varias partes de tu programa.\n* Realizar cálculos y operaciones con valores.\n* Mostrar resultados en pantalla.\n\n### Ejemplos y Práctica\nAhora que has aprendido sobre variables y tipos de datos en C#, es hora de practicar. Recuerda que la práctica es la mejor manera de aprender a programar.\n\n### Siguiente Paso\nAhora es tu turno. En el editor de código que está debajo, escribe lo siguiente:\n```csharp\nusing System;\n\nclass Program {\n    static void Main() {\n        // Declara una variable de tipo string llamada 'nombre' y asígnale tu nombre.\n        string nombre = \"Tu nombre\";\n        \n        // Imprime la variable 'nombre' usando Console.WriteLine\n        Console.WriteLine(nombre);\n    }\n}\n```\nReemplaza `\"Tu nombre\"` con tu nombre real. Una vez que hayas escrito el código, haz clic en el botón verde **\"▶ Ejecutar Código\"** para ver el resultado en la Terminal interactiva. Esto te permitirá ver cómo se imprime el valor de la variable `nombre` en pantalla. ¡No te olvides de hacer clic en el botón para ejecutar el código y ver el resultado!"
+    },
+    {
+      "type": "code-editor",
+      "config": {
+        "language": "csharp",
+        "theme": "vs-dark",
+        "readOnly": false,
+        "hints": [
+          "Para un texto, utiliza el tipo 'string'.",
+          "Asegúrate de poner el texto entre comillas dobles (\"\").",
+          "Imprime usando Console.WriteLine(nombre);"
+        ],
+        "initialCode": "using System;\n\nclass Program {\n    static void Main() {\n        // Declara una variable de tipo string llamada 'nombre' y asígnale tu nombre.\n        \n        \n        // Imprime la variable 'nombre' usando Console.WriteLine\n        \n    }\n}",
+        "solutionCode": "using System;\n\nclass Program {\n    static void Main() {\n        string nombre = \"Antonio\";\n        Console.WriteLine(nombre);\n    }\n}"
+      }
+    }
+  ]
+}

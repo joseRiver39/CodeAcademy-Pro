@@ -1,0 +1,31 @@
+{
+  "id": "csharp-patrones-01-singleton",
+  "title": "Singleton",
+  "description": "Garantiza que una clase tenga solo una instancia global.",
+  "language": "csharp",
+  "level": "patrones",
+  "estimatedMinutes": 30,
+  "nextLessonId": "csharp-patrones-02-factory",
+  "previousLessonId": "csharp-avanzado-04-async",
+  "contentBlocks": [
+    {
+      "type": "markdown",
+      "content": "### Introducción al Patrón Singleton\nEl patrón Singleton es un diseño de software que garantiza que una clase tenga solo una instancia global. Esto significa que, no importa cuántas veces intentes crear un objeto de esta clase, siempre obtendrás la misma instancia. Una forma de entender esto es imaginar una caja de seguridad en un banco. Solo hay una caja de seguridad para un cliente específico, y no importa cuántas veces el cliente intente abrir su caja, siempre será la misma caja.\n\n### ¿Para qué sirve el Singleton?\nEl patrón Singleton es útil cuando necesitas controlar el acceso a un recurso que debe ser compartido por toda la aplicación. Por ejemplo, si estás creando un juego y quieres que solo haya un objeto que se encargue de gestionar la puntuación, puedes usar un Singleton para asegurarte de que solo haya una instancia de este objeto.\n\n### Tipos de Singleton\nExisten varios tipos de Singleton, pero los más comunes son:\n* **Eager Initialization**: La instancia se crea en el momento en que se carga la clase.\n* **Lazy Initialization**: La instancia se crea solo cuando se necesita por primera vez.\n\n### Singleton en C#\nEn C#, se usa comúnmente una variable estática `readonly` o un contenedor estático con inicialización perezosa (usando `Lazy<T>`) para crear un Singleton thread-safe. Una variable estática `readonly` es como una caja de mudanza que se llena con un objeto solo una vez, y después no se puede cambiar.\n\n### Ejemplo de Singleton con Inicialización Eager\n```csharp\npublic class Configuracion\n{\n    private static readonly Configuracion _instancia = new Configuracion();\n    private Configuracion() { }\n    public static Configuracion Instancia { get { return _instancia; } }\n}\n```\n### Ejemplo de Singleton con Inicialización Lazy\n```csharp\npublic class Configuracion\n{\n    private static readonly Lazy<Configuracion> _instancia = new Lazy<Configuracion>(() => new Configuracion());\n    private Configuracion() { }\n    public static Configuracion Instancia { get { return _instancia.Value; } }\n}\n```\n### Práctica\nAhora es tu turno. En el editor de código que está debajo, escribe lo siguiente:\n```csharp\nusing System;\n\nclass Configuracion {\n    // 1. Crea la instancia estática privada\n    private static readonly Configuracion _instancia = new Configuracion();\n    \n    // 2. Constructor privado\n    private Configuracion() { }\n    \n    // 3. Propiedad estática 'Instancia'\n    public static Configuracion Instancia { get { return _instancia; } }\n}\n\nclass Program {\n    static void Main() {\n        // 4. Obtén la instancia dos veces y verifica que son el mismo objeto\n        var c1 = Configuracion.Instancia;\n        var c2 = Configuracion.Instancia;\n        Console.WriteLine(c1 == c2);\n    }\n}\n```\nUna vez que hayas escrito el código, haz clic en el botón verde **\"▶ Ejecutar Código\"** para ver el resultado en la Terminal interactiva. Observa cómo ambas instancias son iguales, lo que demuestra que el patrón Singleton está funcionando correctamente."
+    },
+    {
+      "type": "code-editor",
+      "config": {
+        "language": "csharp",
+        "theme": "vs-dark",
+        "readOnly": false,
+        "hints": [
+          "Constructor privado: private Configuracion() {}",
+          "Instancia estática: private static Configuracion _instancia = new Configuracion();",
+          "Propiedad pública: public static Configuracion Instancia { get { return _instancia; } }"
+        ],
+        "initialCode": "using System;\n\nclass Configuracion {\n    // 1. Crea la instancia estática privada\n    \n    // 2. Constructor privado\n    \n    // 3. Propiedad estática 'Instancia'\n    \n}\n\nclass Program {\n    static void Main() {\n        // 4. Obtén la instancia dos veces y verifica que son el mismo objeto\n        // var c1 = Configuracion.Instancia;\n        // var c2 = Configuracion.Instancia;\n        // Console.WriteLine(c1 == c2);\n    }\n}",
+        "solutionCode": "using System;\n\nclass Configuracion {\n    private static readonly Configuracion _instancia = new Configuracion();\n    \n    private Configuracion() { }\n    \n    public static Configuracion Instancia {\n        get { return _instancia; }\n    }\n}\n\nclass Program {\n    static void Main() {\n        var c1 = Configuracion.Instancia;\n        var c2 = Configuracion.Instancia;\n        Console.WriteLine(c1 == c2);\n    }\n}"
+      }
+    }
+  ]
+}

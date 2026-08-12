@@ -1,0 +1,31 @@
+{
+  "id": "java-bd-02-jdbc-conexion",
+  "title": "Conexión a Base de Datos con JDBC",
+  "description": "Conecta tu programa Java a una base de datos MySQL usando JDBC.",
+  "language": "java",
+  "level": "basededatos",
+  "estimatedMinutes": 25,
+  "nextLessonId": "java-bd-03-jdbc-crud",
+  "previousLessonId": "java-bd-01-sql-basico",
+  "contentBlocks": [
+    {
+      "type": "markdown",
+      "content": "\n### Introducción a JDBC\nJDBC (Java Database Connectivity) es una API de Java que permite a los programas Java interactuar con bases de datos relacionales. Sirve para conectar, consultar y manipular datos en una base de datos.\n\n### ¿Por qué usar JDBC?\nJDBC es útil porque permite a los desarrolladores de Java acceder a diferentes bases de datos sin tener que aprender un lenguaje de consulta específico para cada una. Es como un traductor que permite que Java se comunique con diferentes bases de datos.\n\n### Tipos de JDBC\nHay cuatro tipos de JDBC:\n- **JDBC-ODBC**: Utiliza el conector ODBC para conectarse a la base de datos.\n- **JDBC-Nativo**: Utiliza un conector nativo para conectarse a la base de datos.\n- **JDBC-Net**: Utiliza una conexión de red para conectarse a la base de datos.\n- **JDBC-PUENTE**: Utiliza un puente para conectarse a la base de datos.\n\n### Ejemplo de Código\n```java\n// Importar las librerías necesarias\nimport java.sql.Connection;\nimport java.sql.DriverManager;\nimport java.sql.SQLException;\n\n// Clase para conectar a la base de datos\npublic class ConexionBD {\n   public static void main(String[] args) {\n       // URL de la base de datos\n       String url = \"jdbc:mysql://localhost:3306/mibasedatos\";\n       // Usuario y contraseña de la base de datos\n       String usuario = \"miusuario\";\n       String contraseña = \"micontraseña\";\n       \n       try {\n           // Conectar a la base de datos\n           Connection conexion = DriverManager.getConnection(url, usuario, contraseña);\n           // Imprimir mensaje de conexión exitosa\n           System.out.println(\"Conexión exitosa\");\n       } catch (SQLException e) {\n           // Imprimir mensaje de error\n           System.out.println(\"Error de conexión: \" + e.getMessage());\n       }\n   }\n}\n```\n\n### Actividad\nAhora es tu turno de practicar. En el editor de código, escribe un programa que se conecte a una base de datos MySQL utilizando JDBC. Recuerda importar las librerías necesarias, especificar la URL de la base de datos, el usuario y la contraseña. No olvides manejar las excepciones que puedan ocurrir durante la conexión.\n\nPresiona \"▶ Ejecutar Código\" para probar tu programa."
+    },
+    {
+      "type": "code-editor",
+      "config": {
+        "language": "java",
+        "theme": "vs-dark",
+        "readOnly": false,
+        "hints": [
+          "Importar librerías",
+          "Especificar URL de la base de datos",
+          "Manejar excepciones"
+        ],
+        "initialCode": "\n// Importar librerías\nimport java.sql.Connection;\nimport java.sql.DriverManager;\nimport java.sql.SQLException;\n\npublic class ConexionBD {\n   public static void main(String[] args) {\n       // Especificar URL de la base de datos\n       String url = \"jdbc:mysql://localhost:3306/mibasedatos\";\n       // Especificar usuario y contraseña de la base de datos\n       String usuario = \"miusuario\";\n       String contraseña = \"micontraseña\";\n       \n       try {\n           // Conectar a la base de datos\n           // TODO: Completar la conexión\n           Connection conexion = null;\n           // Imprimir mensaje de conexión exitosa\n           System.out.println(\"Conexión exitosa\");\n       } catch (SQLException e) {\n           // Imprimir mensaje de error\n           System.out.println(\"Error de conexión: \" + e.getMessage());\n       }\n   }\n}\n",
+        "solutionCode": "\n// Importar librerías\nimport java.sql.Connection;\nimport java.sql.DriverManager;\nimport java.sql.SQLException;\n\npublic class ConexionBD {\n   public static void main(String[] args) {\n       // Especificar URL de la base de datos\n       String url = \"jdbc:mysql://localhost:3306/mibasedatos\";\n       // Especificar usuario y contraseña de la base de datos\n       String usuario = \"miusuario\";\n       String contraseña = \"micontraseña\";\n       \n       try {\n           // Conectar a la base de datos\n           Connection conexion = DriverManager.getConnection(url, usuario, contraseña);\n           // Imprimir mensaje de conexión exitosa\n           System.out.println(\"Conexión exitosa\");\n       } catch (SQLException e) {\n           // Imprimir mensaje de error\n           System.out.println(\"Error de conexión: \" + e.getMessage());\n       }\n   }\n}\n"
+      }
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "csharp-basico-04-bucles",
+  "title": "Bucles",
+  "description": "Repite acciones usando bucles for, while y foreach.",
+  "language": "csharp",
+  "level": "basico",
+  "estimatedMinutes": 20,
+  "nextLessonId": "csharp-basico-05-arrays",
+  "previousLessonId": "csharp-basico-03-condicionales",
+  "contentBlocks": [
+    {
+      "type": "markdown",
+      "content": "### Introducción a los Bucles For\nEl bucle `for` es una herramienta fundamental en la programación que nos permite repetir un bloque de código una cantidad determinada de veces. Imagina que estás embolsando regalos para una fiesta y necesitas agregar un lazo a cada uno de ellos. Si sabes que tienes 10 regalos, puedes usar un bucle `for` para repetir la acción de agregar un lazo a cada regalo, sin tener que escribir la misma línea de código 10 veces.\n\n### ¿Qué es un Bucle For?\nUn bucle `for` es como una receta para repetir una tarea. Se define con tres partes clave: \n- La inicialización, donde se establece el punto de partida (por ejemplo, el número 0).\n- La condición, que es como una pregunta que se hace en cada iteración para determinar si se debe continuar (por ejemplo, \"¿el número es menor que 5?\").\n- El incremento, que es la acción que se toma después de cada iteración para avanzar hacia el siguiente paso (por ejemplo, sumar 1 al número actual).\n\n### Tipos de Bucles For\nAunque el concepto básico es el mismo, los bucles `for` pueden variar ligeramente en su sintaxis dependiendo del lenguaje de programación que estés utilizando. En general, todos siguen el patrón de inicialización, condición y incremento.\n\n### Definición y Ejemplo\nLa definición de un bucle `for` suele seguir este patrón:\n```csharp\nfor (inicialización; condición; incremento) {\n    // Código a ejecutar\n}\n```\nPor ejemplo, si queremos imprimir los números del 0 al 4, podemos hacerlo de la siguiente manera:\n```csharp\nfor (int i = 0; i <= 4; i++) {\n    Console.WriteLine(i);\n}\n```\nEn este ejemplo, `i` se inicializa en 0, la condición es que `i` sea menor o igual a 4, y el incremento es sumar 1 a `i` después de cada iteración.\n\n### Analogía del Mundo Real\nUna variable en un bucle `for` es como un contador en una tienda. Imagina que estás a cargo de contar el número de clientes que entran a una tienda durante una promoción. En cada cliente que entra, incrementas el contador. El bucle `for` sería como un procedimiento automatizado que aumenta el contador por ti, sin que tengas que preocuparte por recordar el número actual.\n\n### ¿Por Qué Usar Bucles For?\nLos bucles `for` son especialmente útiles cuando sabes exactamente cuántas veces necesitas ejecutar un bloque de código. Esto los hace ideales para tareas que involucran iteraciones predecibles, como imprimir una serie de números, procesar elementos en una lista, o realizar cálculos repetidos.\n\n### Práctica\nAhora es tu turno. En el editor de código que está debajo, escribe lo siguiente:\n```csharp\nusing System;\n\nclass Program {\n    static void Main() {\n        // Escribe un bucle for que imprima los números del 0 al 4\n        for (int i = 0; i <= 4; i++) {\n            Console.WriteLine(i);\n        }\n    }\n}\n```\nUna vez que hayas escrito el código, haz clic en el botón verde **\"▶ Ejecutar Código\"** para ver el resultado en la Terminal interactiva. Observa cómo el bucle `for` imprime cada número en una línea nueva, demostrando cómo se puede repetir una acción de manera eficiente con programación."
+    },
+    {
+      "type": "code-editor",
+      "config": {
+        "language": "csharp",
+        "theme": "vs-dark",
+        "readOnly": false,
+        "hints": [
+          "La sintaxis es: for (int i = 0; i < limite; i++)",
+          "Para imprimir del 0 al 4: for(int i = 0; i < 5; i++)",
+          "Usa Console.WriteLine(i);"
+        ],
+        "initialCode": "using System;\n\nclass Program {\n    static void Main() {\n        // Escribe un bucle for que imprima los números del 0 al 4\n        \n    }\n}",
+        "solutionCode": "using System;\n\nclass Program {\n    static void Main() {\n        for (int i = 0; i < 5; i++) {\n            Console.WriteLine(i);\n        }\n    }\n}"
+      }
+    }
+  ]
+}

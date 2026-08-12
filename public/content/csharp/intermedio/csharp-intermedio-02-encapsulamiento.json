@@ -1,0 +1,31 @@
+{
+  "id": "csharp-intermedio-02-encapsulamiento",
+  "title": "Propiedades y Encapsulamiento",
+  "description": "Protege los datos usando el mecanismo de Propiedades (Properties) exclusivo de C#.",
+  "language": "csharp",
+  "level": "intermedio",
+  "estimatedMinutes": 30,
+  "nextLessonId": "csharp-intermedio-03-herencia",
+  "previousLessonId": "csharp-intermedio-01-clases",
+  "contentBlocks": [
+    {
+      "type": "markdown",
+      "content": "### Introducción a las Propiedades en C#\nLas propiedades en C# son un mecanismo elegante que permite acceder a datos privados como si fueran públicos, pero manteniendo el control. Esto es especialmente útil para proteger los datos de una clase y asegurarse de que se utilicen de manera segura y coherente.\n\n### ¿Qué son las Propiedades?\nUna propiedad es como una caja fuerte donde se almacenan datos valiosos. Al igual que una caja fuerte, tiene una cerradura que controla quién puede acceder a su contenido. En el caso de las propiedades, esta \"cerradura\" se logra mediante los bloques `get` y `set`, que permiten obtener y asignar valores a la propiedad de manera controlada.\n\n### Tipos de Propiedades\nExisten varios tipos de propiedades en C#, incluyendo:\n\n* Propiedades automáticas: Son las más simples y se utilizan cuando no se necesita realizar ninguna lógica adicional al obtener o asignar un valor.\n* Propiedades con bloques `get` y `set`: Estas propiedades permiten realizar operaciones adicionales al obtener o asignar un valor, como validaciones o cálculos.\n* Propiedades solo de lectura: Estas propiedades solo permiten obtener el valor, pero no asignarlo.\n\n### Definición de Propiedades\nUna propiedad se define utilizando la palabra clave `public` (o `private`, `protected`, etc., según sea necesario), seguida del tipo de dato de la propiedad y el nombre de la propiedad. Los bloques `get` y `set` se utilizan para controlar el acceso a la propiedad.\n\n```csharp\npublic string Nombre { get; set; }\n```\n\nEn este ejemplo, se define una propiedad pública `Nombre` de tipo `string`, con bloques `get` y `set` automáticos.\n\n### Ejemplo de Propiedad con Bloques `get` y `set`\n```csharp\nprivate string _nombre;\n\npublic string Nombre \n{ \n    get { return _nombre; } \n    set { _nombre = value; } \n}\n```\n\nEn este ejemplo, se define una propiedad pública `Nombre` que accede a una variable privada `_nombre`. Los bloques `get` y `set` permiten obtener y asignar el valor de `_nombre` de manera controlada.\n\n### Uso de Propiedades\nLas propiedades se pueden utilizar como si fueran variables públicas, pero con el beneficio adicional de controlar el acceso a los datos.\n\n```csharp\nPersona persona = new Persona();\npersona.Nombre = \"Juan\";\nConsole.WriteLine(persona.Nombre);\n```\n\nEn este ejemplo, se instancia una clase `Persona`, se asigna un valor a la propiedad `Nombre` y se obtiene el valor de la propiedad para imprimirlo en la consola.\n\n### Ejercicio Practico\nAhora es tu turno. En el editor de código que está debajo, escribe lo siguiente:\n```csharp\nusing System;\n\nclass Persona {\n    private string _nombre;\n    \n    // 1. Crea una Propiedad pública 'Nombre' para obtener y asignar '_nombre'\n    // Usa los bloques get y set, y la palabra reservada 'value'\n    public string Nombre \n    { \n        get { return _nombre; } \n        set { _nombre = value; } \n    }\n}\n\nclass Program {\n    static void Main() {\n        // 2. Instancia Persona, asígnale un nombre usando la propiedad y muéstralo.\n        Persona persona = new Persona();\n        persona.Nombre = \"Juan\";\n        Console.WriteLine(persona.Nombre);\n    }\n}\n```\nUna vez que hayas escrito el código, haz clic en el botón verde **\"▶ Ejecutar Código\"** para ver el resultado en la Terminal interactiva. Observa cómo la propiedad `Nombre` se utiliza para asignar y obtener el valor de la variable privada `_nombre`."
+    },
+    {
+      "type": "code-editor",
+      "config": {
+        "language": "csharp",
+        "theme": "vs-dark",
+        "readOnly": false,
+        "hints": [
+          "Define la propiedad: public string Nombre { get { return _nombre; } set { _nombre = value; } }",
+          "También puedes usar auto-properties: public string Nombre { get; set; }",
+          "En Main: p.Nombre = \"Ana\"; y luego Console.WriteLine(p.Nombre);"
+        ],
+        "initialCode": "using System;\n\nclass Persona {\n    private string _nombre;\n    \n    // 1. Crea una Propiedad pública 'Nombre' para obtener y asignar '_nombre'\n    // Usa los bloques get y set, y la palabra reservada 'value'\n    \n}\n\nclass Program {\n    static void Main() {\n        // 2. Instancia Persona, asígnale un nombre usando la propiedad y muéstralo.\n        \n    }\n}",
+        "solutionCode": "using System;\n\nclass Persona {\n    private string _nombre;\n    \n    public string Nombre {\n        get { return _nombre; }\n        set { _nombre = value; }\n    }\n}\n\nclass Program {\n    static void Main() {\n        Persona p = new Persona();\n        p.Nombre = \"Ana\";\n        Console.WriteLine(p.Nombre);\n    }\n}"
+      }
+    }
+  ]
+}

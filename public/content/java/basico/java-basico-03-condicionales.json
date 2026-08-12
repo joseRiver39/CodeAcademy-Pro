@@ -1,0 +1,31 @@
+{
+  "id": "java-basico-03-condicionales",
+  "title": "Condicionales (if/else)",
+  "description": "Controla el flujo de tu programa con instrucciones condicionales.",
+  "language": "java",
+  "level": "basico",
+  "estimatedMinutes": 20,
+  "nextLessonId": null,
+  "previousLessonId": "java-basico-02-operadores",
+  "contentBlocks": [
+    {
+      "type": "markdown",
+      "content": "### Introducción a Condicionales (if/else)\nLos condicionales son instrucciones que permiten controlar el flujo de un programa según condiciones específicas. Son fundamentales para crear programas interactivos y dinámicos. Imagina que estás en un restaurante y quieres pedir un café, pero sólo si tienen leche. En este caso, la condición es \"¿Hay leche disponible?\". Si la respuesta es sí, pides el café; si no, pides algo diferente. En programación, esto se logra con los condicionales if/else.\n\n### Estructura If / Else\nLa estructura if/else es la forma más básica de condicional. Permite ejecutar un bloque de código si una condición es verdadera y otro bloque si es falsa. Una variable es como una caja de mudanza: puedes meter o sacar cosas de ella. De manera similar, un condicional if/else es como un cruce de caminos: dependiendo de la condición, tomas uno u otro camino.\n\n### Tipos de Condicionales\nExisten varios tipos de condicionales, pero el if/else es el más común. Otros tipos incluyen if simplificado, que solo ejecuta una acción si la condición es verdadera, y los condicionales anidados, que permiten evaluar varias condiciones de manera secuencial.\n\n### Definición de un If/Else\nUn if/else se define de la siguiente manera:\n```markdown\nif (condición) {\n  // Código a ejecutar si la condición es verdadera\n} else {\n  // Código a ejecutar si la condición es falsa\n}\n```\nPor ejemplo, si queremos imprimir \"Hola\" si la variable `nombre` es \"Juan\", y \"Adiós\" en caso contrario, podríamos hacer:\n```java\nString nombre = \"Juan\";\nif (nombre.equals(\"Juan\")) {\n  System.out.println(\"Hola\");\n} else {\n  System.out.println(\"Adiós\");\n}\n```\n\n### Ejemplos Prácticos\nLos condicionales if/else son muy útiles en situaciones donde necesitas tomar decisiones basadas en condiciones específicas. Por ejemplo, en un juego, podrías usar un if/else para determinar si un personaje ha ganado o perdido, y mostrar un mensaje correspondiente.\n\n### Siguiente Paso\nAhora es tu turno. En el editor de código que está debajo, escribe lo siguiente:\n```java\npublic class Main {\n    public static void main(String[] args) {\n        int edad = 20;\n        \n        // Escribe un if-else que imprima \"Mayor de edad\" si la edad es >= 18\n        // y \"Menor de edad\" en caso contrario.\n        \n    }\n}\n```\nRecuerda que, una vez escribas el código, debes hacer clic en el botón verde **\"▶ Ejecutar Código\"** para ver el resultado en la Terminal interactiva. ¡Buena suerte!"
+    },
+    {
+      "type": "code-editor",
+      "config": {
+        "language": "java",
+        "theme": "vs-dark",
+        "readOnly": false,
+        "hints": [
+          "Usa la sintaxis: if (condicion) { ... } else { ... }",
+          "Para verificar si es mayor de edad, la condición es: edad >= 18",
+          "Si es mayor, imprime 'Mayor de edad', de lo contrario imprime 'Menor de edad'"
+        ],
+        "initialCode": "public class Main {\n    public static void main(String[] args) {\n        int edad = 20;\n        \n        // Escribe un if-else que imprima \"Mayor de edad\" si la edad es >= 18\n        // y \"Menor de edad\" en caso contrario.\n        \n    }\n}",
+        "solutionCode": "public class Main {\n    public static void main(String[] args) {\n        int edad = 20;\n        if (edad >= 18) {\n            System.out.println(\"Mayor de edad\");\n        } else {\n            System.out.println(\"Menor de edad\");\n        }\n    }\n}"
+      }
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+<div class="lesson-container" *ngIf="lesson">
+  <div class="lesson-nav">
+    <a routerLink="/" class="back-link">← Volver al panel</a>
+  </div>
+  
+  <h1>{{ lesson.title }}</h1>
+  <p class="description">{{ lesson.description }}</p>
+
+  <div *ngFor="let block of lesson.contentBlocks; let i = index" class="block">
+
+    <!-- Markdown Block -->
+    <div *ngIf="block.type === 'markdown'" class="markdown-content">
+      <markdown [data]="block.content"></markdown>
+    </div>
+
+    <!-- Code Editor Block -->
+    <div *ngIf="block.type === 'code-editor'" class="editor-container">
+      
+      <div class="editor-header">
+        <div class="editor-actions-left">
+          <button 
+            *ngIf="block.config.hints?.length"
+            class="hint-btn"
+            (click)="revealNextHint(i)"
+            [disabled]="!hasMoreHints(i, block.config.hints)">
+            {{ hasMoreHints(i, block.config.hints) 
+               ? '💡 Ver pista (' + getHintCount(i) + '/' + block.config.hints.length + ')'
+               : '💡 Sin más pistas' }}
+          </button>
+        </div>
+        <div class="editor-actions-right">
+          <button (click)="runCode(i)" [disabled]="isExecutingMap[i]" class="run-btn" title="Atajo: Ctrl + Enter">
+            {{ isExecutingMap[i] ? '⏳ Ejecutando...' : '▶ Ejecutar Código' }}
+          </button>
+          <button (click)="evaluateCode(i)" [disabled]="loadingMap[i]" class="review-btn">
+            {{ loadingMap[i] ? '⏳ Revisando...' : '🤖 Revisar con IA' }}
+          </button>
+          <button (click)="toggleSolution(i)" class="solution-btn">
+            {{ showSolution[i] ? '🙈 Ocultar solución' : '👁️ Ver solución' }}
+          </button>
+        </div>
+      </div>
+
+      <!-- Progressive Hints -->
+      <div class="hints-panel" *ngIf="getHintCount(i) > 0">
+        <div class="hint-item" *ngFor="let hint of getRevealedHints(i, block.config.hints); let hIdx = index">
+          <span class="hint-label">Pista {{ hIdx + 1 }}</span>
+          <p>{{ hint }}</p>
+        </div>
+      </div>
+
+      <!-- Our custom Monaco component -->
+      <div class="monaco-wrapper">
+        <app-monaco-editor
+          [language]="block.config.language"
+          [theme]="block.config.theme"
+          [value]="block.config.initialCode"
+          (valueChange)="onCodeChange(i, $event)">
+        </app-monaco-editor>
+      </div>
+
+      <!-- Interactive Console Panel -->
+      <div class="console-panel" *ngIf="consoleOutputMap[i] !== undefined && consoleOutputMap[i] !== null" id="console-{{i}}">
+        <div class="console-header">
+          <span>Terminal</span>
+          <button class="clear-btn" (click)="consoleOutputMap[i] = null">Limpiar</button>
+        </div>
+        <pre class="console-output" [class.error]="consoleOutputMap[i]?.isError">{{ consoleOutputMap[i]?.text || 'Ejecución exitosa sin salida (No Output)' }}</pre>
+      </div>
+
+      <!-- AI Feedback Panel -->
+      <div class="feedback-panel" *ngIf="feedbackMap[i]" id="feedback-{{i}}">
+        <h3>🤖 Retroalimentación de la IA</h3>
+        <p>{{ feedbackMap[i].feedback }}</p>
+        <div *ngIf="feedbackMap[i].suggestions?.length">
+          <h4>Sugerencias de Mejora:</h4>
+          <ul><li *ngFor="let s of feedbackMap[i].suggestions">{{ s }}</li></ul>
+        </div>
+        <div *ngIf="feedbackMap[i].goodPractices?.length">
+          <h4>Buenas Prácticas Identificadas:</h4>
+          <ul><li *ngFor="let p of feedbackMap[i].goodPractices">{{ p }}</li></ul>
+        </div>
+      </div>
+
+      <!-- Solution Panel -->
+      <div class="solution-panel" *ngIf="showSolution[i]">
+        <h3>✅ Solución Esperada</h3>
+        <pre><code>{{ block.config.solutionCode }}</code></pre>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="lesson-footer">
+    <button class="complete-btn" (click)="completeLesson()">
+      {{ lesson.nextLessonId ? '✔ Completar y Continuar →' : '🎉 Completar Lección' }}
+    </button>
+  </div>
+</div>
+
+<div *ngIf="!lesson" class="loading-state">Cargando lección...</div>

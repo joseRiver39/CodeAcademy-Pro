@@ -1,0 +1,31 @@
+{
+  "id": "csharp-avanzado-04-async",
+  "title": "Programación Asíncrona (async/await)",
+  "description": "Escribe código no bloqueante usando Tareas y la palabra clave await.",
+  "language": "csharp",
+  "level": "avanzado",
+  "estimatedMinutes": 45,
+  "nextLessonId": "csharp-patrones-01-singleton",
+  "previousLessonId": "csharp-avanzado-03-linq",
+  "contentBlocks": [
+    {
+      "type": "markdown",
+      "content": "### Introducción a la Programación Asíncrona\nLa programación asíncrona es una técnica que permite a un programa realizar múltiples tareas al mismo tiempo, sin bloquear el hilo principal de ejecución. Esto es especialmente útil para operaciones de larga duración, como lecturas de archivos, acceso a bases de datos o comunicaciones de red.\n\n### ¿Qué es Async/Await?\nLa programación asíncrona en C# utiliza el modificador `async` y el operador `await` para realizar operaciones de larga duración sin bloquear el hilo principal. El modificador `async` indica que un método es asíncrono, es decir, que puede realizar operaciones sin bloquear el hilo principal. El operador `await` se utiliza para pausar la ejecución de un método asíncrono hasta que se complete una operación asíncrona.\n\n### Analogía del Mundo Real\nImagina que estás en un restaurante y pides un café. Si el camarero se queda esperando a que se termine de preparar el café para poder atender a otro cliente, estaría bloqueando su capacidad para atender a otros clientes. En cambio, si el camarero toma tu pedido y sigue atendiendo a otros clientes mientras se prepara el café, estaría utilizando una técnica asíncrona. Cuando el café esté listo, el camarero puede entregártelo sin haber bloqueado su capacidad para atender a otros clientes.\n\n### Tipos de Operaciones Asíncronas\nExisten varios tipos de operaciones asíncronas, como:\n\n* Lecturas de archivos\n* Acceso a bases de datos\n* Comunicaciones de red\n* Operaciones de red\n\n### Definición de un Método Asíncrono\nUn método asíncrono se define utilizando el modificador `async` y el tipo de retorno `Task`. Por ejemplo:\n```csharp\nasync Task MiMetodoAsincrono()\n{\n    // Código asíncrono\n}\n```\n### Uso del Operador Await\nEl operador `await` se utiliza para pausar la ejecución de un método asíncrono hasta que se complete una operación asíncrona. Por ejemplo:\n```csharp\nasync Task MiMetodoAsincrono()\n{\n    await Task.Delay(1000); // Pausa la ejecución durante 1 segundo\n    Console.WriteLine(\"Fin\");\n}\n```\n### Ejemplo de Código\n```csharp\nusing System;\nusing System.Threading.Tasks;\n\nclass Program\n{\n    static async Task Main()\n    {\n        Console.WriteLine(\"Iniciando...\");\n        await Task.Delay(1000); // Pausa la ejecución durante 1 segundo\n        Console.WriteLine(\"Fin\");\n    }\n}\n```\n### Siguiente Paso\nAhora es tu turno. En el editor de código que está debajo, escribe lo siguiente:\n```csharp\nusing System;\nusing System.Threading.Tasks;\n\nclass Program\n{\n    static async Task Main()\n    {\n        Console.WriteLine(\"Iniciando...\");\n        // 1. Realiza una pausa asíncrona de 1 segundo (1000 ms)\n        await Task.Delay(1000);\n        Console.WriteLine(\"Fin\");\n    }\n}\n```\nRecuerda que, una vez escribas el código, debes hacer clic en el botón verde **\"▶ Ejecutar Código\"** para ver el resultado en la Terminal interactiva. ¡Buena suerte!"
+    },
+    {
+      "type": "code-editor",
+      "config": {
+        "language": "csharp",
+        "theme": "vs-dark",
+        "readOnly": false,
+        "hints": [
+          "Haz que el método Main sea async: static async Task Main()",
+          "Llama a Task.Delay(1000) usando el operador await.",
+          "Imprime mensajes antes y después."
+        ],
+        "initialCode": "using System;\nusing System.Threading.Tasks;\n\nclass Program {\n    // 1. Convierte Main a un método asíncrono que devuelva Task\n    static void Main() {\n        Console.WriteLine(\"Iniciando...\");\n        \n        // 2. Realiza una pausa asíncrona de 1 segundo (1000 ms)\n        // await Task.Delay(1000);\n        \n        Console.WriteLine(\"Fin\");\n    }\n}",
+        "solutionCode": "using System;\nusing System.Threading.Tasks;\n\nclass Program {\n    static async Task Main() {\n        Console.WriteLine(\"Iniciando...\");\n        await Task.Delay(1000);\n        Console.WriteLine(\"Fin\");\n    }\n}"
+      }
+    }
+  ]
+}

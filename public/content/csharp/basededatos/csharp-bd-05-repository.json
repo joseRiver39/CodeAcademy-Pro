@@ -1,0 +1,31 @@
+{
+  "id": "csharp-bd-05-repository",
+  "title": "Patrón Repository en C#",
+  "description": "Separa la lógica de acceso a datos usando el patrón Repository con interfaces.",
+  "language": "csharp",
+  "level": "basededatos",
+  "estimatedMinutes": 25,
+  "nextLessonId": "csharp-bd-06-proyecto-final",
+  "previousLessonId": "csharp-bd-04-ef-core",
+  "contentBlocks": [
+    {
+      "type": "markdown",
+      "content": "\n### Introducción al Patrón Repository\nEl patrón Repository es un diseño de software que actúa como una capa de abstracción entre la lógica de negocio y el almacenamiento de datos. Sirve para encapsular la lógica de acceso a datos, haciendo que el código sea más mantenible, escalable y fácil de probar.\n\n### Tipos de Repository\nExisten diferentes tipos de Repository, como:\n- **Repository Genérico**: Un repositorio que puede manejar cualquier tipo de entidad.\n- **Repository Específico**: Un repositorio diseñado para una entidad específica.\n\n### Analogía del Mundo Real\nImagina un supermercado donde los productos están almacenados en estantes. El patrón Repository sería como un empleado que se encarga de buscar y traer los productos que necesitas, sin que tengas que saber dónde están almacenados.\n\n### Ejemplo de Código\n```csharp\n// Define la interfaz del Repository\npublic interface IProductoRepository\n{\n    IEnumerable<Producto> ObtenerProductos();\n}\n\n// Implementa el Repository\npublic class ProductoRepository : IProductoRepository\n{\n    // Simula una BD con lista en memoria para poder ejecutar\n    private List<Producto> productos = new List<Producto>()\n    {\n        new Producto { Id = 1, Nombre = \"Producto 1\" },\n        new Producto { Id = 2, Nombre = \"Producto 2\" },\n    };\n\n    public IEnumerable<Producto> ObtenerProductos()\n    {\n        return productos;\n    }\n}\n\n// Define la entidad Producto\npublic class Producto\n{\n    public int Id { get; set; }\n    public string Nombre { get; set; }\n}\n```\n\n### Siguiente Paso\nAhora es tu turno de practicar. En el editor de código, crea una clase `ProductoRepository` que implemente la interfaz `IProductoRepository`. Debe tener un método `ObtenerProductos` que devuelva una lista de productos. Luego, presiona \"▶ Ejecutar Código\" para ver el resultado."
+    },
+    {
+      "type": "code-editor",
+      "config": {
+        "language": "csharp",
+        "theme": "vs-dark",
+        "readOnly": false,
+        "hints": [
+          "Implementa la interfaz IProductoRepository",
+          "Crea un método ObtenerProductos",
+          "Simula una BD con lista en memoria"
+        ],
+        "initialCode": "\n// Define la interfaz del Repository\npublic interface IProductoRepository\n{\n    IEnumerable<Producto> ObtenerProductos();\n}\n\n// Implementa el Repository\npublic class ProductoRepository : IProductoRepository\n{\n    // Simula una BD con lista en memoria para poder ejecutar\n    private List<Producto> productos = new List<Producto>()\n    {\n        // TO DO: Agrega algunos productos\n    };\n\n    public IEnumerable<Producto> ObtenerProductos()\n    {\n        // TO DO: Devuelve la lista de productos\n        return null;\n    }\n}\n\n// Define la entidad Producto\npublic class Producto\n{\n    public int Id { get; set; }\n    public string Nombre { get; set; }\n}\n\nclass Program\n{\n    static void Main(string[] args)\n    {\n        // TO DO: Crea una instancia de ProductoRepository y llama al método ObtenerProductos\n    }\n}",
+        "solutionCode": "\n// Define la interfaz del Repository\npublic interface IProductoRepository\n{\n    IEnumerable<Producto> ObtenerProductos();\n}\n\n// Implementa el Repository\npublic class ProductoRepository : IProductoRepository\n{\n    // Simula una BD con lista en memoria para poder ejecutar\n    private List<Producto> productos = new List<Producto>()\n    {\n        new Producto { Id = 1, Nombre = \"Producto 1\" },\n        new Producto { Id = 2, Nombre = \"Producto 2\" },\n    };\n\n    public IEnumerable<Producto> ObtenerProductos()\n    {\n        return productos;\n    }\n}\n\n// Define la entidad Producto\npublic class Producto\n{\n    public int Id { get; set; }\n    public string Nombre { get; set; }\n}\n\nclass Program\n{\n    static void Main(string[] args)\n    {\n        ProductoRepository repository = new ProductoRepository();\n        var productos = repository.ObtenerProductos();\n\n        foreach (var producto in productos)\n        {\n            Console.WriteLine(producto.Nombre);\n        }\n    }\n}"
+      }
+    }
+  ]
+}

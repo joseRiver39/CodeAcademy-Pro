@@ -1,0 +1,31 @@
+{
+  "id": "csharp-basico-03-condicionales",
+  "title": "Condicionales (if/else, switch)",
+  "description": "Controla el flujo de tu aplicación usando if/else y switch.",
+  "language": "csharp",
+  "level": "basico",
+  "estimatedMinutes": 20,
+  "nextLessonId": "csharp-basico-04-bucles",
+  "previousLessonId": "csharp-basico-02-operadores",
+  "contentBlocks": [
+    {
+      "type": "markdown",
+      "content": "### Introducción a los Condicionales\nLos condicionales son una herramienta fundamental en la programación que nos permiten tomar decisiones en base a condiciones lógicas. Imagina que estás en una encrucijada y debes decidir hacia dónde ir. La decisión se basa en una condición, como si hay tráfico o no en una de las direcciones. De la misma manera, en la programación, usamos condicionales para decidir qué acción tomar en función de una condición.\n\n### ¿Qué son los Condicionales?\nLos condicionales son estructuras de control de flujo que evalúan una condición lógica (`true` o `false`) y ejecutan un bloque de código en función del resultado. Los dos tipos de condicionales más comunes son `if` y `switch`.\n\n### El Condición `if`\nEl condicional `if` es como un semáforo. Si la condición es `true`, el semáforo está en verde y el código dentro del bloque `if` se ejecuta. Si la condición es `false`, el semáforo está en rojo y el código dentro del bloque `if` se salta.\n\n```markdown\nif (condición) {\n  // Código a ejecutar si la condición es true\n}\n```\n\n### El Condición `if/else`\nEl condicional `if/else` es como un semáforo con una opción alternativa. Si la condición es `true`, el semáforo está en verde y el código dentro del bloque `if` se ejecuta. Si la condición es `false`, el semáforo está en rojo y el código dentro del bloque `else` se ejecuta.\n\n```markdown\nif (condición) {\n  // Código a ejecutar si la condición es true\n} else {\n  // Código a ejecutar si la condición es false\n}\n```\n\n### El Condición `switch`\nEl condicional `switch` es como un interruptor de luces. Dependiendo del valor de la variable, se ejecuta un bloque de código específico.\n\n```markdown\nswitch (variable) {\n  case valor1:\n    // Código a ejecutar si la variable es igual a valor1\n    break;\n  case valor2:\n    // Código a ejecutar si la variable es igual a valor2\n    break;\n  default:\n    // Código a ejecutar si la variable no es igual a ninguno de los valores anteriores\n    break;\n}\n```\n\n### Ejemplos y Práctica\nAhora que has aprendido sobre los condicionales, es hora de practicar. Imagina que tienes una variable `numero` con un valor de 7. Quieres verificar si el número es par o impar.\n\n### Tu Turno\nAhora es tu turno. En el editor de código que está debajo, escribe lo siguiente:\n```csharp\nusing System;\n\nclass Program {\n    static void Main() {\n        int numero = 7;\n        \n        // Escribe un condicional if/else para verificar si el número es par o impar\n        // Un número es par si su módulo entre 2 es igual a cero (numero % 2 == 0)\n        \n    }\n}\n```\nRecuerda que, una vez escribas el código, debes hacer clic en el botón verde **\"▶ Ejecutar Código\"** para ver el resultado en la Terminal interactiva. ¡Buena suerte!"
+    },
+    {
+      "type": "code-editor",
+      "config": {
+        "language": "csharp",
+        "theme": "vs-dark",
+        "readOnly": false,
+        "hints": [
+          "Usa la sintaxis: if (condicion) { ... } else { ... }",
+          "Para verificar si es un número par, usa el operador módulo: numero % 2 == 0",
+          "Imprime 'Par' o 'Impar' según corresponda."
+        ],
+        "initialCode": "using System;\n\nclass Program {\n    static void Main() {\n        int numero = 7;\n        \n        // Escribe un condicional if/else para verificar si el número es par o impar\n        // Un número es par si su módulo entre 2 es igual a cero (numero % 2 == 0)\n        \n    }\n}",
+        "solutionCode": "using System;\n\nclass Program {\n    static void Main() {\n        int numero = 7;\n        if (numero % 2 == 0) {\n            Console.WriteLine(\"Par\");\n        } else {\n            Console.WriteLine(\"Impar\");\n        }\n    }\n}"
+      }
+    }
+  ]
+}

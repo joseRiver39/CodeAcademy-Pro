@@ -1,0 +1,62 @@
+{
+  "id": "csharp",
+  "title": "Aprende C# Profesional",
+  "modules": [
+    {
+      "id": "basico",
+      "title": "Nivel Básico",
+      "lessons": [
+        { "id": "csharp-basico-01-variables", "title": "Variables y Tipos de Datos", "path": "/content/csharp/basico/csharp-basico-01-variables.json" },
+        { "id": "csharp-basico-02-operadores", "title": "Operadores", "path": "/content/csharp/basico/csharp-basico-02-operadores.json" },
+        { "id": "csharp-basico-03-condicionales", "title": "Condicionales (if/else, switch)", "path": "/content/csharp/basico/csharp-basico-03-condicionales.json" },
+        { "id": "csharp-basico-04-bucles", "title": "Bucles", "path": "/content/csharp/basico/csharp-basico-04-bucles.json" },
+        { "id": "csharp-basico-05-arrays", "title": "Arrays", "path": "/content/csharp/basico/csharp-basico-05-arrays.json" },
+        { "id": "csharp-basico-06-metodos", "title": "Métodos", "path": "/content/csharp/basico/csharp-basico-06-metodos.json" }
+      ]
+    },
+    {
+      "id": "intermedio",
+      "title": "Nivel Intermedio (POO)",
+      "lessons": [
+        { "id": "csharp-intermedio-01-clases", "title": "Clases, Objetos y Propiedades", "path": "/content/csharp/intermedio/csharp-intermedio-01-clases.json" },
+        { "id": "csharp-intermedio-02-herencia", "title": "Herencia", "path": "/content/csharp/intermedio/csharp-intermedio-02-herencia.json" },
+        { "id": "csharp-intermedio-03-polimorfismo", "title": "Polimorfismo e Interfaces", "path": "/content/csharp/intermedio/csharp-intermedio-03-polimorfismo.json" },
+        { "id": "csharp-intermedio-04-excepciones", "title": "Manejo de Excepciones", "path": "/content/csharp/intermedio/csharp-intermedio-04-excepciones.json" }
+      ]
+    },
+    {
+      "id": "avanzado",
+      "title": "Nivel Avanzado",
+      "lessons": [
+        { "id": "csharp-avanzado-01-colecciones", "title": "Colecciones (List, Dictionary)", "path": "/content/csharp/avanzado/csharp-avanzado-01-colecciones.json" },
+        { "id": "csharp-avanzado-02-linq", "title": "LINQ", "path": "/content/csharp/avanzado/csharp-avanzado-02-linq.json" },
+        { "id": "csharp-avanzado-03-delegados", "title": "Delegados y Eventos", "path": "/content/csharp/avanzado/csharp-avanzado-03-delegados.json" },
+        { "id": "csharp-avanzado-04-async", "title": "Programación Asíncrona", "path": "/content/csharp/avanzado/csharp-avanzado-04-async.json" }
+      ]
+    },
+    {
+      "id": "patrones",
+      "title": "Patrones de Diseño",
+      "lessons": [
+        { "id": "csharp-patrones-01-singleton", "title": "Singleton", "path": "/content/csharp/patrones/csharp-patrones-01-singleton.json" },
+        { "id": "csharp-patrones-02-factory", "title": "Factory Method", "path": "/content/csharp/patrones/csharp-patrones-02-factory.json" },
+        { "id": "csharp-patrones-03-strategy", "title": "Strategy", "path": "/content/csharp/patrones/csharp-patrones-03-strategy.json" },
+        { "id": "csharp-patrones-04-observer", "title": "Observer", "path": "/content/csharp/patrones/csharp-patrones-04-observer.json" }
+      ]
+    },
+    {
+      "id": "basededatos",
+      "title": "🗄️ Bases de Datos",
+      "lessons": [
+        { "id": "csharp-bd-01-sql-basico", "title": "SQL Básico para C#", "path": "/content/csharp/basededatos/csharp-bd-01-sql-basico.json" },
+        { "id": "csharp-bd-02-adonet-conexion", "title": "Conexión a BD con ADO.NET", "path": "/content/csharp/basededatos/csharp-bd-02-adonet-conexion.json" },
+        { "id": "csharp-bd-03-crud", "title": "CRUD Completo con ADO.NET", "path": "/content/csharp/basededatos/csharp-bd-03-crud.json" },
+        { "id": "csharp-bd-04-ef-core", "title": "ORM con Entity Framework Core", "path": "/content/csharp/basededatos/csharp-bd-04-ef-core.json" },
+        { "id": "csharp-bd-05-repository", "title": "Patrón Repository", "path": "/content/csharp/basededatos/csharp-bd-05-repository.json" },
+        { "id": "csharp-bd-06-proyecto-final", "title": "🏆 Proyecto Final: Sistema de Estudiantes", "path": "/content/csharp/basededatos/csharp-bd-06-proyecto-final.json" },
+        { "id": "csharp-bd-07-proyecto-local-vs2026-docker", "title": "🚀 Guía Práctica: C# en VS 2026 + Docker", "path": "/content/csharp/basededatos/csharp-bd-07-proyecto-local-vs2026-docker.json" },
+        { "id": "csharp-bd-08-frontend-angular", "title": "🚀 Proyecto Full-Stack: Frontend Angular", "path": "/content/csharp/basededatos/csharp-bd-08-frontend-angular.json" }
+      ]
+    }
+  ]
+}

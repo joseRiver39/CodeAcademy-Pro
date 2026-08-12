@@ -1,0 +1,31 @@
+{
+  "id": "csharp-patrones-04-observer",
+  "title": "Observer",
+  "description": "Patrón publicador-suscriptor para eventos.",
+  "language": "csharp",
+  "level": "patrones",
+  "estimatedMinutes": 45,
+  "nextLessonId": null,
+  "previousLessonId": "csharp-patrones-03-strategy",
+  "contentBlocks": [
+    {
+      "type": "markdown",
+      "content": "### Introducción al Patrón Observer\nEl patrón Observer, también conocido como publicador-suscriptor, es un diseño de patrón que permite a los objetos notificar a otros objetos sobre cambios en su estado. Esto se logra a través de una relación de publicador-suscriptor, donde el objeto que realiza la notificación se conoce como el publicador y los objetos que reciben la notificación se conocen como suscriptores.\n\n### ¿Qué es el Patrón Observer?\nImagina que estás suscrito a un canal de YouTube. Cada vez que el canal sube un nuevo video, recibes una notificación en tu correo electrónico o en la aplicación de YouTube. De esta manera, no necesitas estar constantemente revisando el canal para ver si hay nuevos videos. En lugar de eso, el canal te notifica cuando hay un nuevo video disponible. De la misma manera, en programación, el patrón Observer nos permite que los objetos se notifiquen entre sí cuando ocurren eventos específicos.\n\n### Tipos de Observer\nExisten varios tipos de Observer, pero los más comunes son:\n* **Observer push**: En este tipo de Observer, el publicador envía la información actualizada a los suscriptores cada vez que ocurre un evento.\n* **Observer pull**: En este tipo de Observer, los suscriptores solicitan la información actualizada al publicador cada vez que necesitan actualizar su estado.\n\n### Definición y Uso en C#\nEn C#, el patrón Observer se puede implementar utilizando delegados y eventos. Un delegado es un tipo que representa referencias a métodos con una firma específica. Un evento es un mensaje que se envía a los suscriptores cuando ocurre un evento específico.\n\n```csharp\n// Delegado que representa la firma del método que se llamará cuando se dispare el evento\npublic delegate void VideoSubidoEventHandler(string titulo);\n\n// Clase que representa el publicador\npublic class Canal\n{\n    // Evento que se dispara cuando se sube un nuevo video\n    public event VideoSubidoEventHandler OnVideoSubido;\n\n    public void SubirVideo(string titulo)\n    {\n        Console.WriteLine(\"Canal sube: \" + titulo);\n        // Llamar al evento\n        OnVideoSubido?.Invoke(titulo);\n    }\n}\n\n// Clase que representa el suscriptor\npublic class Suscriptor\n{\n    public void NotificarVideoSubido(string titulo)\n    {\n        Console.WriteLine(\"Se ha subido un nuevo video: \" + titulo);\n    }\n}\n\nclass Program\n{\n    static void Main()\n    {\n        Canal miCanal = new Canal();\n        Suscriptor miSuscriptor = new Suscriptor();\n\n        // Suscribirse al evento\n        miCanal.OnVideoSubido += miSuscriptor.NotificarVideoSubido;\n\n        miCanal.SubirVideo(\"Observer en C#\");\n    }\n}\n```\n\n### Implementando el Patrón Observer\nAhora que has visto cómo funciona el patrón Observer, es tu turno de implementarlo. En el editor de código que está debajo, escribe lo siguiente:\n1. Declara el evento `Action<string>` `OnVideoSubido` en la clase `Canal`.\n2. Llama al evento `OnVideoSubido` en el método `SubirVideo` de la clase `Canal`.\n3. Suscríbete al evento `OnVideoSubido` en el método `Main` utilizando el operador `+=`.\n\n```csharp\nusing System;\n\nclass Canal {\n    // 1. Declara el evento Action<string> OnVideoSubido\n    public event Action<string> OnVideoSubido;\n    \n    public void SubirVideo(string titulo) {\n        Console.WriteLine(\"Canal sube: \" + titulo);\n        // 2. Llama al evento\n        OnVideoSubido?.Invoke(titulo);\n    }\n}\n\nclass Program {\n    static void Main() {\n        Canal miCanal = new Canal();\n        // 3. Suscríbete usando +=\n        miCanal.OnVideoSubido += (titulo) => Console.WriteLine(\"Se ha subido un nuevo video: \" + titulo);\n        miCanal.SubirVideo(\"Observer en C#\");\n    }\n}\n```\n\nUna vez que hayas escrito el código, haz clic en el botón verde **\"▶ Ejecutar Código\"** para ver el resultado en la Terminal interactiva. Esto te permitirá ver cómo funciona el patrón Observer en acción. Recuerda que, al hacer clic en el botón **\"▶ Ejecutar Código\"**, podrás ver el resultado de tu código y entender mejor cómo se implementa el patrón Observer en C#."
+    },
+    {
+      "type": "code-editor",
+      "config": {
+        "language": "csharp",
+        "theme": "vs-dark",
+        "readOnly": false,
+        "hints": [
+          "En Canal, declara: public event Action<string> OnVideoSubido;",
+          "Al subir video, invoca: OnVideoSubido?.Invoke(titulo);",
+          "En Main, suscríbete: miCanal.OnVideoSubido += (t) => Console.WriteLine(\"Recibido: \" + t);"
+        ],
+        "initialCode": "using System;\n\nclass Canal {\n    // 1. Declara el evento Action<string> OnVideoSubido\n    \n    public void SubirVideo(string titulo) {\n        Console.WriteLine(\"Canal sube: \" + titulo);\n        // 2. Llama al evento\n    }\n}\n\nclass Program {\n    static void Main() {\n        Canal miCanal = new Canal();\n        // 3. Suscríbete usando +=\n        miCanal.SubirVideo(\"Observer en C#\");\n    }\n}",
+        "solutionCode": "using System;\n\nclass Canal {\n    public event Action<string> OnVideoSubido;\n    \n    public void SubirVideo(string titulo) {\n        Console.WriteLine(\"Canal sube: \" + titulo);\n        OnVideoSubido?.Invoke(titulo);\n    }\n}\n\nclass Program {\n    static void Main() {\n        Canal miCanal = new Canal();\n        miCanal.OnVideoSubido += (t) => Console.WriteLine(\"Recibido: \" + t);\n        miCanal.SubirVideo(\"Observer en C#\");\n    }\n}"
+      }
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "csharp-intermedio-01-clases",
+  "title": "Clases y Objetos",
+  "description": "Aprende los fundamentos de la Programación Orientada a Objetos en C#.",
+  "language": "csharp",
+  "level": "intermedio",
+  "estimatedMinutes": 25,
+  "nextLessonId": "csharp-intermedio-02-encapsulamiento",
+  "previousLessonId": "csharp-basico-06-metodos",
+  "contentBlocks": [
+    {
+      "type": "markdown",
+      "content": "### Introducción a Clases y Objetos\nEn la Programación Orientada a Objetos (POO), las clases y objetos son conceptos fundamentales que te permiten modelar y simular objetos y sistemas del mundo real de manera efectiva. Una **Clase** es como una receta o una plantilla que define las características y comportamientos de un objeto. Piensa en una clase como un molde de galletas: define la forma y los ingredientes, pero no es la galleta en sí.\n\n### Definición de Clases y Objetos\nUn **Objeto** es una instancia concreta de una clase, como una galleta hecha con el molde. Cada objeto tiene sus propias características (atributos) y puede realizar acciones (métodos) definidas por la clase. En C#, defines una clase con la palabra reservada `class`. Para instanciarla, utilizas `new`.\n\n### Analogía del Mundo Real\nImagina que estás en una fábrica de coches. La clase `Coche` sería como el diseño y la especificación del coche, incluyendo sus características como la marca, el modelo, el color, etc. Un objeto `Coche` sería un coche específico que sale de la fábrica, con su propia marca, modelo y color. La clase define qué características tiene un coche, y el objeto es una instancia real de ese coche.\n\n### Tipos de Clases\nExisten varios tipos de clases, incluyendo:\n* Clases abstractas: no pueden ser instanciadas directamente y se utilizan como base para otras clases.\n* Clases selladas: no pueden ser heredadas por otras clases.\n* Clases estáticas: solo pueden contener métodos y variables estáticos.\n\n### Definición de Clases en C#\nEn C#, defines una clase con la palabra reservada `class`. Por ejemplo:\n```csharp\npublic class Coche {\n    public string marca;\n    public string modelo;\n}\n```\nLuego, puedes instanciar la clase con `new`:\n```csharp\nCoche miCoche = new Coche();\n```\n### Ejemplo de Uso\nAquí hay un ejemplo de cómo puedes utilizar una clase y un objeto en C#:\n```csharp\nusing System;\n\nclass Coche {\n    public string marca;\n    public string modelo;\n}\n\nclass Program {\n    static void Main() {\n        Coche miCoche = new Coche();\n        miCoche.marca = \"Ford\";\n        miCoche.modelo = \"Mustang\";\n        Console.WriteLine(\"Mi coche es un \" + miCoche.marca + \" \" + miCoche.modelo);\n    }\n}\n```\n### Siguiente Paso\nAhora es tu turno. En el editor de código que está debajo, escribe lo siguiente:\n1. Crea un objeto de la clase `Coche` llamado `miCoche`.\n2. Asigna el valor \"Ford\" al atributo `marca` de `miCoche`.\n3. Imprime la marca del coche utilizando `Console.WriteLine`.\n```csharp\nusing System;\n\nclass Coche {\n    public string marca;\n}\n\nclass Program {\n    static void Main() {\n        // 1. Crea un objeto de la clase Coche llamado 'miCoche'\n        Coche miCoche = new Coche();\n        \n        // 2. Asigna el valor \"Ford\" al atributo 'marca'\n        miCoche.marca = \"Ford\";\n        \n        // 3. Imprime la marca del coche\n        Console.WriteLine(\"La marca del coche es: \" + miCoche.marca);\n    }\n}\n```\nRecuerda que, una vez hayas escrito el código, debes hacer clic en el botón verde **\"▶ Ejecutar Código\"** para ver el resultado en la Terminal interactiva. ¡Buena suerte!"
+    },
+    {
+      "type": "code-editor",
+      "config": {
+        "language": "csharp",
+        "theme": "vs-dark",
+        "readOnly": false,
+        "hints": [
+          "Dentro de Main, crea el objeto usando: Coche miCoche = new Coche();",
+          "Asigna el valor al atributo: miCoche.marca = \"Ford\";",
+          "Imprime el atributo usando Console.WriteLine(miCoche.marca);"
+        ],
+        "initialCode": "using System;\n\nclass Coche {\n    public string marca;\n}\n\nclass Program {\n    static void Main() {\n        // 1. Crea un objeto de la clase Coche llamado 'miCoche'\n        \n        // 2. Asigna el valor \"Ford\" al atributo 'marca'\n        \n        // 3. Imprime la marca del coche\n        \n    }\n}",
+        "solutionCode": "using System;\n\nclass Coche {\n    public string marca;\n}\n\nclass Program {\n    static void Main() {\n        Coche miCoche = new Coche();\n        miCoche.marca = \"Ford\";\n        Console.WriteLine(miCoche.marca);\n    }\n}"
+      }
+    }
+  ]
+}

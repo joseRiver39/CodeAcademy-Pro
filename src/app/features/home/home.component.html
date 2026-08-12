@@ -1,0 +1,146 @@
+<!-- Welcome Modal (first time only) -->
+<app-welcome-modal *ngIf="showModal" (profileCreated)="onProfileCreated($event)"></app-welcome-modal>
+
+<!-- NAV -->
+<nav class="navbar">
+  <a routerLink="/" class="nav-logo">
+    <span class="logo-icon">&lt;/&gt;</span>
+    <span class="logo-text">CodeAcademy <span class="logo-pro">Pro</span></span>
+  </a>
+  <div class="nav-links">
+    <a routerLink="/courses" class="nav-link">Cursos</a>
+    <a routerLink="/courses" class="nav-cta-btn">{{ profile ? 'Mis Cursos' : 'Empezar Gratis' }} →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-glow"></div>
+
+  <div class="hero-content">
+    <!-- Returning user: personalized greeting -->
+    <div class="welcome-back" *ngIf="profile">
+      <span class="greeting-emoji">👋</span>
+      <span>{{ getGreeting() }}, <strong>{{ profile.name }}</strong></span>
+    </div>
+
+    <div class="hero-badge" *ngIf="!profile">🚀 Aprende programando en vivo</div>
+
+    <h1 class="hero-title">
+      <ng-container *ngIf="profile">
+        ¿Listo para seguir <span class="gradient-text">aprendiendo</span>?
+      </ng-container>
+      <ng-container *ngIf="!profile">
+        Aprende a <span class="gradient-text">Programar</span><br>
+        de Cero a Experto
+      </ng-container>
+    </h1>
+
+    <p class="hero-subtitle" *ngIf="!profile">
+      Domina Java y C# con lecciones interactivas, editor de código con IA integrada,
+      pistas progresivas y retroalimentación instantánea. Sin cuentas. Sin costos.
+    </p>
+
+    <!-- Continue card for returning users -->
+    <div class="continue-card" *ngIf="profile && profile.lastLessonRoute">
+      <div class="continue-label">📍 Continuar donde lo dejaste</div>
+      <div class="continue-lesson">{{ profile.lastLessonTitle }}</div>
+      <a [routerLink]="profile.lastLessonRoute" class="continue-btn">Continuar lección →</a>
+    </div>
+
+    <div class="hero-actions">
+      <a routerLink="/courses" class="btn-primary">
+        {{ profile ? '📚 Ver todos los cursos' : '▶ Comenzar Ahora' }}
+      </a>
+      <a routerLink="/courses" class="btn-secondary" *ngIf="!profile">Ver Cursos</a>
+    </div>
+
+    <!-- Floating code card -->
+    <div class="code-card">
+      <div class="code-card-header">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+        <span class="code-card-title">Main.java</span>
+      </div>
+      <pre class="code-preview"><span class="kw">public class</span> <span class="cl">Main</span> &#123;
+  <span class="kw">public static void</span> <span class="fn">main</span>(String[] args) &#123;
+    <span class="cl">String</span> nombre = <span class="st">"Estudiante"</span>;
+    System.out.<span class="fn">println</span>(<span class="st">"Hola, "</span> + nombre);
+  &#125;
+&#125;</pre>
+      <div class="code-output">
+        <span class="output-prefix">▶ Output:</span> Hola, Estudiante
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats-section">
+  <div class="stats-grid">
+    <div class="stat-card" *ngFor="let s of stats">
+      <span class="stat-icon">{{ s.icon }}</span>
+      <span class="stat-value">{{ s.value }}</span>
+      <span class="stat-label">{{ s.label }}</span>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features-section">
+  <div class="section-header">
+    <h2>Todo lo que necesitas para aprender</h2>
+    <p>Una plataforma completa que te guía paso a paso, sin que necesites instalar nada.</p>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card" *ngFor="let f of features">
+      <div class="feature-icon">{{ f.icon }}</div>
+      <h3>{{ f.title }}</h3>
+      <p>{{ f.desc }}</p>
+    </div>
+  </div>
+</section>
+
+<!-- COURSES -->
+<section class="courses-section">
+  <div class="section-header">
+    <h2>Elige tu Lenguaje</h2>
+    <p>Dos rutas completas de aprendizaje, desde los fundamentos hasta los Patrones de Diseño profesionales.</p>
+  </div>
+  <div class="courses-grid">
+    <div class="course-card" *ngFor="let c of courses" [style.--accent]="c.color">
+      <div class="course-icon" [style.background]="c.color + '20'" [style.border-color]="c.color + '50'">
+        {{ c.icon }}
+      </div>
+      <div class="course-info">
+        <h3 [style.color]="c.color">{{ c.name }}</h3>
+        <p>{{ c.description }}</p>
+        <div class="course-levels">
+          <span class="level-badge" *ngFor="let l of c.levels">{{ l }}</span>
+        </div>
+        <div class="course-meta">
+          <span>📚 {{ c.lessons }} lecciones</span>
+        </div>
+      </div>
+      <a routerLink="/courses" class="course-btn" [style.background]="c.color">
+        Ir al curso →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-section">
+  <div class="cta-glow"></div>
+  <h2>¿Listo para empezar?</h2>
+  <p>No necesitas crear una cuenta. Empieza a aprender en este mismo momento.</p>
+  <a routerLink="/courses" class="btn-primary btn-large">▶ Comenzar Gratis Ahora</a>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <span class="footer-logo">&lt;/&gt; CodeAcademy Pro</span>
+  <span class="footer-text">Construido con ❤️ para estudiantes de programación</span>
+</footer>

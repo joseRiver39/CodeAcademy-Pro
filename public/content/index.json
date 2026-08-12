@@ -1,0 +1,14 @@
+{
+  "languages": [
+    {
+      "id": "java",
+      "name": "Java",
+      "path": "/content/java/index.json"
+    },
+    {
+      "id": "csharp",
+      "name": "C#",
+      "path": "/content/csharp/index.json"
+    }
+  ]
+}

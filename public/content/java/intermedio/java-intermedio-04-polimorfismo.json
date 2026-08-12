@@ -1,0 +1,31 @@
+{
+  "id": "java-intermedio-04-polimorfismo",
+  "title": "Polimorfismo e Interfaces",
+  "description": "Comprende cómo los objetos pueden tomar múltiples formas e implementar contratos.",
+  "language": "java",
+  "level": "intermedio",
+  "estimatedMinutes": 35,
+  "nextLessonId": "java-intermedio-05-excepciones",
+  "previousLessonId": "java-intermedio-03-herencia",
+  "contentBlocks": [
+    {
+      "type": "markdown",
+      "content": "### Introducción a Interfaces y Polimorfismo\nEn el mundo de la programación, es común que nos encontremos con situaciones en las que necesitamos que diferentes objetos puedan ser tratados de manera similar, aunque tengan características y comportamientos distintos. Esto es donde entra en juego el concepto de polimorfismo y interfaces. Una `interface` en Java es como un contrato que se establece entre la clase que la implementa y el resto del sistema. Al implementar una interfaz, una clase se compromete a definir todos los métodos especificados en esa interfaz.\n\n### ¿Qué es una Interfaz?\nUna interfaz es como un plano o un diseño que define cómo debe ser algo. En el mundo real, si estás construyendo una casa, tienes un plano que dicta cómo deben ser las paredes, las ventanas, las puertas, etc. De manera similar, en programación, una interfaz dicta cómo deben ser los métodos que se deben implementar en una clase. Esto asegura que cualquier clase que implemente esa interfaz tenga los mismos métodos, aunque la implementación de esos métodos pueda variar.\n\n### Tipos de Interfaces\nAunque en Java, la palabra clave `interface` se utiliza para declarar una interfaz, en términos generales, una interfaz puede ser considerada de diferentes maneras:\n- **Interfaz como contrato**: Define qué métodos debe tener una clase.\n- **Interfaz como tipo**: Puede ser usada como tipo de variable, parámetro, etc.\n\n### Definición de una Interfaz\nLa definición de una interfaz en Java es bastante simple. Se utiliza la palabra clave `interface` seguida del nombre de la interfaz. Dentro de la definición de la interfaz, se especifican los métodos que deben ser implementados por cualquier clase que la implemente.\n\n```java\npublic interface Figura {\n    void dibujar();\n}\n```\n\n### Implementación de una Interfaz\nUna clase implementa una interfaz utilizando la palabra clave `implements`. La clase debe proporcionar una implementación para todos los métodos definidos en la interfaz.\n\n```java\npublic class Rectangulo implements Figura {\n    @Override\n    public void dibujar() {\n        System.out.println(\"Dibujando rectangulo\");\n    }\n}\n```\n\n### Polimorfismo con Interfaces\nEl polimorfismo es la capacidad de un objeto para tomar muchas formas. En el contexto de interfaces, esto significa que un objeto de una clase que implementa una interfaz puede ser referenciado como si fuera de tipo interfaz. Esto permite tratar objetos de diferentes clases de manera uniforme, siempre que implementen la misma interfaz.\n\n```java\nFigura f = new Rectangulo();\nf.dibujar(); // Imprime: Dibujando rectangulo\n```\n\n### Ejemplo Completo\nConsideremos un ejemplo completo que ilustre cómo se define una interfaz, cómo se implementa y cómo se utiliza el polimorfismo.\n\n```java\ninterface Figura {\n    void dibujar();\n}\n\nclass Rectangulo implements Figura {\n    @Override\n    public void dibujar() {\n        System.out.println(\"Dibujando rectangulo\");\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Figura f = new Rectangulo();\n        f.dibujar();\n    }\n}\n```\n\n### Siguiente Paso\nAhora es tu turno. En el editor de código que está debajo, escribe lo siguiente:\n1. Crea una clase `Circulo` que implemente la interfaz `Figura` y sobrescriba `dibujar()` imprimiendo \"Dibujando círculo\".\n2. Crea un objeto `Circulo` de tipo `Figura` en el método `main`.\n3. Llama al método `dibujar()` sobre el objeto `Circulo` de tipo `Figura`.\n\nUna vez que hayas escrito el código, haz clic en el botón verde **\"▶ Ejecutar Código\"** para ver el resultado en la Terminal interactiva. Esto te permitirá ver cómo el polimorfismo funciona en acción con interfaces en Java."
+    },
+    {
+      "type": "code-editor",
+      "config": {
+        "language": "java",
+        "theme": "vs-dark",
+        "readOnly": false,
+        "hints": [
+          "Para implementar la interfaz usa: class Rectangulo implements Figura",
+          "Implementa el método: public void dibujar() { ... }",
+          "Asegúrate de que el método sea public."
+        ],
+        "initialCode": "interface Figura {\n    void dibujar();\n}\n\n// 1. Crea una clase Rectangulo que implemente la interfaz Figura\n//    y sobrescriba dibujar() imprimiendo \"Dibujando rectangulo\"\n\n\npublic class Main {\n    public static void main(String[] args) {\n        // 2. Crea un objeto Rectangulo de tipo Figura\n        Figura f = new Rectangulo();\n        f.dibujar();\n    }\n}",
+        "solutionCode": "interface Figura {\n    void dibujar();\n}\n\nclass Rectangulo implements Figura {\n    @Override\n    public void dibujar() {\n        System.out.println(\"Dibujando rectangulo\");\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Figura f = new Rectangulo();\n        f.dibujar();\n    }\n}"
+      }
+    }
+  ]
+}

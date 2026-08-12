@@ -1,0 +1,67 @@
+{
+  "id": "java",
+  "title": "Aprende Java Profesional",
+  "modules": [
+    {
+      "id": "basico",
+      "title": "Nivel Básico",
+      "lessons": [
+        { "id": "java-basico-01-variables", "title": "Variables y Tipos de Datos", "path": "/content/java/basico/java-basico-01-variables.json" },
+        { "id": "java-basico-02-operadores", "title": "Operadores Aritméticos", "path": "/content/java/basico/java-basico-02-operadores.json" },
+        { "id": "java-basico-03-condicionales", "title": "Condicionales (if/else)", "path": "/content/java/basico/java-basico-03-condicionales.json" },
+        { "id": "java-basico-04-bucles", "title": "Bucles (for, while)", "path": "/content/java/basico/java-basico-04-bucles.json" },
+        { "id": "java-basico-05-arrays", "title": "Arrays y Matrices", "path": "/content/java/basico/java-basico-05-arrays.json" },
+        { "id": "java-basico-06-metodos", "title": "Métodos y Funciones", "path": "/content/java/basico/java-basico-06-metodos.json" }
+      ]
+    },
+    {
+      "id": "intermedio",
+      "title": "Nivel Intermedio (POO)",
+      "lessons": [
+        { "id": "java-intermedio-01-clases", "title": "Clases y Objetos", "path": "/content/java/intermedio/java-intermedio-01-clases.json" },
+        { "id": "java-intermedio-02-encapsulamiento", "title": "Constructores y Encapsulamiento", "path": "/content/java/intermedio/java-intermedio-02-encapsulamiento.json" },
+        { "id": "java-intermedio-03-herencia", "title": "Herencia", "path": "/content/java/intermedio/java-intermedio-03-herencia.json" },
+        { "id": "java-intermedio-04-polimorfismo", "title": "Polimorfismo e Interfaces", "path": "/content/java/intermedio/java-intermedio-04-polimorfismo.json" },
+        { "id": "java-intermedio-05-excepciones", "title": "Manejo de Excepciones", "path": "/content/java/intermedio/java-intermedio-05-excepciones.json" }
+      ]
+    },
+    {
+      "id": "avanzado",
+      "title": "Nivel Avanzado",
+      "lessons": [
+        { "id": "java-avanzado-01-colecciones", "title": "Colecciones (List, Set, Map)", "path": "/content/java/avanzado/java-avanzado-01-colecciones.json" },
+        { "id": "java-avanzado-02-genericos", "title": "Genéricos", "path": "/content/java/avanzado/java-avanzado-02-genericos.json" },
+        { "id": "java-avanzado-03-streams", "title": "Streams y Lambdas", "path": "/content/java/avanzado/java-avanzado-03-streams.json" },
+        { "id": "java-avanzado-04-hilos", "title": "Hilos y Concurrencia", "path": "/content/java/avanzado/java-avanzado-04-hilos.json" }
+      ]
+    },
+    {
+      "id": "patrones",
+      "title": "Patrones de Diseño",
+      "lessons": [
+        { "id": "java-patrones-01-singleton", "title": "Singleton", "path": "/content/java/patrones/java-patrones-01-singleton.json" },
+        { "id": "java-patrones-02-factory", "title": "Factory Method", "path": "/content/java/patrones/java-patrones-02-factory.json" },
+        { "id": "java-patrones-03-strategy", "title": "Strategy", "path": "/content/java/patrones/java-patrones-03-strategy.json" },
+        { "id": "java-patrones-04-observer", "title": "Observer", "path": "/content/java/patrones/java-patrones-04-observer.json" }
+      ]
+    },
+    {
+      "id": "basededatos",
+      "title": "🗄️ Bases de Datos",
+      "lessons": [
+        { "id": "java-bd-01-sql-basico", "title": "SQL Básico para Java", "path": "/content/java/basededatos/java-bd-01-sql-basico.json" },
+        { "id": "java-bd-02-jdbc-conexion", "title": "Conexión a BD con JDBC", "path": "/content/java/basededatos/java-bd-02-jdbc-conexion.json" },
+        { "id": "java-bd-03-jdbc-crud", "title": "CRUD Completo con JDBC", "path": "/content/java/basededatos/java-bd-03-jdbc-crud.json" },
+        { "id": "java-bd-04-jpa-orm", "title": "ORM con JPA e Hibernate", "path": "/content/java/basededatos/java-bd-04-jpa-orm.json" },
+        { "id": "java-bd-05-repository", "title": "Patrón Repository", "path": "/content/java/basededatos/java-bd-05-repository.json" },
+        { "id": "java-bd-06-proyecto-final", "title": "🏆 Proyecto Final: Sistema de Estudiantes", "path": "/content/java/basededatos/java-bd-06-proyecto-final.json" },
+        { "id": "java-bd-07-springboot-intro", "title": "⚡ Introducción a Spring Boot", "path": "/content/java/basededatos/java-bd-07-springboot-intro.json" },
+        { "id": "java-bd-08-springboot-entity", "title": "⚡ Entidades y @Entity en Spring Boot", "path": "/content/java/basededatos/java-bd-08-springboot-entity.json" },
+        { "id": "java-bd-09-springboot-repository", "title": "⚡ @Repository y Spring Data JPA", "path": "/content/java/basededatos/java-bd-09-springboot-repository.json" },
+        { "id": "java-bd-10-springboot-rest", "title": "⚡ API REST con @RestController y @Service", "path": "/content/java/basededatos/java-bd-10-springboot-rest.json" },
+        { "id": "java-bd-11-proyecto-local-netbeans", "title": "🚀 Guía Práctica: Spring Boot en NetBeans", "path": "/content/java/basededatos/java-bd-11-proyecto-local-netbeans.json" },
+        { "id": "java-bd-12-frontend-angular", "title": "🚀 Proyecto Full-Stack: Frontend Angular", "path": "/content/java/basededatos/java-bd-12-frontend-angular.json" }
+      ]
+    }
+  ]
+}

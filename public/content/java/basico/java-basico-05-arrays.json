@@ -1,0 +1,31 @@
+{
+  "id": "java-basico-05-arrays",
+  "title": "Arrays y Matrices",
+  "description": "Aprende a almacenar múltiples valores en una sola variable utilizando Arrays.",
+  "language": "java",
+  "level": "basico",
+  "estimatedMinutes": 25,
+  "nextLessonId": "java-basico-06-metodos",
+  "previousLessonId": "java-basico-04-bucles",
+  "contentBlocks": [
+    {
+      "type": "markdown",
+      "content": "### Introducción a los Arrays\nUn Array es una estructura de datos que te permite almacenar una colección de elementos del mismo tipo en una sola variable. Esto es similar a tener una caja de juguetes donde puedes guardar varios juguetes del mismo tipo, como pelotas o bloques. Los índices en un array siempre comienzan en `0`, lo que significa que el primer elemento del array está en la posición `0`, el segundo elemento en la posición `1`, y así sucesivamente.\n\n### Definición y Uso de Arrays\nPara definir un array, debes especificar el tipo de dato que almacenará y el nombre del array. Por ejemplo, si quieres almacenar números enteros, puedes definir un array de la siguiente manera:\n```java\nint[] numeros = {10, 20, 30};\n```\nEn este ejemplo, `numeros` es el nombre del array y `int` es el tipo de dato que almacena. Los valores `{10, 20, 30}` son los elementos que se almacenan en el array.\n\n### Accediendo a los Elementos de un Array\nPara acceder a un elemento específico de un array, debes utilizar su índice. Por ejemplo, para acceder al primer elemento del array `numeros`, puedes utilizar el siguiente código:\n```java\nSystem.out.println(numeros[0]); // Imprime 10\n```\nEn este ejemplo, `numeros[0]` se refiere al primer elemento del array, que es `10`.\n\n### Tipos de Arrays\nExisten varios tipos de arrays, incluyendo:\n\n* Arrays unidimensionales: son los arrays más comunes y se utilizan para almacenar una lista de elementos.\n* Arrays multidimensionales: son arrays que contienen otros arrays como elementos. Estos se utilizan para representar estructuras de datos más complejas, como matrices.\n\n### Ejemplos y Analogías\nUna forma de pensar en los arrays es como una estantería de libros. Cada libro en la estantería es como un elemento en un array, y la posición del libro en la estantería es como el índice del elemento en el array. Al igual que puedes acceder a un libro específico en la estantería, puedes acceder a un elemento específico en un array utilizando su índice.\n\n### Ahora es tu Turno\nAhora es tu turno de practicar con los arrays. En el editor de código que está debajo, escribe lo siguiente:\n```java\npublic class Main {\n    public static void main(String[] args) {\n        // 1. Crea un array de Strings llamado 'nombres' con los valores: \"Ana\", \"Juan\", \"Maria\"\n        String[] nombres = {\"Ana\", \"Juan\", \"Maria\"};\n        \n        // 2. Imprime el segundo nombre (\"Juan\") accediendo por su índice\n        System.out.println(nombres[1]);\n    }\n}\n```\nUna vez que hayas escrito el código, haz clic en el botón verde **\"▶ Ejecutar Código\"** para ver el resultado en la Terminal interactiva. Esto te permitirá ver el resultado de tu código y aprender de tus errores. ¡Buena suerte!"
+    },
+    {
+      "type": "code-editor",
+      "config": {
+        "language": "java",
+        "theme": "vs-dark",
+        "readOnly": false,
+        "hints": [
+          "Declara el array así: String[] nombres = {\"Ana\", \"Juan\", \"Maria\"};",
+          "Para acceder al segundo elemento (Juan), usa el índice 1: nombres[1]",
+          "Imprime el valor usando System.out.println(nombres[1]);"
+        ],
+        "initialCode": "public class Main {\n    public static void main(String[] args) {\n        // 1. Crea un array de Strings llamado 'nombres' con los valores: \"Ana\", \"Juan\", \"Maria\"\n        \n        \n        // 2. Imprime el segundo nombre (\"Juan\") accediendo por su índice\n        \n    }\n}",
+        "solutionCode": "public class Main {\n    public static void main(String[] args) {\n        String[] nombres = {\"Ana\", \"Juan\", \"Maria\"};\n        System.out.println(nombres[1]);\n    }\n}"
+      }
+    }
+  ]
+}

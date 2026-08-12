@@ -1,0 +1,32 @@
+{
+  "id": "csharp-avanzado-01-colecciones",
+  "title": "Colecciones Genéricas (List, Dictionary)",
+  "description": "Utiliza listas y diccionarios con tipado fuerte en C#.",
+  "language": "csharp",
+  "level": "avanzado",
+  "estimatedMinutes": 35,
+  "nextLessonId": "csharp-avanzado-02-delegados",
+  "previousLessonId": "csharp-intermedio-04-polimorfismo",
+  "contentBlocks": [
+    {
+      "type": "markdown",
+      "content": "### Introducción a Colecciones Genéricas\nEn el mundo de la programación, los datos son como los objetos que almacenamos en nuestras casas. Algunos de estos objetos pueden ser de un mismo tipo, como libros, mientras que otros pueden ser completamente diferentes, como una mezcla de juguetes y ropa. Para manejar estos datos de manera eficiente, C# ofrece una herramienta poderosa llamada Colecciones Genéricas. Estas colecciones nos permiten almacenar y manipular datos de manera segura y eficiente, sin preocuparnos por el tipo de dato que estamos manejando.\n\n### ¿Qué son las Colecciones Genéricas?\nLas Colecciones Genéricas son clases que se encuentran en el espacio de nombres `System.Collections.Generic`. Estas clases, como `List<T>` y `Dictionary<TKey, TValue>`, están diseñadas para trabajar con datos de cualquier tipo, pero con la ventaja de que son fuertemente tipadas. Esto significa que, a diferencia de las colecciones no genéricas, las colecciones genéricas saben exactamente qué tipo de dato están manejando, lo que reduce los errores en tiempo de ejecución y mejora la seguridad del código.\n\n### Tipos de Colecciones Genéricas\nExisten varios tipos de colecciones genéricas en C#, cada una con su propio propósito y uso. Algunas de las más comunes son:\n- `List<T>`: Una lista de elementos del tipo `T`. Puede ser comparada con una caja donde puedes almacenar varios objetos del mismo tipo, como una caja de lápices.\n- `Dictionary<TKey, TValue>`: Un diccionario que almacena pares de clave-valor. La clave es única y se utiliza para identificar el valor asociado. Es como un archivo donde cada documento tiene un título único (clave) y un contenido (valor).\n\n### Definición y Uso\nPara definir una colección genérica, debes especificar el tipo de dato que se va a almacenar entre corchetes `< >`. Por ejemplo, `List<int>` define una lista de enteros, mientras que `Dictionary<string, int>` define un diccionario donde las claves son cadenas de texto y los valores son enteros.\n\n```csharp\n// Definir una lista de enteros\nList<int> numeros = new List<int>();\n\n// Definir un diccionario con clave string y valor int\nDictionary<string, int> edades = new Dictionary<string, int>();\n```\n\n### Ejemplo Práctico\nImagina que estás creando un programa para gestionar la compra de productos en una tienda en línea. Puedes usar una `List<string>` para almacenar los nombres de los productos que el cliente desea comprar, y un `Dictionary<string, double>` para almacenar el precio de cada producto, donde la clave es el nombre del producto y el valor es el precio.\n\n```csharp\nList<string> productos = new List<string>();\nDictionary<string, double> precios = new Dictionary<string, double>();\n\n// Añadir productos a la lista\nproductos.Add(\"Camisa\");\nproductos.Add(\"Pantalon\");\n\n// Añadir precios al diccionario\nprecios.Add(\"Camisa\", 19.99);\nprecios.Add(\"Pantalon\", 29.99);\n```\n\n### Siguiente Paso\nAhora es tu turno. En el editor de código que está debajo, escribe lo siguiente:\n```csharp\nusing System;\nusing System.Collections.Generic; // 1. Añade el using necesario para colecciones genéricas\n\nclass Program {\n    static void Main() {\n        List<int> miLista = new List<int>(); // 2. Crea una List<int>\n        \n        miLista.Add(10); // 3. Añade los números 10 y 20\n        miLista.Add(20);\n        \n        Console.WriteLine(miLista.Count); // 4. Imprime la cantidad de elementos usando la propiedad Count\n    }\n}\n```\nRecuerda que, una vez hayas escrito el código, debes hacer clic en el botón verde **\"▶ Ejecutar Código\"** para ver el resultado en la Terminal interactiva. Esto te permitirá ver cómo funciona la colección genérica en tiempo de ejecución y entender mejor su funcionamiento. ¡Buena suerte!"
+    },
+    {
+      "type": "code-editor",
+      "config": {
+        "language": "csharp",
+        "theme": "vs-dark",
+        "readOnly": false,
+        "hints": [
+          "Importa el namespace: using System.Collections.Generic;",
+          "Instancia la lista: List<int> numeros = new List<int>();",
+          "Añade números con el método Add(), por ejemplo: numeros.Add(10);",
+          "Imprime el conteo: Console.WriteLine(numeros.Count);"
+        ],
+        "initialCode": "using System;\n// 1. Añade el using necesario para colecciones genéricas\n\n\nclass Program {\n    static void Main() {\n        // 2. Crea una List<int>\n        \n        // 3. Añade los números 10 y 20\n        \n        // 4. Imprime la cantidad de elementos usando la propiedad Count\n        \n    }\n}",
+        "solutionCode": "using System;\nusing System.Collections.Generic;\n\nclass Program {\n    static void Main() {\n        List<int> numeros = new List<int>();\n        numeros.Add(10);\n        numeros.Add(20);\n        Console.WriteLine(numeros.Count);\n    }\n}"
+      }
+    }
+  ]
+}

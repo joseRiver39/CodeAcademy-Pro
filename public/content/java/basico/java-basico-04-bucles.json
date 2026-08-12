@@ -1,0 +1,31 @@
+{
+  "id": "java-basico-04-bucles",
+  "title": "Bucles (for, while)",
+  "description": "Repite bloques de código utilizando estructuras iterativas.",
+  "language": "java",
+  "level": "basico",
+  "estimatedMinutes": 20,
+  "nextLessonId": "java-basico-05-arrays",
+  "previousLessonId": "java-basico-03-condicionales",
+  "contentBlocks": [
+    {
+      "type": "markdown",
+      "content": "### Introducción a las Estructuras Iterativas (Bucles)\nLas estructuras iterativas, comúnmente conocidas como bucles, son una herramienta fundamental en la programación que nos permiten repetir bloques de código múltiples veces. Esto es especialmente útil cuando necesitamos realizar una tarea varias veces, ya sea un número fijo de veces o hasta que se cumpla una cierta condición.\n\n### ¿Qué son los Bucles y Para Qué Sirven?\nImagina que estás haciendo una lista de compras para una fiesta y necesitas comprar 10 latas de refresco. En lugar de escribir \"comprar lata de refresco\" 10 veces, puedes simplemente decir \"comprar 10 latas de refresco\". De manera similar, en la programación, los bucles nos permiten ejecutar el mismo bloque de código múltiples veces sin tener que repetirlo manualmente.\n\n### Tipos de Bucles\nExisten varios tipos de bucles, pero los más comunes son `for` y `while`. Cada uno tiene su propio propósito y uso.\n\n- **`for`**: Un bucle `for` es ideal cuando sabes exactamente cuántas veces quieres iterar. Es como contar del 1 al 10; sabes exactamente cuántas veces vas a contar. Por ejemplo, si quieres imprimir los números del 1 al 5, puedes usar un bucle `for`.\n```markdown\n// Ejemplo de bucle for\nfor (int i = 1; i <= 5; i++) {\n    System.out.println(i);\n}\n```\n- **`while`**: Un bucle `while` es ideal cuando la iteración depende de una condición que puede cambiar en cualquier momento. Es como esperar a que un amigo llegue; no sabes exactamente cuánto tiempo vas a esperar, pero sabes que vas a seguir esperando hasta que llegue. Por ejemplo, si quieres imprimir números hasta que el usuario ingrese un número negativo, puedes usar un bucle `while`.\n```markdown\n// Ejemplo de bucle while\nint numero = 0;\nwhile (numero >= 0) {\n    System.out.println(\"Ingresa un número: \");\n    numero = scanner.nextInt();\n}\n```\n### Definición y Uso de Bucles\nUn bucle se define especificando la condición bajo la cual se debe repetir el bloque de código. En el caso de un bucle `for`, se especifica el número de iteraciones. En el caso de un bucle `while`, se especifica la condición que debe ser cierta para que el bucle continúe.\n\n### Ejemplos y Aplicaciones\nLos bucles tienen muchas aplicaciones en la programación, desde imprimir patrones en la pantalla hasta realizar cálculos complejos. Por ejemplo, puedes usar un bucle `for` para imprimir un triángulo de asteriscos.\n```markdown\n// Ejemplo de triángulo de asteriscos\nfor (int i = 1; i <= 5; i++) {\n    for (int j = 1; j <= i; j++) {\n        System.out.print(\"* \");\n    }\n    System.out.println();\n}\n```\n### Siguiente Paso\nAhora es tu turno. En el editor de código que está debajo, escribe un bucle `for` que imprima los números del 1 al 5 (inclusive). Recuerda que debes especificar la condición de iteración y el bloque de código que se debe repetir.\n```java\npublic class Main {\n    public static void main(String[] args) {\n        // Escribe un bucle for que imprima los números del 1 al 5 (inclusive)\n        \n    }\n}\n```\nUna vez que hayas escrito el código, haz clic en el botón verde **\"▶ Ejecutar Código\"** para ver el resultado en la Terminal interactiva. ¡Buena suerte!"
+    },
+    {
+      "type": "code-editor",
+      "config": {
+        "language": "java",
+        "theme": "vs-dark",
+        "readOnly": false,
+        "hints": [
+          "La sintaxis del for es: for(inicialización; condición; incremento)",
+          "Para ir del 1 al 5: for (int i = 1; i <= 5; i++)",
+          "Usa System.out.println(i); dentro del bucle para imprimir el valor."
+        ],
+        "initialCode": "public class Main {\n    public static void main(String[] args) {\n        // Escribe un bucle for que imprima los números del 1 al 5 (inclusive)\n        \n    }\n}",
+        "solutionCode": "public class Main {\n    public static void main(String[] args) {\n        for (int i = 1; i <= 5; i++) {\n            System.out.println(i);\n        }\n    }\n}"
+      }
+    }
+  ]
+}

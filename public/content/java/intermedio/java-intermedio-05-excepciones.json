@@ -1,0 +1,31 @@
+{
+  "id": "java-intermedio-05-excepciones",
+  "title": "Manejo de Excepciones",
+  "description": "Aprende a capturar y manejar errores en tiempo de ejecución usando try, catch y finally.",
+  "language": "java",
+  "level": "intermedio",
+  "estimatedMinutes": 25,
+  "nextLessonId": "java-avanzado-01-colecciones",
+  "previousLessonId": "java-intermedio-04-polimorfismo",
+  "contentBlocks": [
+    {
+      "type": "markdown",
+      "content": "### Introducción a las Excepciones\nLas excepciones son eventos inesperados que ocurren mientras un programa está en ejecución. Estos eventos pueden ser errores de sintaxis, errores de tipo, errores de división por cero, entre otros. Las excepciones pueden hacer que un programa se cierre inesperadamente, lo que puede ser frustrante para los usuarios y dificultar la depuración del código.\n\n### ¿Qué es un Bloque Try/Catch?\nUn bloque `try` es como una caja de seguridad donde se coloca el código que podría generar una excepción. Si algo sale mal dentro de esta caja, el bloque `catch` actúa como un salvavidas, atrapando el error y permitiendo que el programa continúe ejecutándose sin interrupciones. El bloque `catch` es donde se define qué acción se tomará cuando se produzca una excepción.\n\n### Tipos de Excepciones\nExisten varios tipos de excepciones, incluyendo:\n* Excepciones de tipo: ocurren cuando se intenta asignar un valor de un tipo a una variable de otro tipo.\n* Excepciones de división por cero: ocurren cuando se intenta dividir un número por cero.\n* Excepciones de índice fuera de rango: ocurren cuando se intenta acceder a un elemento de una lista o array que está fuera de su rango.\n\n### Definición de un Bloque Try/Catch\nUn bloque `try` se define usando la palabra clave `try`, seguida de un bloque de código entre llaves. Un bloque `catch` se define usando la palabra clave `catch`, seguida de un par de paréntesis que contiene el tipo de excepción que se está atrapando, y un bloque de código entre llaves.\n\n```java\ntry {\n    // Código que podría generar una excepción\n} catch (Exception e) {\n    // Código que se ejecutará si se produce una excepción\n}\n```\n\n### Ejemplo de Uso\nPor ejemplo, si se intenta dividir un número por cero, se producirá una excepción de división por cero. Se puede atrapar esta excepción usando un bloque `catch` y imprimir un mensaje de error.\n\n```java\ntry {\n    int division = 10 / 0;\n} catch (ArithmeticException e) {\n    System.out.println(\"No se puede dividir por cero\");\n}\n```\n\n### Agregando un Bloque Finally\nUn bloque `finally` es un bloque de código que se ejecutará siempre, independientemente de si se produjo una excepción o no. Se puede usar para liberar recursos, cerrar archivos o conexiones, entre otros.\n\n```java\ntry {\n    // Código que podría generar una excepción\n} catch (Exception e) {\n    // Código que se ejecutará si se produce una excepción\n} finally {\n    // Código que se ejecutará siempre\n}\n```\n\n### Práctica\nAhora es tu turno. En el editor de código que está debajo, escribe lo siguiente:\n```java\npublic class Main {\n    public static void main(String[] args) {\n        // 1. Envuelve el siguiente código en un bloque try/catch.\n        // Si ocurre un error, imprime \"No se puede dividir por cero\".\n        \n        int division = 10 / 0;\n        System.out.println(division);\n        \n    }\n}\n```\nAsegúrate de envolver el código en un bloque `try` y agregar un bloque `catch` para atrapar la excepción de división por cero. Luego, haz clic en el botón verde **\"▶ Ejecutar Código\"** para ver el resultado en la Terminal interactiva. Observa cómo el programa se ejecuta sin interrupciones y muestra el mensaje de error en lugar de cerrarse inesperadamente."
+    },
+    {
+      "type": "code-editor",
+      "config": {
+        "language": "java",
+        "theme": "vs-dark",
+        "readOnly": false,
+        "hints": [
+          "Envuelve la división en: try { int res = 10 / 0; }",
+          "Atrapa la excepción de división por cero: catch (ArithmeticException e) { ... }",
+          "En el catch, imprime un mensaje de error."
+        ],
+        "initialCode": "public class Main {\n    public static void main(String[] args) {\n        // 1. Envuelve el siguiente código en un bloque try/catch.\n        // Si ocurre un error, imprime \"No se puede dividir por cero\".\n        \n        int division = 10 / 0;\n        System.out.println(division);\n        \n    }\n}",
+        "solutionCode": "public class Main {\n    public static void main(String[] args) {\n        try {\n            int division = 10 / 0;\n            System.out.println(division);\n        } catch (ArithmeticException e) {\n            System.out.println(\"No se puede dividir por cero\");\n        }\n    }\n}"
+      }
+    }
+  ]
+}

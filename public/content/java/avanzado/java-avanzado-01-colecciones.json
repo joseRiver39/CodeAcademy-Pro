@@ -1,0 +1,32 @@
+{
+  "id": "java-avanzado-01-colecciones",
+  "title": "Colecciones (List, Set, Map)",
+  "description": "Maneja estructuras de datos dinámicas con el Java Collections Framework.",
+  "language": "java",
+  "level": "avanzado",
+  "estimatedMinutes": 35,
+  "nextLessonId": "java-avanzado-02-genericos",
+  "previousLessonId": "java-intermedio-05-excepciones",
+  "contentBlocks": [
+    {
+      "type": "markdown",
+      "content": "### Introducción a las Colecciones: Listas (ArrayList)\nImagina que tienes una biblioteca con estanterías infinitas donde puedes agregar y quitar libros según tus necesidades. Cada libro representa un elemento en una estructura de datos, y las estanterías son como las colecciones que podemos usar en programación. En Java, una de las estructuras de datos más versátiles y utilizadas es el `ArrayList`, que pertenece al paquete `java.util`.\n\n### ¿Qué es un ArrayList?\nUn `ArrayList` es una clase que implementa una lista dinámica de elementos, lo que significa que puede crecer o disminuir en tamaño según se agreguen o eliminen elementos. A diferencia de los arrays tradicionales, que tienen un tamaño fijo definido en el momento de su creación, un `ArrayList` se puede adaptar dinámicamente a las necesidades de tu aplicación.\n\n### Características y Ventajas\nUn `ArrayList` ofrece varias ventajas sobre los arrays clásicos:\n- **Flexibilidad en el tamaño**: Puedes agregar o eliminar elementos sin preocuparte por el tamaño inicial.\n- **Acceso a elementos**: Puedes acceder a cualquier elemento por su índice (posición en la lista).\n- **Métodos útiles**: Ofrece métodos para realizar operaciones comunes como agregar, eliminar, buscar y modificar elementos.\n\n### Definir y Usar un ArrayList\nPara definir un `ArrayList`, debes importar el paquete `java.util` y crear una instancia de la clase `ArrayList`. Por ejemplo, si queremos crear una lista de strings, podemos hacerlo de la siguiente manera:\n```java\nimport java.util.ArrayList;\n\n// Crear un ArrayList de tipo String\nArrayList<String> frutas = new ArrayList<String>();\n\n// Agregar elementos\nfrutas.add(\"Manzana\");\nfrutas.add(\"Plátano\");\n\n// Imprimir la lista\nSystem.out.println(frutas);\n```\n\n### Tipos de Elementos en un ArrayList\nUn `ArrayList` puede contener cualquier tipo de objeto en Java, incluyendo tipos primitivos envueltos (como `Integer`, `Double`, etc.) y clases definidas por el usuario. Por ejemplo, podrías tener una lista de números enteros, una lista de objetos de una clase `Persona`, etc.\n\n### Ejemplo Práctico\nImagina que estás creando una aplicación para gestionar una lista de lenguajes de programación favoritos. Puedes usar un `ArrayList` para almacenar los nombres de los lenguajes:\n```java\nimport java.util.ArrayList;\n\npublic class Main {\n    public static void main(String[] args) {\n        // Crear un ArrayList de tipo String para lenguajes de programación\n        ArrayList<String> lenguajes = new ArrayList<String>();\n        \n        // Agregar algunos lenguajes\n        lenguajes.add(\"Java\");\n        lenguajes.add(\"Python\");\n        lenguajes.add(\"C#\");\n        \n        // Imprimir la cantidad de lenguajes en la lista\n        System.out.println(\"Cantidad de lenguajes: \" + lenguajes.size());\n    }\n}\n```\n\n### Siguiente Paso\nAhora es tu turno. En el editor de código que está debajo, escribe lo siguiente:\n1. Crea un `ArrayList` de tipo `String` llamado `lenguajes`.\n2. Añade los elementos \"Java\" y \"C#\".\n3. Imprime la cantidad de elementos de la lista.\nUna vez que hayas escrito el código, haz clic en el botón verde **\"▶ Ejecutar Código\"** para ver el resultado en la Terminal interactiva. Observa cómo el `ArrayList` se crea, se llenan con elementos y se imprime la cantidad de elementos en la lista. Esto te dará una idea práctica de cómo funciona un `ArrayList` en Java."
+    },
+    {
+      "type": "code-editor",
+      "config": {
+        "language": "java",
+        "theme": "vs-dark",
+        "readOnly": false,
+        "hints": [
+          "Importa ArrayList: import java.util.ArrayList;",
+          "Instancia: ArrayList<String> lista = new ArrayList<>();",
+          "Añade: lista.add(\"Java\");",
+          "Imprime el tamaño: lista.size()"
+        ],
+        "initialCode": "import java.util.ArrayList;\n\npublic class Main {\n    public static void main(String[] args) {\n        // 1. Crea un ArrayList de tipo String llamado 'lenguajes'\n        \n        // 2. Añade los elementos \"Java\" y \"C#\"\n        \n        // 3. Imprime la cantidad de elementos de la lista\n        \n    }\n}",
+        "solutionCode": "import java.util.ArrayList;\n\npublic class Main {\n    public static void main(String[] args) {\n        ArrayList<String> lenguajes = new ArrayList<>();\n        lenguajes.add(\"Java\");\n        lenguajes.add(\"C#\");\n        System.out.println(lenguajes.size());\n    }\n}"
+      }
+    }
+  ]
+}

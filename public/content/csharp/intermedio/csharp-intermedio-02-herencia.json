@@ -1,0 +1,30 @@
+{
+  "id": "csharp-intermedio-02-herencia",
+  "title": "Herencia",
+  "description": "Aprende sobre herencia en C#.",
+  "language": "csharp",
+  "level": "intermedio",
+  "estimatedMinutes": 15,
+  "nextLessonId": "csharp-intermedio-03-polimorfismo",
+  "previousLessonId": "csharp-intermedio-01-clases",
+  "contentBlocks": [
+    {
+      "type": "markdown",
+      "content": "### Introducción a la Herencia\nLa herencia es un concepto fundamental en la programación orientada a objetos (POO) que nos permite crear nuevas clases a partir de clases existentes, heredando sus propiedades y métodos. Esto nos permite reutilizar código y crear jerarquías de clases más organizadas y mantenibles.\n\n### ¿Qué es la Herencia?\nLa herencia es como una relación de familia. Imagina que tienes un padre y una madre, y ellos tienen ciertas características y habilidades. Ahora, imagina que tú también tienes esas características y habilidades, pero también tienes algunas propias. De esta manera, puedes heredar las cosas buenas de tus padres y agregar tus propias características para convertirte en una persona única.\n\nEn la programación, la herencia funciona de manera similar. Una clase \"hija\" o \"derivada\" hereda las propiedades y métodos de una clase \"padre\" o \"base\", y puede agregar sus propias características y métodos.\n\n### Tipos de Herencia\nExisten varios tipos de herencia, incluyendo:\n\n* Herencia simple: una clase hija hereda de una sola clase padre.\n* Herencia múltiple: una clase hija hereda de varias clases padre (no soportado en C#).\n* Herencia jerárquica: una clase hija hereda de una clase padre, y otra clase hija hereda de la clase hija anterior.\n\n### Definición de la Herencia en C#\nEn C#, la herencia se define utilizando la palabra clave `:` después del nombre de la clase hija, seguida del nombre de la clase padre. Por ejemplo:\n```csharp\npublic class Vehiculo\n{\n    public string Marca { get; set; }\n    public string Modelo { get; set; }\n\n    public void Arrancar()\n    {\n        Console.WriteLine(\"El vehículo ha arrancado\");\n    }\n}\n\npublic class Coche : Vehiculo\n{\n    public int NumeroPuertas { get; set; }\n\n    public void Acelerar()\n    {\n        Console.WriteLine(\"El coche ha acelerado\");\n    }\n}\n```\nEn este ejemplo, la clase `Coche` hereda las propiedades y métodos de la clase `Vehiculo`, y agrega una propiedad adicional `NumeroPuertas` y un método `Acelerar`.\n\n### Ejemplo de Uso\nAhora, podemos crear un objeto de la clase `Coche` y utilizar sus propiedades y métodos:\n```csharp\nCoche miCoche = new Coche();\nmiCoche.Marca = \"Ford\";\nmiCoche.Modelo = \"Mustang\";\nmiCoche.NumeroPuertas = 2;\n\nmiCoche.Arrancar();\nmiCoche.Acelerar();\n```\n### Práctica\nAhora es tu turno. En el editor de código que está debajo, escribe lo siguiente:\n```csharp\nusing System;\n\nclass Program {\n    static void Main() {\n        // Crea una clase \"Animal\" con una propiedad \"Nombre\" y un método \"Hablar\"\n        // Crea una clase \"Perro\" que herede de \"Animal\" y agregue un método \"Ladrar\"\n        // Crea un objeto de la clase \"Perro\" y utilice sus propiedades y métodos\n    }\n}\n```\nUna vez que hayas escrito el código, haz clic en el botón verde **\"▶ Ejecutar Código\"** para ver el resultado en la Terminal interactiva. Recuerda que debes definir las clases y métodos correctamente, y utilizar los objetos de manera adecuada para que el código funcione correctamente. ¡Buena suerte!"
+    },
+    {
+      "type": "code-editor",
+      "config": {
+        "language": "csharp",
+        "theme": "vs-dark",
+        "readOnly": false,
+        "hints": [
+          "Pista 1: En construcción",
+          "Pista 2: En construcción"
+        ],
+        "initialCode": "using System;\n\nclass Program {\n    static void Main() {\n        // Escribe tu código aquí\n    }\n}",
+        "solutionCode": "using System;\n\nclass Program {\n    static void Main() {\n        // Solución aquí\n    }\n}"
+      }
+    }
+  ]
+}

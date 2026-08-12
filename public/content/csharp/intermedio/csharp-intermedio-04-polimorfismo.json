@@ -1,0 +1,31 @@
+{
+  "id": "csharp-intermedio-04-polimorfismo",
+  "title": "Polimorfismo (virtual/override)",
+  "description": "Modifica el comportamiento heredado sobrescribiendo métodos.",
+  "language": "csharp",
+  "level": "intermedio",
+  "estimatedMinutes": 35,
+  "nextLessonId": "csharp-avanzado-01-colecciones",
+  "previousLessonId": "csharp-intermedio-03-herencia",
+  "contentBlocks": [
+    {
+      "type": "markdown",
+      "content": "### Introducción al Polimorfismo\nEl polimorfismo es un concepto fundamental en la programación orientada a objetos que nos permite modificar el comportamiento de un método heredado. Imagina que tienes una caja de herramientas donde cada herramienta tiene una función específica, pero quieres personalizar alguna de esas herramientas para que haga algo ligeramente diferente. En programación, podemos lograr esto mediante el uso de métodos virtuales y sobrescritura.\n\n### ¿Qué es el Polimorfismo?\nEl polimorfismo se refiere a la capacidad de un objeto para tomar muchas formas. En el contexto de la herencia, esto significa que una clase hija puede proporcionar una implementación diferente de un método que ya existe en su clase base. Esto nos permite tratar objetos de clases hijas como si fueran de la clase base, pero con comportamientos específicos.\n\n### Tipos de Polimorfismo\nHay varios tipos de polimorfismo, pero en este caso, nos enfocaremos en el polimorfismo mediante sobrescritura de métodos. Este tipo de polimorfismo se logra marcando un método en la clase base con la palabra clave `virtual` y luego sobrescribiéndolo en la clase hija con la palabra clave `override`.\n\n### Definición y Uso\nEn C#, por defecto, los métodos no son sobrescritbles. Para permitir la sobrescritura, debes marcar el método en la clase base con `virtual`. Luego, en la clase hija, puedes sobrescribir este método usando `override`. Esto te permite cambiar el comportamiento del método para que se adapte a las necesidades específicas de la clase hija.\n\n### Ejemplo de Polimorfismo\n```csharp\n// Clase base Animal con un método virtual\nclass Animal {\n    public virtual void HacerSonido() {\n        Console.WriteLine(\"Sonido genérico\");\n    }\n}\n\n// Clase hija Perro que sobrescribe el método HacerSonido\nclass Perro : Animal {\n    public override void HacerSonido() {\n        Console.WriteLine(\"Guau\");\n    }\n}\n\nclass Program {\n    static void Main() {\n        // Creamos un objeto Perro pero lo referenciamos como Animal\n        Animal a = new Perro();\n        // Llamamos al método HacerSonido, que debería invocar la versión de Perro\n        a.HacerSonido(); // Imprime \"Guau\"\n    }\n}\n```\n\n### Siguiente Paso\nAhora es tu turno. En el editor de código que está debajo, escribe lo siguiente:\n1. Marca el método `HacerSonido` en la clase `Animal` con la palabra clave `virtual`.\n2. Sobrescribe el método `HacerSonido` en la clase `Perro` usando `override` e imprime \"Guau\".\n\nUna vez que hayas completado estos pasos, recuerda hacer clic en el botón verde **\"▶ Ejecutar Código\"** para ver el resultado en la Terminal interactiva. Esto te permitirá ver cómo el polimorfismo funciona en acción, invocando la versión sobrescrita del método `HacerSonido` desde la clase `Perro` a través de una referencia de la clase base `Animal`."
+    },
+    {
+      "type": "code-editor",
+      "config": {
+        "language": "csharp",
+        "theme": "vs-dark",
+        "readOnly": false,
+        "hints": [
+          "Agrega 'virtual' en Animal: public virtual void HacerSonido()",
+          "Usa 'override' en Perro: public override void HacerSonido()",
+          "Asegúrate de imprimir 'Guau' en la clase Perro."
+        ],
+        "initialCode": "using System;\n\nclass Animal {\n    // 1. Marca este método con la palabra clave 'virtual'\n    public void HacerSonido() {\n        Console.WriteLine(\"Sonido genérico\");\n    }\n}\n\nclass Perro : Animal {\n    // 2. Sobrescribe el método usando 'override'\n    // Imprime \"Guau\"\n    \n}\n\nclass Program {\n    static void Main() {\n        Animal a = new Perro();\n        a.HacerSonido(); // Debe invocar la versión de Perro\n    }\n}",
+        "solutionCode": "using System;\n\nclass Animal {\n    public virtual void HacerSonido() {\n        Console.WriteLine(\"Sonido genérico\");\n    }\n}\n\nclass Perro : Animal {\n    public override void HacerSonido() {\n        Console.WriteLine(\"Guau\");\n    }\n}\n\nclass Program {\n    static void Main() {\n        Animal a = new Perro();\n        a.HacerSonido();\n    }\n}"
+      }
+    }
+  ]
+}

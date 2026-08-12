@@ -1,0 +1,30 @@
+{
+  "id": "csharp-intermedio-03-polimorfismo",
+  "title": "Polimorfismo e Interfaces",
+  "description": "Aprende sobre polimorfismo e interfaces en C#.",
+  "language": "csharp",
+  "level": "intermedio",
+  "estimatedMinutes": 15,
+  "nextLessonId": "csharp-intermedio-04-excepciones",
+  "previousLessonId": "csharp-intermedio-02-herencia",
+  "contentBlocks": [
+    {
+      "type": "markdown",
+      "content": "### Introducción al Polimorfismo e Interfaces\nEl polimorfismo es una de las características más poderosas de la programación orientada a objetos. En esencia, el polimorfismo nos permite tratar a objetos de diferentes clases como si fueran de la misma clase, siempre y cuando compartan una interfaz común. Imagina que tienes una colección de diferentes tipos de vehículos, como coches, motos y bicicletas. Aunque cada uno de ellos tiene características únicas, todos pueden ser tratados como \"vehículos\" porque comparten ciertas propiedades y comportamientos básicos, como el hecho de tener ruedas y ser capaces de moverse.\n\n### Qué es el Polimorfismo\nEl polimorfismo se refiere a la capacidad de un objeto para tomar muchas formas. En el contexto de la programación, esto significa que un objeto puede ser tratado como si fuera de una clase diferente, siempre y cuando cumpla con ciertos criterios. Por ejemplo, si tienes una clase `Vehiculo` y clases derivadas como `Coche`, `Moto` y `Bicicleta`, puedes tratar a objetos de estas clases derivadas como si fueran objetos de la clase `Vehiculo`, porque heredan las propiedades y métodos de `Vehiculo`.\n\n### Interfaces\nLas interfaces son un tipo de contrato que define un conjunto de métodos que deben ser implementados por cualquier clase que la implemente. Una interfaz es como una receta que dice: \"Si quieres ser un tipo de vehículo, debes tener estos métodos y propiedades\". Las interfaces son abstractas, lo que significa que no pueden ser instanciadas por sí solas, pero pueden ser implementadas por clases concretas. En C#, las interfaces se definen usando la palabra clave `interface`.\n\n### Tipos de Polimorfismo\nExisten varios tipos de polimorfismo, incluyendo:\n- **Polimorfismo de inclusión**: Ocurre cuando una clase derivada hereda de una clase base y puede ser tratada como si fuera de la clase base.\n- **Polimorfismo de sobreescritura**: Ocurre cuando una clase derivada proporciona una implementación diferente de un método que ya existe en la clase base.\n- **Polimorfismo de sobrecarga**: Ocurre cuando múltiples métodos con el mismo nombre pueden ser llamados con diferentes parámetros.\n\n### Ejemplos de Código\n```csharp\n// Definición de una interfaz\npublic interface IVehiculo\n{\n    void Moverse();\n}\n\n// Clase Coche que implementa la interfaz IVehiculo\npublic class Coche : IVehiculo\n{\n    public void Moverse()\n    {\n        Console.WriteLine(\"El coche se está moviendo\");\n    }\n}\n\n// Clase Moto que implementa la interfaz IVehiculo\npublic class Moto : IVehiculo\n{\n    public void Moverse()\n    {\n        Console.WriteLine(\"La moto se está moviendo\");\n    }\n}\n\n// Uso del polimorfismo para tratar a objetos de diferentes clases como si fueran de la misma clase\npublic class Program\n{\n    public static void Main()\n    {\n        IVehiculo coche = new Coche();\n        IVehiculo moto = new Moto();\n        \n        coche.Moverse(); // Salida: El coche se está moviendo\n        moto.Moverse();  // Salida: La moto se está moviendo\n    }\n}\n```\n\n### Siguiente Paso\nAhora es tu turno. En el editor de código que está debajo, escribe lo siguiente:\n```csharp\nusing System;\n\npublic interface IFiguraGeometrica\n{\n    void Dibujar();\n}\n\npublic class Circulo : IFiguraGeometrica\n{\n    public void Dibujar()\n    {\n        Console.WriteLine(\"Dibujando un círculo\");\n    }\n}\n\npublic class Cuadrado : IFiguraGeometrica\n{\n    public void Dibujar()\n    {\n        Console.WriteLine(\"Dibujando un cuadrado\");\n    }\n}\n\nclass Program\n{\n    static void Main()\n    {\n        IFiguraGeometrica figura1 = new Circulo();\n        IFiguraGeometrica figura2 = new Cuadrado();\n        \n        figura1.Dibujar();\n        figura2.Dibujar();\n    }\n}\n```\nRecuerda que, una vez escribas el código, debes hacer clic en el botón verde **\"▶ Ejecutar Código\"** para ver el resultado en la Terminal interactiva. Esto te permitirá ver cómo el polimorfismo y las interfaces funcionan en la práctica, tratando a objetos de diferentes clases como si fueran de la misma clase debido a que implementan la misma interfaz."
+    },
+    {
+      "type": "code-editor",
+      "config": {
+        "language": "csharp",
+        "theme": "vs-dark",
+        "readOnly": false,
+        "hints": [
+          "Pista 1: En construcción",
+          "Pista 2: En construcción"
+        ],
+        "initialCode": "using System;\n\nclass Program {\n    static void Main() {\n        // Escribe tu código aquí\n    }\n}",
+        "solutionCode": "using System;\n\nclass Program {\n    static void Main() {\n        // Solución aquí\n    }\n}"
+      }
+    }
+  ]
+}

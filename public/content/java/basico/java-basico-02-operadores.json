@@ -1,0 +1,31 @@
+{
+  "id": "java-basico-02-operadores",
+  "title": "Operadores Aritméticos",
+  "description": "Aprende a realizar operaciones matemáticas básicas en Java.",
+  "language": "java",
+  "level": "basico",
+  "estimatedMinutes": 15,
+  "nextLessonId": "java-basico-03-condicionales",
+  "previousLessonId": "java-basico-01-variables",
+  "contentBlocks": [
+    {
+      "type": "markdown",
+      "content": "### Introducción a los Operadores Aritméticos\nEn el mundo de la programación, los operadores aritméticos son los elementos clave que nos permiten realizar operaciones matemáticas básicas, como la suma, la resta, la multiplicación, la división y el módulo. Estos operadores son fundamentales en cualquier lenguaje de programación, incluyendo Java. Imagina que estás en una tienda y quieres saber cuánto cuesta un conjunto de productos. Los operadores aritméticos te permiten hacer estos cálculos de manera sencilla y eficiente.\n\n### ¿Qué son los Operadores Aritméticos?\nLos operadores aritméticos son símbolos o palabras clave que se utilizan para realizar operaciones matemáticas entre dos o más números. En Java, algunos de los operadores aritméticos básicos incluyen:\n- Suma (`+`): se utiliza para sumar dos números.\n- Resta (`-`): se utiliza para restar un número de otro.\n- Multiplicación (`*`): se utiliza para multiplicar dos números.\n- División (`/`): se utiliza para dividir un número entre otro.\n- Módulo (`%`): se utiliza para encontrar el resto de una división.\n\nUna variable es como una caja de mudanza donde puedes almacenar un valor. Cuando utilizas operadores aritméticos, estás tomando los valores almacenados en estas \"cajas\" y realizando operaciones con ellos.\n\n### Ejemplos de Operadores Aritméticos en Acción\nPor ejemplo, si tienes dos variables `a` y `b` con los valores 10 y 5, respectivamente, puedes realizar las siguientes operaciones:\n```java\nint a = 10;\nint b = 5;\n\nint suma = a + b;  // suma = 15\nint resta = a - b;  // resta = 5\nint multiplicacion = a * b;  // multiplicacion = 50\nint division = a / b;  // division = 2\nint modulo = a % b;  // modulo = 0\n```\nEn estos ejemplos, estamos utilizando los operadores aritméticos para realizar diferentes operaciones con los valores almacenados en `a` y `b`.\n\n### Práctica con Operadores Aritméticos\nAhora que has visto cómo funcionan los operadores aritméticos, es tu turno de practicar. En el editor de código que está debajo, escribe lo siguiente:\n```java\npublic class Main {\n    public static void main(String[] args) {\n        int a = 10;\n        int b = 5;\n        \n        // Calcula la suma de a y b, y guárdala en una variable llamada 'suma'\n        int suma = a + b;\n        \n        // Imprime el resultado de la suma\n        System.out.println(\"La suma es: \" + suma);\n    }\n}\n```\nUna vez que hayas escrito el código, recuerda hacer clic en el botón verde **\"▶ Ejecutar Código\"** para ver el resultado en la Terminal interactiva. Esto te permitirá ver cómo funcionan los operadores aritméticos en acción y entender mejor cómo se utilizan en la programación. ¡Buena suerte!"
+    },
+    {
+      "type": "code-editor",
+      "config": {
+        "language": "java",
+        "theme": "vs-dark",
+        "readOnly": false,
+        "hints": [
+          "Recuerda que para sumar usas el símbolo +",
+          "Debes asignar el resultado a una variable de tipo entero (int)",
+          "El código completo sería: int suma = a + b;"
+        ],
+        "initialCode": "public class Main {\n    public static void main(String[] args) {\n        int a = 10;\n        int b = 5;\n        \n        // Calcula la suma de a y b, y guárdala en una variable llamada 'suma'\n        \n        // System.out.println(\"La suma es: \" + suma);\n    }\n}",
+        "solutionCode": "public class Main {\n    public static void main(String[] args) {\n        int a = 10;\n        int b = 5;\n        int suma = a + b;\n        System.out.println(\"La suma es: \" + suma);\n    }\n}"
+      }
+    }
+  ]
+}

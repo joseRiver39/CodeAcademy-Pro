@@ -1,0 +1,31 @@
+<div class="modal-backdrop">
+  <div class="modal-card">
+    <div class="modal-glow"></div>
+
+    <div class="modal-icon">&lt;/&gt;</div>
+    <h2 class="modal-title">Bienvenido a <span class="gradient-text">CodeAcademy Pro</span></h2>
+    <p class="modal-subtitle">
+      Antes de empezar, ¿cómo te llamas? Usaremos tu nombre para personalizar tu experiencia y guardar tu progreso.
+    </p>
+
+    <div class="input-group">
+      <input
+        id="nickname-input"
+        type="text"
+        class="name-input"
+        [(ngModel)]="name"
+        (keydown)="onKeydown($event)"
+        placeholder="Tu nombre o apodo (ej. Carlos, Dev123)"
+        maxlength="30"
+        autofocus
+      />
+      <p class="input-error" *ngIf="error">{{ error }}</p>
+    </div>
+
+    <button class="start-btn" (click)="submit()" [disabled]="!name.trim()">
+      Empezar a aprender →
+    </button>
+
+    <p class="modal-note">Sin contraseñas · Sin correo · 100% gratis</p>
+  </div>
+</div>

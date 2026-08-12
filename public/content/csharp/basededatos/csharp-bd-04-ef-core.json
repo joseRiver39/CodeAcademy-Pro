@@ -1,0 +1,31 @@
+{
+  "id": "csharp-bd-04-ef-core",
+  "title": "ORM con Entity Framework Core",
+  "description": "Usa Entity Framework Core para mapear clases C# a tablas de base de datos.",
+  "language": "csharp",
+  "level": "basededatos",
+  "estimatedMinutes": 30,
+  "nextLessonId": "csharp-bd-05-repository",
+  "previousLessonId": "csharp-bd-03-crud",
+  "contentBlocks": [
+    {
+      "type": "markdown",
+      "content": "### Introducción a Entity Framework Core\nEntity Framework Core es un ORM (Object-Relational Mapping) que nos permite interactuar con bases de datos relacionales utilizando objetos .NET. Esto significa que podemos mapear clases C# a tablas de base de datos y viceversa.\n\n### ¿Qué es un ORM?\nUn ORM es una capa de abstracción que nos permite interactuar con bases de datos sin tener que escribir código SQL. En su lugar, podemos utilizar objetos y métodos para realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar).\n\n### Analogía\nImagina que estás en un restaurante y quieres pedir un plato. En lugar de ir a la cocina y preparar el plato tú mismo, le das la orden al mesero. El mesero se encarga de llevar tu pedido a la cocina y traerte el plato listo. De la misma manera, Entity Framework Core actúa como el mesero, llevando tus pedidos (consultas) a la base de datos y trayendo los resultados.\n\n### Tipos de ORM\nExisten varios tipos de ORM, incluyendo:\n* ORM de código: el desarrollador escribe código para mapear las clases a las tablas de base de datos.\n* ORM de configuración: el desarrollador configura el mapeo utilizando archivos de configuración o interfaces gráficas.\n\n### Ejemplo de código\n```csharp\nusing Microsoft.EntityFrameworkCore;\nusing System;\n\npublic class Persona\n{\n    public int Id { get; set; }\n    public string Nombre { get; set; }\n    public string Apellido { get; set; }\n}\n\npublic class MiDbContext : DbContext\n{\n    public DbSet<Persona> Personas { get; set; }\n}\n```\nEn este ejemplo, creamos una clase `Persona` que se mapeará a una tabla de base de datos. Luego, creamos una clase `MiDbContext` que hereda de `DbContext` y define una propiedad `Personas` de tipo `DbSet<Persona>`.\n\n### ¿Qué debe hacer el estudiante?\nAhora es tu turno de practicar. En el editor de código, crea una nueva clase `Persona` y una nueva clase `MiDbContext`. Luego, agrega una propiedad `Personas` de tipo `DbSet<Persona>` a la clase `MiDbContext`. Finalmente, presiona \"▶ Ejecutar Código\" para ver los resultados."
+    },
+    {
+      "type": "code-editor",
+      "config": {
+        "language": "csharp",
+        "theme": "vs-dark",
+        "readOnly": false,
+        "hints": [
+          "Agrega la clase Persona",
+          "Agrega la clase MiDbContext",
+          "Agrega la propiedad Personas a MiDbContext"
+        ],
+        "initialCode": "// Simula una BD con lista en memoria para poder ejecutar\nusing Microsoft.EntityFrameworkCore;\nusing System.Collections.Generic;\nusing System;\n\npublic class Persona\n{\n    // TODO: Agrega las propiedades de la clase Persona\n}\n\npublic class MiDbContext\n{\n    // TODO: Agrega la propiedad Personas\n}\n\nclass Program\n{\n    static void Main(string[] args)\n    {\n        // TODO: Crea una instancia de MiDbContext y agrega algunas personas\n        Console.WriteLine(\"Hola, mundo!\");\n    }\n}",
+        "solutionCode": "// Simula una BD con lista en memoria para poder ejecutar\nusing Microsoft.EntityFrameworkCore;\nusing System.Collections.Generic;\nusing System;\n\npublic class Persona\n{\n    public int Id { get; set; }\n    public string Nombre { get; set; }\n    public string Apellido { get; set; }\n}\n\npublic class MiDbContext\n{\n    public List<Persona> Personas { get; set; }\n    public MiDbContext()\n    {\n        Personas = new List<Persona>();\n    }\n}\n\nclass Program\n{\n    static void Main(string[] args)\n    {\n        MiDbContext contexto = new MiDbContext();\n        contexto.Personas.Add(new Persona { Id = 1, Nombre = \"Juan\", Apellido = \"Pérez\" });\n        contexto.Personas.Add(new Persona { Id = 2, Nombre = \"María\", Apellido = \"Gómez\" });\n        foreach (var persona in contexto.Personas)\n        {\n            Console.WriteLine(persona.Nombre + \" \" + persona.Apellido);\n        }\n    }\n}"
+      }
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "csharp-intermedio-03-herencia",
+  "title": "Herencia",
+  "description": "Reutiliza código creando clases que heredan de otras.",
+  "language": "csharp",
+  "level": "intermedio",
+  "estimatedMinutes": 30,
+  "nextLessonId": "csharp-intermedio-04-polimorfismo",
+  "previousLessonId": "csharp-intermedio-02-encapsulamiento",
+  "contentBlocks": [
+    {
+      "type": "markdown",
+      "content": "### Introducción a la Herencia en C#\nLa herencia es un concepto fundamental en la programación orientada a objetos (POO) que nos permite reutilizar código creando clases que heredan características de otras clases. Esto se logra mediante la creación de una relación entre dos clases: una clase padre (también conocida como clase base) y una clase hija (también conocida como clase derivada). La clase hija adquiere todos los miembros públicos y protegidos de la clase padre, lo que significa que puede utilizar todos los métodos y propiedades de la clase padre como si fueran suyos.\n\n### ¿Qué es la Herencia?\nImagina que estás construyendo una casa. En lugar de empezar desde cero, decides utilizar un plano base que ya tiene las características comunes que necesitas, como paredes, techo y puertas. Luego, puedes personalizar este plano base agregando características únicas, como ventanas, una chimenea o un jardín. De esta manera, estás reutilizando el plano base y creando una casa única sin tener que empezar desde cero. La herencia en programación funciona de manera similar. La clase padre es como el plano base, y la clase hija es como la casa personalizada que se crea a partir de ese plano.\n\n### Tipos de Herencia\nExisten varios tipos de herencia, incluyendo:\n* Herencia simple: una clase hija hereda de una sola clase padre.\n* Herencia múltiple: una clase hija hereda de varias clases padre (no soportada en C#).\n* Herencia jerárquica: una clase hija hereda de una clase padre, y otra clase hija hereda de la primera clase hija.\n\n### Definición de la Herencia en C#\nEn C#, la herencia se define utilizando el símbolo `:`.\n```csharp\nclass ClaseHija : ClasePadre\n{\n    // Código de la clase hija\n}\n```\nPor ejemplo:\n```csharp\nclass Animal\n{\n    public void Comer()\n    {\n        Console.WriteLine(\"Comiendo...\");\n    }\n}\n\nclass Gato : Animal\n{\n    public void Maullar()\n    {\n        Console.WriteLine(\"Miau\");\n    }\n}\n```\nEn este ejemplo, la clase `Gato` hereda de la clase `Animal` y adquiere el método `Comer()`. La clase `Gato` también tiene un método propio llamado `Maullar()`.\n\n### Ejemplo Práctico\nSupongamos que queremos crear una clase `Perro` que herede de la clase `Animal`. La clase `Perro` tendrá un método propio llamado `Ladrar()`.\n```csharp\nclass Perro : Animal\n{\n    public void Ladrar()\n    {\n        Console.WriteLine(\"Ladrando...\");\n    }\n}\n```\nAhora, podemos instanciar un `Perro` y llamar a los métodos `Comer()` y `Ladrar()`.\n```csharp\nclass Program\n{\n    static void Main()\n    {\n        Perro perro = new Perro();\n        perro.Comer();\n        perro.Ladrar();\n    }\n}\n```\n### Ahora es tu Turno\nEn el editor de código que está debajo, escribe lo siguiente:\n1. Crea una clase `Gato` que herede de `Animal` usando `:`\n2. Agrega un método `Maullar` que imprima \"Miau\"\n```csharp\nusing System;\n\nclass Animal\n{\n    public void Comer()\n    {\n        Console.WriteLine(\"Comiendo...\");\n    }\n}\n\n// 1. Crea una clase Gato que herede de Animal usando ':'\n// 2. Agrega un método 'Maullar' que imprima \"Miau\"\n\nclass Program\n{\n    static void Main()\n    {\n        // 3. Instancia un Gato y llama a Comer() y Maullar()\n        \n    }\n}\n```\nUna vez que hayas escrito el código, haz clic en el botón verde **\"▶ Ejecutar Código\"** para ver el resultado en la Terminal interactiva. Verás que el método `Comer()` se hereda de la clase `Animal` y que el método `Maullar()` es específico de la clase `Gato`. ¡Espero que disfrutes aprendiendo sobre la herencia en C#!"
+    },
+    {
+      "type": "code-editor",
+      "config": {
+        "language": "csharp",
+        "theme": "vs-dark",
+        "readOnly": false,
+        "hints": [
+          "Para heredar usa: class Gato : Animal",
+          "Llama al método heredado: miGato.Comer();",
+          "Llama al método propio: miGato.Maullar();"
+        ],
+        "initialCode": "using System;\n\nclass Animal {\n    public void Comer() {\n        Console.WriteLine(\"Comiendo...\");\n    }\n}\n\n// 1. Crea una clase Gato que herede de Animal usando ':'\n// 2. Agrega un método 'Maullar' que imprima \"Miau\"\n\n\nclass Program {\n    static void Main() {\n        // 3. Instancia un Gato y llama a Comer() y Maullar()\n        \n    }\n}",
+        "solutionCode": "using System;\n\nclass Animal {\n    public void Comer() {\n        Console.WriteLine(\"Comiendo...\");\n    }\n}\n\nclass Gato : Animal {\n    public void Maullar() {\n        Console.WriteLine(\"Miau\");\n    }\n}\n\nclass Program {\n    static void Main() {\n        Gato miGato = new Gato();\n        miGato.Comer();\n        miGato.Maullar();\n    }\n}"
+      }
+    }
+  ]
+}

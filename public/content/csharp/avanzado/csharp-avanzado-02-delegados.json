@@ -1,0 +1,31 @@
+{
+  "id": "csharp-avanzado-02-delegados",
+  "title": "Delegados y Expresiones Lambda",
+  "description": "Pasa métodos como parámetros usando Delegates, Action y Func.",
+  "language": "csharp",
+  "level": "avanzado",
+  "estimatedMinutes": 35,
+  "nextLessonId": "csharp-avanzado-03-linq",
+  "previousLessonId": "csharp-avanzado-01-colecciones",
+  "contentBlocks": [
+    {
+      "type": "markdown",
+      "content": "### Introducción a Delegados y Expresiones Lambda\nUn delegado es un tipo que representa referencias a métodos con una lista de parámetros y un tipo de valor devuelto concretos. Esto puede parecer un poco confuso al principio, pero piensa en un delegado como una tarjeta de visita que contiene información sobre cómo contactar a alguien. En este caso, el \"alguien\" es un método, y la tarjeta de visita (el delegado) tiene la información necesaria para \"llamar\" a ese método cuando sea necesario.\n\n### ¿Qué son los Delegados?\nImagina que estás organizando una fiesta y quieres que tus amigos te ayuden con diferentes tareas, como preparar la comida, decorar el salón y recibir a los invitados. Cada amigo tiene una tarea específica que debe realizar. En programación, los métodos son como tus amigos, y cada uno realiza una tarea específica. Los delegados son como las instrucciones que le das a cada amigo sobre qué tarea deben realizar y cómo deben hacerlo.\n\n### Tipos de Delegados\nExisten varios tipos de delegados en C#, pero algunos de los más comunes son `Action` y `Func`. `Action` se utiliza para métodos que no devuelven ningún valor (son como void), mientras que `Func` se utiliza para métodos que devuelven un valor.\n\n### Definición de Delegados\nUn delegado se define utilizando la palabra clave `delegate` seguida del tipo de valor devuelto y el nombre del delegado. Por ejemplo:\n```csharp\npublic delegate void MiDelegado(string mensaje);\n```\nSin embargo, gracias a `Action` y `Func`, podemos simplificar esta definición. `Action` es como un delegado que no devuelve nada, y `Func` es como un delegado que devuelve un valor. Por ejemplo:\n```csharp\nAction<string> miAction = (mensaje) => Console.WriteLine(mensaje);\nFunc<string, int> miFunc = (mensaje) => mensaje.Length;\n```\n### Expresiones Lambda\nLas expresiones lambda son una forma concisa de representar métodos anónimos. Un método anónimo es un método que no tiene un nombre explícito. Las expresiones lambda se utilizan comúnmente con delegados. Por ejemplo:\n```csharp\nAction<string> saludar = (nombre) => Console.WriteLine($\"Hola {nombre}\");\nsaludar(\"Mundo\"); // Imprime \"Hola Mundo\"\n```\n### Uso de Delegados y Expresiones Lambda\nLos delegados y las expresiones lambda son muy útiles cuando necesitas pasar métodos como parámetros a otros métodos. Por ejemplo, imagina que tienes un método que realiza una búsqueda en una base de datos y quieres que, cuando encuentre un resultado, ejecute una acción específica. Puedes pasar esa acción como un delegado.\n\n### Ejemplo Práctico\nSupongamos que tienes un método que imprime un mensaje en la pantalla. Quieres que, cuando se ejecute ese método, también se ejecute otra acción. Puedes utilizar un delegado para lograr esto.\n\n### Siguiente Paso\nAhora es tu turno. En el editor de código que está debajo, escribe lo siguiente:\n```csharp\nusing System;\n\nclass Program {\n    static void Main() {\n        // 1. Declara un delegado Action<string> llamado 'saludar'\n        Action<string> saludar = (nombre) => Console.WriteLine($\"Hola {nombre}\");\n        \n        // 2. Invoca el delegado pasando \"Mundo\"\n        saludar(\"Mundo\");\n    }\n}\n```\nRecuerda que, una vez escribas el código, debes hacer clic en el botón verde **\"▶ Ejecutar Código\"** para ver el resultado en la Terminal interactiva. ¡Buena suerte!"
+    },
+    {
+      "type": "code-editor",
+      "config": {
+        "language": "csharp",
+        "theme": "vs-dark",
+        "readOnly": false,
+        "hints": [
+          "Define un Action<string>.",
+          "Asignale una expresión lambda: Action<string> saludar = (nombre) => Console.WriteLine(\"Hola \" + nombre);",
+          "Invócalo: saludar(\"Mundo\");"
+        ],
+        "initialCode": "using System;\n\nclass Program {\n    static void Main() {\n        // 1. Declara un delegado Action<string> llamado 'saludar'\n        // Asígnale una lambda que imprima \"Hola \" concatenado con el parámetro.\n        \n        // 2. Invoca el delegado pasando \"Mundo\"\n        \n    }\n}",
+        "solutionCode": "using System;\n\nclass Program {\n    static void Main() {\n        Action<string> saludar = (nombre) => Console.WriteLine(\"Hola \" + nombre);\n        saludar(\"Mundo\");\n    }\n}"
+      }
+    }
+  ]
+}

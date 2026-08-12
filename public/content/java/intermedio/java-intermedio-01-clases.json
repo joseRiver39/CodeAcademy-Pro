@@ -1,0 +1,31 @@
+{
+  "id": "java-intermedio-01-clases",
+  "title": "Clases y Objetos",
+  "description": "Aprende los fundamentos de la Programación Orientada a Objetos creando clases e instanciando objetos.",
+  "language": "java",
+  "level": "intermedio",
+  "estimatedMinutes": 25,
+  "nextLessonId": "java-intermedio-02-encapsulamiento",
+  "previousLessonId": "java-basico-06-metodos",
+  "contentBlocks": [
+    {
+      "type": "markdown",
+      "content": "### Introducción a Clases y Objetos\nLa Programación Orientada a Objetos (POO) es un paradigma fundamental en la programación que nos permite modelar el mundo real de manera más efectiva. En este contexto, **Clases** y **Objetos** son conceptos clave que debes entender para empezar a programar de manera orientada a objetos.\n\n### ¿Qué es una Clase?\nUna **Clase** es como una receta para hacer un pastel. Contiene la lista de ingredientes (atributos) y las instrucciones (métodos) para prepararlo. De la misma manera que una receta puede ser utilizada para hacer muchos pasteles diferentes, una clase puede ser utilizada para crear muchos objetos diferentes. Una clase es una plantilla o molde que define las características y comportamientos de un objeto.\n\n### ¿Qué es un Objeto?\nUn **Objeto** es como un pastel que acabas de hornear. Es una instancia concreta de una clase, con sus propios atributos (ingredientes) y métodos (instrucciones). Cada objeto tiene su propia copia de los atributos de la clase y puede ser manipulado de manera independiente.\n\n### Definir Clases en Java\nEn Java, defines una clase con la palabra reservada `class`. Por ejemplo:\n```java\npublic class Coche {\n    String marca;\n    String modelo;\n}\n```\nEsta clase `Coche` tiene dos atributos: `marca` y `modelo`.\n\n### Instanciar Objetos en Java\nPara instanciar un objeto, utilizas la palabra clave `new`. Por ejemplo:\n```java\nCoche miCoche = new Coche();\n```\nAhora, `miCoche` es un objeto de la clase `Coche`.\n\n### Tipos de Clases\nExisten varios tipos de clases, incluyendo:\n\n*   Clases abstractas: no pueden ser instanciadas y se utilizan como base para otras clases.\n*   Clases concretas: pueden ser instanciadas y se utilizan para crear objetos.\n*   Clases internas: se definen dentro de otra clase y se utilizan para encapsular funcionalidad.\n\n### Ejemplo de Clase y Objeto\nSupongamos que queremos modelar un coche con una marca y un modelo. Podríamos definir una clase `Coche` con dos atributos: `marca` y `modelo`. Luego, podríamos instanciar un objeto `Coche` y asignarle valores a sus atributos.\n```java\npublic class Coche {\n    String marca;\n    String modelo;\n\n    public void imprimirInformacion() {\n        System.out.println(\"Marca: \" + marca);\n        System.out.println(\"Modelo: \" + modelo);\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Coche miCoche = new Coche();\n        miCoche.marca = \"Toyota\";\n        miCoche.modelo = \"Corolla\";\n        miCoche.imprimirInformacion();\n    }\n}\n```\n### Siguiente Paso\nAhora es tu turno. En el editor de código que está debajo, escribe lo siguiente:\n1.  Crea un objeto de la clase `Coche` llamado `miCoche`.\n2.  Asigna el valor \"Toyota\" al atributo `marca` de `miCoche`.\n3.  Imprime la marca del coche utilizando `System.out.println`.\n```java\nclass Coche {\n    String marca;\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        // 1. Crea un objeto de la clase Coche llamado 'miCoche'\n        Coche miCoche = new Coche();\n        \n        // 2. Asigna el valor \"Toyota\" al atributo 'marca'\n        miCoche.marca = \"Toyota\";\n        \n        // 3. Imprime la marca del coche\n        System.out.println(miCoche.marca);\n        \n    }\n}\n```\nUna vez que hayas escrito el código, haz clic en el botón verde **\"▶ Ejecutar Código\"** para ver el resultado en la Terminal interactiva. ¡Buena suerte!"
+    },
+    {
+      "type": "code-editor",
+      "config": {
+        "language": "java",
+        "theme": "vs-dark",
+        "readOnly": false,
+        "hints": [
+          "Dentro del Main, crea el objeto usando: Coche miCoche = new Coche();",
+          "Asigna el valor al atributo: miCoche.marca = \"Toyota\";",
+          "Imprime el atributo usando System.out.println(miCoche.marca);"
+        ],
+        "initialCode": "class Coche {\n    String marca;\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        // 1. Crea un objeto de la clase Coche llamado 'miCoche'\n        \n        // 2. Asigna el valor \"Toyota\" al atributo 'marca'\n        \n        // 3. Imprime la marca del coche\n        \n    }\n}",
+        "solutionCode": "class Coche {\n    String marca;\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Coche miCoche = new Coche();\n        miCoche.marca = \"Toyota\";\n        System.out.println(miCoche.marca);\n    }\n}"
+      }
+    }
+  ]
+}

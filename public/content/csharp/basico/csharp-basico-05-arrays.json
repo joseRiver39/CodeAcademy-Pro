@@ -1,0 +1,31 @@
+{
+  "id": "csharp-basico-05-arrays",
+  "title": "Arrays",
+  "description": "Trabaja con colecciones de datos usando Arrays en C#.",
+  "language": "csharp",
+  "level": "basico",
+  "estimatedMinutes": 20,
+  "nextLessonId": "csharp-basico-06-metodos",
+  "previousLessonId": "csharp-basico-04-bucles",
+  "contentBlocks": [
+    {
+      "type": "markdown",
+      "content": "### Introducción a Arrays\nUn array es una forma de almacenar múltiples valores en una sola variable. En C#, se declaran definiendo el tipo seguido de corchetes `[]`. Pero, ¿qué significa esto exactamente? Imagina que tienes una colección de libros que deseas almacenar en una estantería. Cada libro es como un valor individual, y la estantería es como el array que los contiene a todos.\n\n### ¿Para qué sirven los Arrays?\nLos arrays son útiles cuando necesitas trabajar con una colección de datos relacionados. Por ejemplo, si estás creando un programa que gestiona una lista de tareas, podrías usar un array para almacenar el título de cada tarea. O, si estás desarrollando un juego, podrías usar un array para almacenar las puntuaciones de los jugadores.\n\n### Tipos de Arrays\nEn C#, existen varios tipos de arrays, incluyendo:\n* Arrays unidimensionales: Son los más comunes y se utilizan para almacenar una lista de valores.\n* Arrays multidimensionales: Se utilizan para almacenar valores en una tabla o matriz.\n* Arrays jagged: Son arrays de arrays, donde cada elemento es otro array.\n\n### Declaración de Arrays\nPara declarar un array en C#, debes especificar el tipo de dato que se almacenará en el array, seguido de corchetes `[]`. Por ejemplo:\n```csharp\nint[] edades;\n```\nEsto declara un array de enteros llamado `edades`. Luego, puedes inicializar el array con valores:\n```csharp\nint[] edades = { 25, 30, 35, 40 };\n```\n### Ejemplos de Código\nAquí hay algunos ejemplos de cómo se pueden utilizar los arrays en C#:\n```csharp\n// Declarar un array de strings\nstring[] frutas = { \"Manzana\", \"Plátano\", \"Naranja\" };\n\n// Imprimir el valor de un elemento del array\nConsole.WriteLine(frutas[0]); // Imprime: Manzana\n\n// Modificar el valor de un elemento del array\nfrutas[0] = \"Pera\";\nConsole.WriteLine(frutas[0]); // Imprime: Pera\n```\n### Siguiente Paso\nAhora es tu turno. En el editor de código que está debajo, escribe lo siguiente:\n```csharp\nusing System;\n\nclass Program {\n    static void Main() {\n        // 1. Declara un array de strings llamado 'colores' con: \"Rojo\", \"Verde\", \"Azul\"\n        string[] colores = { \"Rojo\", \"Verde\", \"Azul\" };\n        \n        // 2. Imprime la cantidad de elementos en el array usando la propiedad .Length\n        Console.WriteLine(\"Cantidad de colores: \" + colores.Length);\n    }\n}\n```\nRecuerda que, una vez hayas escrito el código, debes hacer clic en el botón verde **\"▶ Ejecutar Código\"** para ver el resultado en la Terminal interactiva. ¡Buena suerte!"
+    },
+    {
+      "type": "code-editor",
+      "config": {
+        "language": "csharp",
+        "theme": "vs-dark",
+        "readOnly": false,
+        "hints": [
+          "Para crear el array con valores usa: string[] colores = { \"Rojo\", \"Verde\", \"Azul\" };",
+          "Para leer la longitud (cantidad de elementos) usa la propiedad Length.",
+          "Imprime el resultado de colores.Length"
+        ],
+        "initialCode": "using System;\n\nclass Program {\n    static void Main() {\n        // 1. Declara un array de strings llamado 'colores' con: \"Rojo\", \"Verde\", \"Azul\"\n        \n        \n        // 2. Imprime la cantidad de elementos en el array usando la propiedad .Length\n        \n    }\n}",
+        "solutionCode": "using System;\n\nclass Program {\n    static void Main() {\n        string[] colores = { \"Rojo\", \"Verde\", \"Azul\" };\n        Console.WriteLine(colores.Length);\n    }\n}"
+      }
+    }
+  ]
+}

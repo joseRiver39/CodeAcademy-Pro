@@ -1,0 +1,31 @@
+{
+  "id": "java-patrones-02-factory",
+  "title": "Factory Method",
+  "description": "Delega la lógica de instanciación de objetos a clases especializadas.",
+  "language": "java",
+  "level": "patrones",
+  "estimatedMinutes": 45,
+  "nextLessonId": "java-patrones-03-strategy",
+  "previousLessonId": "java-patrones-01-singleton",
+  "contentBlocks": [
+    {
+      "type": "markdown",
+      "content": "### Introducción al Factory Method\nEl patrón de diseño Factory Method es una técnica creacional que permite delegar la lógica de instanciación de objetos a clases especializadas. Esto significa que, en lugar de crear objetos directamente en una superclase, se define una interfaz para crear objetos, pero se permite que las subclases decidan qué tipo de objetos se crearán.\n\n### ¿Qué es el Factory Method?\nImagina que estás en una fábrica de automóviles y necesitas crear diferentes tipos de vehículos, como coches y motos. En lugar de tener una máquina que pueda crear todos los tipos de vehículos, tienes una línea de ensamblaje especializada para cada tipo de vehículo. De esta manera, puedes crear coches y motos sin tener que preocuparte por los detalles de la creación de cada uno.\n\n### Tipos de Factory Method\nExisten diferentes tipos de Factory Method, incluyendo:\n\n* **Factory Method simple**: se utiliza para crear objetos de un solo tipo.\n* **Factory Method parametrizado**: se utiliza para crear objetos de diferentes tipos, dependiendo de un parámetro.\n* **Factory Method abstracto**: se utiliza para crear objetos de diferentes tipos, sin conocer los detalles de la creación.\n\n### Cómo se define el Factory Method\nEl Factory Method se define creando una interfaz o una clase abstracta que tiene un método para crear objetos. Luego, se crean subclases que implementan este método y crean objetos de diferentes tipos.\n\n### Ejemplo de código\n```java\ninterface Vehiculo {\n    void conducir();\n}\n\nclass Coche implements Vehiculo {\n    public void conducir() { System.out.println(\"Conduciendo coche\"); }\n}\n\nclass Moto implements Vehiculo {\n    public void conducir() { System.out.println(\"Conduciendo moto\"); }\n}\n```\nEn este ejemplo, tenemos una interfaz `Vehiculo` que define un método `conducir()`. Luego, tenemos dos clases `Coche` y `Moto` que implementan esta interfaz.\n\n### Implementando el Factory Method\nPara implementar el Factory Method, necesitamos crear una clase que tenga un método para crear objetos de diferentes tipos. Por ejemplo:\n```java\nclass VehiculoFactory {\n    public static Vehiculo crearVehiculo(String tipo) {\n        if (tipo.equals(\"coche\")) {\n            return new Coche();\n        } else if (tipo.equals(\"moto\")) {\n            return new Moto();\n        } else {\n            return null;\n        }\n    }\n}\n```\nEn este ejemplo, tenemos una clase `VehiculoFactory` que tiene un método `crearVehiculo()` que crea objetos de diferentes tipos, dependiendo del parámetro `tipo`.\n\n### Uso del Factory Method\nPara usar el Factory Method, podemos crear objetos de diferentes tipos de la siguiente manera:\n```java\npublic class Main {\n    public static void main(String[] args) {\n        Vehiculo coche = VehiculoFactory.crearVehiculo(\"coche\");\n        coche.conducir();\n        \n        Vehiculo moto = VehiculoFactory.crearVehiculo(\"moto\");\n        moto.conducir();\n    }\n}\n```\n### Ahora es tu turno\nEn el editor de código que está debajo, escribe lo siguiente:\n1. Crea la clase `VehiculoFactory` con el método `crearVehiculo(String tipo)` que devuelve un objeto de tipo `Vehiculo`.\n2. Usa la factoría para crear un `Coche` y una `Moto` y llama a `conducir()` en cada uno de ellos.\n\nRecuerda que, una vez escribas el código, debes hacer clic en el botón verde **\"▶ Ejecutar Código\"** para ver el resultado en la Terminal interactiva. ¡Buena suerte!"
+    },
+    {
+      "type": "code-editor",
+      "config": {
+        "language": "java",
+        "theme": "vs-dark",
+        "readOnly": false,
+        "hints": [
+          "Crea una clase VehiculoFactory con un método estático crearVehiculo(String tipo).",
+          "Dentro del método, usa un if o switch: si es \"coche\", retorna new Coche().",
+          "Si es \"moto\", retorna new Moto()."
+        ],
+        "initialCode": "interface Vehiculo {\n    void conducir();\n}\n\nclass Coche implements Vehiculo {\n    public void conducir() { System.out.println(\"Conduciendo coche\"); }\n}\n\nclass Moto implements Vehiculo {\n    public void conducir() { System.out.println(\"Conduciendo moto\"); }\n}\n\n// 1. Crea VehiculoFactory con el método crearVehiculo(String tipo)\n\n\npublic class Main {\n    public static void main(String[] args) {\n        // 2. Usa la factoría para crear un Coche y una Moto y llama a conducir()\n        \n    }\n}",
+        "solutionCode": "interface Vehiculo {\n    void conducir();\n}\n\nclass Coche implements Vehiculo {\n    public void conducir() { System.out.println(\"Conduciendo coche\"); }\n}\n\nclass Moto implements Vehiculo {\n    public void conducir() { System.out.println(\"Conduciendo moto\"); }\n}\n\nclass VehiculoFactory {\n    public static Vehiculo crearVehiculo(String tipo) {\n        if (tipo.equalsIgnoreCase(\"coche\")) return new Coche();\n        if (tipo.equalsIgnoreCase(\"moto\")) return new Moto();\n        throw new IllegalArgumentException(\"Tipo desconocido\");\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Vehiculo v1 = VehiculoFactory.crearVehiculo(\"coche\");\n        Vehiculo v2 = VehiculoFactory.crearVehiculo(\"moto\");\n        v1.conducir();\n        v2.conducir();\n    }\n}"
+      }
+    }
+  ]
+}

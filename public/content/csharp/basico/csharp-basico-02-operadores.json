@@ -1,0 +1,31 @@
+{
+  "id": "csharp-basico-02-operadores",
+  "title": "Operadores",
+  "description": "Utiliza operadores aritméticos y lógicos en C#.",
+  "language": "csharp",
+  "level": "basico",
+  "estimatedMinutes": 15,
+  "nextLessonId": "csharp-basico-03-condicionales",
+  "previousLessonId": "csharp-basico-01-variables",
+  "contentBlocks": [
+    {
+      "type": "markdown",
+      "content": "### Introducción a los Operadores Aritméticos\nLos operadores aritméticos son símbolos especiales que se utilizan para realizar operaciones matemáticas en el lenguaje de programación C#. Estos operadores nos permiten realizar cálculos básicos como suma, resta, multiplicación, división y módulo (o resto). Son fundamentales para cualquier tipo de cálculo que necesitemos realizar en nuestros programas.\n\n### ¿Qué son los Operadores Aritméticos?\nImagina que estás en una tienda y quieres calcular el total de tus compras. Necesitas sumar el precio de cada artículo. En programación, los operadores aritméticos son como una caja registradora que te permite realizar estas operaciones de manera rápida y precisa. Los principales operadores aritméticos en C# son:\n- `+` (suma)\n- `-` (resta)\n- `*` (multiplicación)\n- `/` (división)\n- `%` (módulo o resto)\n\n### Ejemplos de Operadores Aritméticos\nVeamos algunos ejemplos sencillos de cómo se utilizan estos operadores en C#:\n```csharp\nint numero1 = 10;\nint numero2 = 3;\n\n// Suma\nint suma = numero1 + numero2;\nConsole.WriteLine(\"La suma es: \" + suma);\n\n// Resta\nint resta = numero1 - numero2;\nConsole.WriteLine(\"La resta es: \" + resta);\n\n// Multiplicación\nint multiplicacion = numero1 * numero2;\nConsole.WriteLine(\"La multiplicación es: \" + multiplicacion);\n\n// División\nint division = numero1 / numero2;\nConsole.WriteLine(\"La división es: \" + division);\n\n// Módulo (resto)\nint modulo = numero1 % numero2;\nConsole.WriteLine(\"El módulo es: \" + modulo);\n```\n### Importancia de los Operadores Aritméticos\nLos operadores aritméticos son esenciales en programación porque nos permiten realizar cálculos complejos de manera eficiente. Sin ellos, sería muy difícil desarrollar aplicaciones que requieren operaciones matemáticas, como juegos, simulaciones, y herramientas de cálculo.\n\n### Siguiente Paso\nAhora es tu turno. En el editor de código que está debajo, escribe lo siguiente:\n```csharp\nusing System;\n\nclass Program {\n    static void Main() {\n        int baseRectangulo = 10;\n        int altura = 5;\n        \n        // Calcula el área (base por altura) y guárdala en una variable llamada 'area'\n        int area = baseRectangulo * altura;\n        \n        // Imprime el área\n        Console.WriteLine(\"El área del rectángulo es: \" + area);\n    }\n}\n```\nRecuerda que, una vez hayas escrito el código, debes hacer clic en el botón verde **\"▶ Ejecutar Código\"** para ver el resultado en la Terminal interactiva. Esto te permitirá ver el resultado de tu código y entender cómo funcionan los operadores aritméticos en la práctica. ¡Buena suerte!"
+    },
+    {
+      "type": "code-editor",
+      "config": {
+        "language": "csharp",
+        "theme": "vs-dark",
+        "readOnly": false,
+        "hints": [
+          "Usa el operador de multiplicación: *",
+          "Declara una variable int llamada 'area' y asígnale el resultado de base * altura",
+          "Usa Console.WriteLine para imprimir el resultado."
+        ],
+        "initialCode": "using System;\n\nclass Program {\n    static void Main() {\n        int baseRectangulo = 10;\n        int altura = 5;\n        \n        // Calcula el área (base por altura) y guárdala en una variable llamada 'area'\n        \n        \n        // Imprime el área\n        \n    }\n}",
+        "solutionCode": "using System;\n\nclass Program {\n    static void Main() {\n        int baseRectangulo = 10;\n        int altura = 5;\n        int area = baseRectangulo * altura;\n        Console.WriteLine(area);\n    }\n}"
+      }
+    }
+  ]
+}

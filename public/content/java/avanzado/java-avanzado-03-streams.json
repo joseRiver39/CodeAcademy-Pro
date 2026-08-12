@@ -1,0 +1,31 @@
+{
+  "id": "java-avanzado-03-streams",
+  "title": "Streams y Lambdas",
+  "description": "Procesa colecciones de datos de manera declarativa y funcional.",
+  "language": "java",
+  "level": "avanzado",
+  "estimatedMinutes": 40,
+  "nextLessonId": "java-avanzado-04-hilos",
+  "previousLessonId": "java-avanzado-02-genericos",
+  "contentBlocks": [
+    {
+      "type": "markdown",
+      "content": "### Introducción a Streams y Expresiones Lambda\nLa API Stream en Java es una herramienta poderosa que permite procesar colecciones de datos de manera declarativa y funcional. Imagina que tienes una gran biblioteca con miles de libros, y necesitas encontrar todos los libros de un autor específico. En lugar de revisar cada libro individualmente, puedes pedirle a un bibliotecario que te traiga todos los libros que cumplan con ese criterio. De esta manera, no necesitas preocuparte por cómo se realizan las búsquedas, solo defines lo que necesitas.\n\n### Qué son las Streams\nUna Stream es como un río de datos que fluye a través de tu programa. Puedes pensar en ella como una secuencia de elementos que se procesan de manera secuencial. Las Streams se pueden crear a partir de colecciones, arreglos o incluso bases de datos. La ventaja de las Streams es que permiten operaciones de tipo funcional, lo que significa que puedes definir qué se debe hacer con los datos sin preocuparte por cómo se realizan los detalles.\n\n### Expresiones Lambda\nLas expresiones Lambda son una forma concisa de escribir implementaciones de interfaces funcionales. Una interfaz funcional es aquella que tiene un solo método abstracto. Las Lambdas pueden ser vistas como pequeñas funciones anónimas que se pueden pasar como argumentos a métodos o devueltas como resultados. La sintaxis de una expresión Lambda es `(param) -> { body }`, donde `param` es el parámetro de entrada y `body` es el código que se ejecuta.\n\n### Tipos de Operaciones en Streams\nExisten dos tipos principales de operaciones en Streams: operaciones intermedias y operaciones terminales. Las operaciones intermedias devuelven otra Stream, lo que permite encadenar varias operaciones. Las operaciones terminales devuelven un resultado o efecto secundario, como imprimir los datos o almacenarlos en una colección.\n\n### Ejemplo de Uso de Streams y Lambda\n```java\nList<String> frutas = Arrays.asList(\"manzana\", \"banana\", \"naranja\", \"kiwi\");\nfrutas.stream()\n      .filter(f -> f.startsWith(\"m\")) // Filtra las frutas que comienzan con \"m\"\n      .forEach(System.out::println); // Imprime las frutas filtradas\n```\nEn este ejemplo, creamos una Stream a partir de la lista de frutas y utilizamos la operación intermedia `filter` con una expresión Lambda que selecciona solo las frutas que comienzan con \"m\". Luego, utilizamos la operación terminal `forEach` para imprimir las frutas filtradas.\n\n### Ejemplo de Uso de Streams para Filtrar Números Pares\n```java\nList<Integer> numeros = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);\nnumeros.stream()\n       .filter(n -> n % 2 == 0) // Filtra los números pares\n       .forEach(System.out::println); // Imprime los números pares\n```\nEn este ejemplo, creamos una Stream a partir de la lista de números y utilizamos la operación intermedia `filter` con una expresión Lambda que selecciona solo los números pares. Luego, utilizamos la operación terminal `forEach` para imprimir los números pares.\n\n### Ahora es tu Turno\nEn el editor de código que está debajo, escribe lo siguiente:\n```java\nimport java.util.Arrays;\nimport java.util.List;\n\npublic class Main {\n    public static void main(String[] args) {\n        List<Integer> numeros = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);\n        \n        // Usa la API Stream para filtrar solo los números pares e imprimirlos\n        numeros.stream()\n                .filter(n -> n % 2 == 0)\n                .forEach(System.out::println);\n    }\n}\n```\nUna vez que hayas escrito el código, haz clic en el botón verde **\"▶ Ejecutar Código\"** para ver el resultado en la Terminal interactiva. Esto te permitirá ver los números pares impresos en la consola. ¡No te olvides de hacer clic en el botón para ver el resultado!"
+    },
+    {
+      "type": "code-editor",
+      "config": {
+        "language": "java",
+        "theme": "vs-dark",
+        "readOnly": false,
+        "hints": [
+          "Convierte la lista a stream: numeros.stream()",
+          "Usa filter con una lambda para pares: .filter(n -> n % 2 == 0)",
+          "Imprime cada uno con forEach: .forEach(System.out::println);"
+        ],
+        "initialCode": "import java.util.Arrays;\nimport java.util.List;\n\npublic class Main {\n    public static void main(String[] args) {\n        List<Integer> numeros = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);\n        \n        // Usa la API Stream para filtrar solo los números pares e imprimirlos\n        \n    }\n}",
+        "solutionCode": "import java.util.Arrays;\nimport java.util.List;\n\npublic class Main {\n    public static void main(String[] args) {\n        List<Integer> numeros = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);\n        \n        numeros.stream()\n               .filter(n -> n % 2 == 0)\n               .forEach(System.out::println);\n    }\n}"
+      }
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "csharp-intermedio-04-excepciones",
+  "title": "Manejo de Excepciones",
+  "description": "Aprende sobre manejo de excepciones en C#.",
+  "language": "csharp",
+  "level": "intermedio",
+  "estimatedMinutes": 15,
+  "nextLessonId": null,
+  "previousLessonId": "csharp-intermedio-03-polimorfismo",
+  "contentBlocks": [
+    {
+      "type": "markdown",
+      "content": "### Introducción al Manejo de Excepciones\nEl manejo de excepciones es una parte fundamental en la programación, ya que nos permite controlar y gestionar situaciones inesperadas que pueden ocurrir durante la ejecución de nuestro código. Imagina que estás conduciendo un coche y de repente, la carretera se bloquea debido a un accidente. En este caso, no puedes simplemente seguir conduciendo como si nada hubiera pasado, necesitas tomar medidas para evitar un accidente mayor, como detener el coche o buscar una ruta alternativa. De la misma manera, en la programación, cuando surge una excepción, nuestro código necesita \"detenerse\" y tomar medidas para resolver el problema.\n\n### Qué es una Excepción\nUna excepción es un evento que ocurre durante la ejecución de un programa y que interrumpe el flujo normal de la aplicación. Puede ser causada por una variedad de factores, como errores de sintaxis, falta de recursos, operaciones inválidas, etc. En C#, las excepciones se representan mediante objetos que contienen información sobre el error, como el mensaje de error y la ubicación en el código donde se produjo.\n\n### Tipos de Excepciones\nExisten dos tipos principales de excepciones: **excepciones no controladas** y **excepciones controladas**. Las excepciones no controladas son aquellas que no se pueden anticipar ni manejar, como errores de hardware o fallos en la memoria. Las excepciones controladas, por otro lado, son aquellas que se pueden prever y manejar, como errores de división por cero o intentos de acceder a un índice inválido en un arreglo.\n\n### Definición y Uso de Excepciones\nEn C#, se utilizan bloques `try`-`catch`-`finally` para definir y manejar excepciones. El bloque `try` contiene el código que puede generar una excepción, el bloque `catch` contiene el código que se ejecutará si se produce una excepción, y el bloque `finally` contiene el código que siempre se ejecutará, independientemente de si se produjo una excepción o no.\n\n```csharp\ntry \n{\n    // Código que puede generar una excepción\n} \ncatch (Excepcion e) \n{\n    // Código que se ejecutará si se produce una excepción\n} \nfinally \n{\n    // Código que siempre se ejecutará\n}\n```\n\n### Ejemplo de Manejo de Excepciones\nSupongamos que tenemos un método que divide dos números y queremos manejar la excepción que se produce cuando se intenta dividir por cero.\n\n```csharp\ntry \n{\n    int resultado = 10 / 0;\n} \ncatch (DivideByZeroException e) \n{\n    Console.WriteLine(\"Error: No se puede dividir por cero.\");\n} \nfinally \n{\n    Console.WriteLine(\"Operación finalizada.\");\n}\n```\n\n### Ahora es tu Turno\nEn el editor de código que está debajo, escribe lo siguiente:\n```csharp\nusing System;\n\nclass Program {\n    static void Main() {\n        try {\n            int[] miArreglo = new int[5];\n            Console.WriteLine(miArreglo[10]);\n        } catch (IndexOutOfRangeException e) {\n            Console.WriteLine(\"Error: Índice fuera de rango.\");\n        } finally {\n            Console.WriteLine(\"Operación finalizada.\");\n        }\n    }\n}\n```\nUna vez que hayas escrito el código, haz clic en el botón verde **\"▶ Ejecutar Código\"** para ver el resultado en la Terminal interactiva. Observa cómo el código maneja la excepción que se produce cuando se intenta acceder a un índice inválido en el arreglo."
+    },
+    {
+      "type": "code-editor",
+      "config": {
+        "language": "csharp",
+        "theme": "vs-dark",
+        "readOnly": false,
+        "hints": [
+          "Pista 1: En construcción",
+          "Pista 2: En construcción"
+        ],
+        "initialCode": "using System;\n\nclass Program {\n    static void Main() {\n        // Escribe tu código aquí\n    }\n}",
+        "solutionCode": "using System;\n\nclass Program {\n    static void Main() {\n        // Solución aquí\n    }\n}"
+      }
+    }
+  ]
+}

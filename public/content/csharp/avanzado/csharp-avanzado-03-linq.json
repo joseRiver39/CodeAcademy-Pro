@@ -1,0 +1,31 @@
+{
+  "id": "csharp-avanzado-03-linq",
+  "title": "LINQ (Language Integrated Query)",
+  "description": "Consulta y transforma colecciones de datos directamente desde el código.",
+  "language": "csharp",
+  "level": "avanzado",
+  "estimatedMinutes": 45,
+  "nextLessonId": "csharp-avanzado-04-async",
+  "previousLessonId": "csharp-avanzado-02-delegados",
+  "contentBlocks": [
+    {
+      "type": "markdown",
+      "content": "### Introducción a LINQ\nLINQ (Language Integrated Query) es una herramienta poderosa en el lenguaje de programación C# que nos permite consultar y transformar colecciones de datos de manera directa y eficiente. Imagine que tiene una biblioteca con miles de libros, y necesita encontrar todos los libros de un autor específico. Sin LINQ, tendría que revisar cada libro individualmente, lo que sería un proceso tedioso y largo. Pero con LINQ, es como tener un asistente que puede buscar todos los libros que coinciden con su criterio de búsqueda en cuestión de segundos.\n\n### Qué es LINQ y para qué sirve\nLINQ proporciona capacidades de consulta a nivel de lenguaje, lo que significa que podemos escribir consultas directamente en nuestro código C# para filtrar, ordenar y mapear colecciones de datos. Es similar a SQL, pero en lugar de escribir consultas en un lenguaje de consulta separado, podemos escribirlas directamente en nuestro código. Esto facilita la manipulación de datos y hace que nuestro código sea más legible y mantenible.\n\n### Tipos de LINQ\nExisten dos tipos principales de LINQ: LINQ para objetos (LINQ to Objects) y LINQ para entidades (LINQ to Entities). LINQ para objetos se utiliza para consultar colecciones de objetos en memoria, mientras que LINQ para entidades se utiliza para consultar bases de datos.\n\n### Sintaxis de LINQ\nLa sintaxis de LINQ es fluida y fácil de leer. Podemos usar la sintaxis de consulta, que es similar a SQL, o la sintaxis de método, que es más similar a la programación funcional. Ambas sintaxis son equivalentes y pueden ser utilizadas para lograr el mismo resultado.\n\n### Ejemplos de LINQ\n```csharp\nusing System;\nusing System.Collections.Generic;\nusing System.Linq;\n\nclass Program {\n    static void Main() {\n        List<int> numeros = new List<int> { 1, 2, 3, 4, 5, 6 };\n        \n        // Usando la sintaxis de consulta\n        var paresConsulta = from numero in numeros\n                            where numero % 2 == 0\n                            select numero;\n        \n        // Usando la sintaxis de método\n        var paresMetodo = numeros.Where(numero => numero % 2 == 0);\n        \n        // Imprimiendo los resultados\n        Console.WriteLine(\"Números pares (consulta):\");\n        foreach (var numero in paresConsulta) {\n            Console.WriteLine(numero);\n        }\n        \n        Console.WriteLine(\"Números pares (método):\");\n        foreach (var numero in paresMetodo) {\n            Console.WriteLine(numero);\n        }\n    }\n}\n```\n\n### Práctica\nAhora es tu turno. En el editor de código que está debajo, escribe lo siguiente:\n```csharp\nusing System;\nusing System.Collections.Generic;\n// 1. Añade using System.Linq;\n\nclass Program {\n    static void Main() {\n        List<int> numeros = new List<int> { 1, 2, 3, 4, 5, 6 };\n        \n        // 2. Usa LINQ para obtener solo los números pares\n        // var pares = ...\n        \n        // 3. Imprime los números filtrados iterándolos\n        \n    }\n}\n```\nRecuerda que debes importar el namespace `System.Linq` para utilizar LINQ. Luego, utiliza la sintaxis de consulta o la sintaxis de método para obtener solo los números pares de la lista. Finalmente, imprime los números filtrados iterándolos. Una vez que hayas escrito el código, haz clic en el botón verde **\"▶ Ejecutar Código\"** para ver el resultado en la Terminal interactiva. ¡Buena suerte!"
+    },
+    {
+      "type": "code-editor",
+      "config": {
+        "language": "csharp",
+        "theme": "vs-dark",
+        "readOnly": false,
+        "hints": [
+          "Importa el namespace: using System.Linq;",
+          "Filtra los pares: numeros.Where(n => n % 2 == 0)",
+          "Itera e imprime el resultado de la consulta."
+        ],
+        "initialCode": "using System;\nusing System.Collections.Generic;\n// 1. Añade using System.Linq;\n\n\nclass Program {\n    static void Main() {\n        List<int> numeros = new List<int> { 1, 2, 3, 4, 5, 6 };\n        \n        // 2. Usa LINQ para obtener solo los números pares\n        // var pares = ...\n        \n        // 3. Imprime los números filtrados iterándolos\n        \n    }\n}",
+        "solutionCode": "using System;\nusing System.Collections.Generic;\nusing System.Linq;\n\nclass Program {\n    static void Main() {\n        List<int> numeros = new List<int> { 1, 2, 3, 4, 5, 6 };\n        \n        var pares = numeros.Where(n => n % 2 == 0);\n        \n        foreach (var n in pares) {\n            Console.WriteLine(n);\n        }\n    }\n}"
+      }
+    }
+  ]
+}

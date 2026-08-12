@@ -1,0 +1,31 @@
+{
+  "id": "java-intermedio-02-encapsulamiento",
+  "title": "Constructores y Encapsulamiento",
+  "description": "Protege los datos de tus objetos y asegura su correcta inicialización.",
+  "language": "java",
+  "level": "intermedio",
+  "estimatedMinutes": 30,
+  "nextLessonId": "java-intermedio-03-herencia",
+  "previousLessonId": "java-intermedio-01-clases",
+  "contentBlocks": [
+    {
+      "type": "markdown",
+      "content": "### Introducción al Encapsulamiento\nEl encapsulamiento es un principio fundamental en la programación orientada a objetos que nos permite proteger los datos de un objeto y asegurar su correcta inicialización. Imagina que tienes una caja fuerte donde guardas tus objetos más valiosos. La caja fuerte tiene una cerradura que solo permite que ciertas personas accedan a su contenido. De la misma manera, el encapsulamiento nos permite \"cerrar\" los datos de un objeto y solo permitir que se accedan a ellos a través de métodos específicos.\n\n### Qué es el Encapsulamiento\nEl encapsulamiento es el proceso de ocultar el estado interno de un objeto y requerir que toda interacción se realice a través de los métodos de ese objeto. Esto se logra utilizando modificadores de acceso como `private` y `public`. Los datos que se declaran como `private` solo pueden ser accedidos dentro de la clase donde se declararon, mientras que los métodos `public` pueden ser accedidos desde cualquier parte del programa.\n\n### Tipos de Modificadores de Acceso\nExisten varios modificadores de acceso que se pueden utilizar para controlar el acceso a los datos de un objeto. Los más comunes son:\n* `public`: Los datos o métodos declarados como `public` pueden ser accedidos desde cualquier parte del programa.\n* `private`: Los datos o métodos declarados como `private` solo pueden ser accedidos dentro de la clase donde se declararon.\n* `protected`: Los datos o métodos declarados como `protected` pueden ser accedidos dentro de la clase donde se declararon y en las clases que heredan de esa clase.\n\n### Ejemplo de Encapsulamiento\n```java\nclass CuentaBancaria {\n    private double saldo;\n\n    public CuentaBancaria(double saldo) {\n        this.saldo = saldo;\n    }\n\n    public double getSaldo() {\n        return saldo;\n    }\n\n    public void setSaldo(double saldo) {\n        if (saldo >= 0) {\n            this.saldo = saldo;\n        } else {\n            System.out.println(\"El saldo no puede ser negativo\");\n        }\n    }\n}\n```\nEn este ejemplo, la clase `CuentaBancaria` tiene un campo `private` llamado `saldo` que solo puede ser accedido a través de los métodos `getSaldo()` y `setSaldo()`. El método `setSaldo()` verifica que el saldo no sea negativo antes de asignarlo.\n\n### Constructores y Encapsulamiento\nLos constructores son métodos especiales que se utilizan para inicializar los objetos cuando se crean. Al combinar los constructores con el encapsulamiento, podemos asegurarnos de que los objetos se creen con los datos correctos y que esos datos se mantengan consistentes a lo largo del tiempo.\n\n### Ejercicio Práctico\nAhora es tu turno. En el editor de código que está debajo, escribe lo siguiente:\n```java\nclass Persona {\n    private String nombre;\n    \n    // 1. Crea un constructor que inicialice el 'nombre'\n    \n    // 2. Crea un método public String getNombre()\n    \n    // 3. Crea un método public void setNombre(String nombre)\n    \n}\n\npublic class Main {\n    public static void main(String[] args) {\n        // 4. Instancia una Persona, asígnale un nombre por constructor o setter, y muéstralo con el getter.\n        \n    }\n}\n```\nUna vez que hayas escrito el código, haz clic en el botón verde **\"▶ Ejecutar Código\"** para ver el resultado en la Terminal interactiva. Recuerda que el objetivo es crear una clase `Persona` que tenga un campo `private` llamado `nombre` y que utilice un constructor y métodos `get` y `set` para acceder y modificar ese campo. ¡Buena suerte!"
+    },
+    {
+      "type": "code-editor",
+      "config": {
+        "language": "java",
+        "theme": "vs-dark",
+        "readOnly": false,
+        "hints": [
+          "Crea el método getter: public String getNombre() { return this.nombre; }",
+          "Crea el método setter: public void setNombre(String nombre) { this.nombre = nombre; }",
+          "En main usa setNombre(\"Juan\") y luego getNombre() para imprimir."
+        ],
+        "initialCode": "class Persona {\n    private String nombre;\n    \n    // 1. Crea un constructor que inicialice el 'nombre'\n    \n    // 2. Crea un método public String getNombre()\n    \n    // 3. Crea un método public void setNombre(String nombre)\n    \n}\n\npublic class Main {\n    public static void main(String[] args) {\n        // 4. Instancia una Persona, asígnale un nombre por constructor o setter, y muéstralo con el getter.\n        \n    }\n}",
+        "solutionCode": "class Persona {\n    private String nombre;\n    \n    public Persona(String nombre) {\n        this.nombre = nombre;\n    }\n    \n    public String getNombre() {\n        return this.nombre;\n    }\n    \n    public void setNombre(String nombre) {\n        this.nombre = nombre;\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Persona p = new Persona(\"Juan\");\n        System.out.println(p.getNombre());\n    }\n}"
+      }
+    }
+  ]
+}

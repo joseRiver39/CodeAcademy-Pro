@@ -1,0 +1,31 @@
+{
+  "id": "csharp-basico-06-metodos",
+  "title": "Métodos",
+  "description": "Crea funciones y métodos para reutilizar lógica en tus aplicaciones.",
+  "language": "csharp",
+  "level": "basico",
+  "estimatedMinutes": 25,
+  "nextLessonId": "csharp-intermedio-01-clases",
+  "previousLessonId": "csharp-basico-05-arrays",
+  "contentBlocks": [
+    {
+      "type": "markdown",
+      "content": "### Introducción a los Métodos\nLos métodos son una forma de agrupar código que se puede reutilizar en diferentes partes de una aplicación. Imagina que tienes una receta para hacer una deliciosa torta de chocolate. En lugar de escribir la receta completa cada vez que quieras hacer una torta, puedes escribirla una vez y guardarla en un lugar especial. Luego, cada vez que quieras hacer una torta, solo tienes que seguir la receta que ya tienes escrita. De esta manera, ahorras tiempo y esfuerzo.\n\n### ¿Qué es un Método?\nUn método es como una receta para el código. Te permite agrupar un conjunto de instrucciones que realizan una tarea específica y luego llamar a esa tarea desde cualquier parte de tu aplicación. En C#, los métodos suelen tener nombres que comienzan con letra mayúscula, siguiendo la convención de PascalCase. Por ejemplo, `Saludar` o `CalcularArea`.\n\n### Tipos de Métodos\nExisten diferentes tipos de métodos, incluyendo:\n- **Métodos estáticos**: Pueden ser llamados sin necesidad de instanciar la clase que los contiene.\n- **Métodos de instancia**: Requieren que se cree una instancia de la clase que los contiene antes de poder ser llamados.\n- **Métodos virtuales**: Pueden ser sobrescritos por clases derivadas.\n- **Métodos abstractos**: Deben ser implementados por clases que heredan de una clase abstracta.\n\n### Definir un Método\nUn método se define utilizando la palabra clave `return` para especificar el tipo de dato que devuelve, seguido del nombre del método y los parámetros entre paréntesis. Por ejemplo:\n```csharp\npublic static string Saludar(string nombre) {\n    return \"Hola \" + nombre;\n}\n```\nEste método `Saludar` devuelve un `string` y recibe un parámetro `nombre` de tipo `string`.\n\n### Llamando a un Método\nPara usar un método, simplemente escribe su nombre seguido de paréntesis que contienen los argumentos necesarios. Por ejemplo:\n```csharp\nstring mensaje = Saludar(\"Antonio\");\nConsole.WriteLine(mensaje); // Imprime: Hola Antonio\n```\n### Ejemplo Práctico\nImagina que quieres crear un programa que salude a diferentes personas. Puedes definir un método `Saludar` que reciba el nombre de la persona y devuelva un saludo personalizado.\n\n### Siguiente Paso\nAhora es tu turno. En el editor de código que está debajo, escribe lo siguiente:\n```csharp\nusing System;\n\nclass Program {\n    // 1. Crea un método estático llamado 'Saludar' que reciba un string 'nombre' \n    //    y retorne un saludo, por ejemplo: \"Hola Antonio\"\n    public static string Saludar(string nombre) {\n        // Tu código aquí\n    }\n\n    static void Main() {\n        // 2. Llama al método Saludar, pasa un nombre e imprime el resultado.\n        // Tu código aquí\n    }\n}\n```\nRecuerda que, una vez hayas escrito el código, debes hacer clic en el botón verde **\"▶ Ejecutar Código\"** para ver el resultado en la Terminal interactiva. ¡Buena suerte!"
+    },
+    {
+      "type": "code-editor",
+      "config": {
+        "language": "csharp",
+        "theme": "vs-dark",
+        "readOnly": false,
+        "hints": [
+          "El método debe ser estático para poder llamarlo desde Main: static string Saludar(string nombre)",
+          "Usa interpolación de strings para el retorno: return $\"Hola {nombre}\"; o concatenación: return \"Hola \" + nombre;",
+          "Llama al método en Main e imprime su resultado."
+        ],
+        "initialCode": "using System;\n\nclass Program {\n    // 1. Crea un método estático llamado 'Saludar' que reciba un string 'nombre' \n    //    y retorne un saludo, por ejemplo: \"Hola Antonio\"\n    \n\n    static void Main() {\n        // 2. Llama al método Saludar, pasa un nombre e imprime el resultado.\n        \n    }\n}",
+        "solutionCode": "using System;\n\nclass Program {\n    static string Saludar(string nombre) {\n        return $\"Hola {nombre}\";\n    }\n\n    static void Main() {\n        Console.WriteLine(Saludar(\"Antonio\"));\n    }\n}"
+      }
+    }
+  ]
+}

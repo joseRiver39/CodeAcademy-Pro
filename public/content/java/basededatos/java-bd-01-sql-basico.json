@@ -1,0 +1,31 @@
+{
+  "id": "java-bd-01-sql-basico",
+  "title": "SQL Básico para Desarrolladores Java",
+  "description": "Aprende los comandos SQL fundamentales: SELECT, INSERT, UPDATE, DELETE.",
+  "language": "java",
+  "level": "basededatos",
+  "estimatedMinutes": 20,
+  "nextLessonId": "java-bd-02-jdbc-conexion",
+  "previousLessonId": "",
+  "contentBlocks": [
+    {
+      "type": "markdown",
+      "content": "\n### Introducción a SQL\n\nSQL (Lenguaje de Consulta Estructurada) es un lenguaje de programación estándar para gestionar sistemas de bases de datos relacionales. Sirve para almacenar, modificar y recuperar datos de manera eficiente.\n\n### Tipos de Comandos SQL\n\nExisten varios tipos de comandos SQL, pero los más comunes son:\n\n*   **SELECT**: Se utiliza para seleccionar datos de una tabla.\n*   **INSERT**: Se utiliza para insertar nuevos datos en una tabla.\n*   **UPDATE**: Se utiliza para actualizar datos existentes en una tabla.\n*   **DELETE**: Se utiliza para eliminar datos de una tabla.\n\n### Analogía con el Mundo Real\n\nImagina una biblioteca donde los libros son los datos y las estanterías son las tablas. El comando **SELECT** sería como buscar un libro específico en la estantería, **INSERT** sería como agregar un nuevo libro a la estantería, **UPDATE** sería como cambiar el título de un libro existente y **DELETE** sería como retirar un libro de la estantería.\n\n### Ejemplo de Código\n\n```sql\n-- Crear una tabla llamada 'libros'\nCREATE TABLE libros (\n    id INT PRIMARY KEY,\n    titulo VARCHAR(255),\n    autor VARCHAR(255)\n);\n\n-- Insertar un nuevo libro\nINSERT INTO libros (id, titulo, autor)\nVALUES (1, 'El Señor de los Anillos', 'J.R.R. Tolkien');\n\n-- Seleccionar todos los libros\nSELECT * FROM libros;\n\n-- Actualizar el título de un libro\nUPDATE libros\nSET titulo = 'La Comunidad del Anillo'\nWHERE id = 1;\n\n-- Eliminar un libro\nDELETE FROM libros\nWHERE id = 1;\n```\n\n### Ejercicio\n\nAhora es tu turno de practicar. En el editor de código, crea una tabla llamada 'estudiantes' con las columnas 'id', 'nombre' y 'edad'. Luego, inserta algunos estudiantes y selecciona todos los estudiantes para ver el resultado. Recuerda presionar '▶ Ejecutar Código' para ver el resultado."
+    },
+    {
+      "type": "code-editor",
+      "config": {
+        "language": "java",
+        "theme": "vs-dark",
+        "readOnly": false,
+        "hints": [
+          "usa el comando CREATE TABLE para crear la tabla 'estudiantes'",
+          "usa el comando INSERT INTO para insertar estudiantes",
+          "usa el comando SELECT para seleccionar todos los estudiantes"
+        ],
+        "initialCode": "\n// Simula una BD con lista en memoria para poder ejecutar\nimport java.util.ArrayList;\nimport java.util.List;\n\nclass Estudiante {\n    int id;\n    String nombre;\n    int edad;\n\n    public Estudiante(int id, String nombre, int edad) {\n        this.id = id;\n        this.nombre = nombre;\n        this.edad = edad;\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        // Crear una lista para simular la tabla 'estudiantes'\n        List<Estudiante> estudiantes = new ArrayList<>();\n\n        // TODO: Inserta algunos estudiantes en la lista\n        // TODO: Selecciona todos los estudiantes y muestra el resultado\n\n        // Simula la impresión de los resultados\n        System.out.println(\"Estudiantes:\");\n        for (Estudiante estudiante : estudiantes) {\n            System.out.println(\"ID: \" + estudiante.id + \", Nombre: \" + estudiante.nombre + \", Edad: \" + estudiante.edad);\n        }\n    }\n}\n",
+        "solutionCode": "\n// Simula una BD con lista en memoria para poder ejecutar\nimport java.util.ArrayList;\nimport java.util.List;\n\nclass Estudiante {\n    int id;\n    String nombre;\n    int edad;\n\n    public Estudiante(int id, String nombre, int edad) {\n        this.id = id;\n        this.nombre = nombre;\n        this.edad = edad;\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        // Crear una lista para simular la tabla 'estudiantes'\n        List<Estudiante> estudiantes = new ArrayList<>();\n\n        // Inserta algunos estudiantes en la lista\n        estudiantes.add(new Estudiante(1, \"Juan\", 20));\n        estudiantes.add(new Estudiante(2, \"María\", 22));\n        estudiantes.add(new Estudiante(3, \"Pedro\", 21));\n\n        // Selecciona todos los estudiantes y muestra el resultado\n        System.out.println(\"Estudiantes:\");\n        for (Estudiante estudiante : estudiantes) {\n            System.out.println(\"ID: \" + estudiante.id + \", Nombre: \" + estudiante.nombre + \", Edad: \" + estudiante.edad);\n        }\n    }\n}\n"
+      }
+    }
+  ]
+}

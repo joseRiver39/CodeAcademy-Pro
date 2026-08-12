@@ -1,0 +1,31 @@
+{
+  "id": "csharp-patrones-02-factory",
+  "title": "Factory Method",
+  "description": "Delega la lógica de instanciación de objetos.",
+  "language": "csharp",
+  "level": "patrones",
+  "estimatedMinutes": 45,
+  "nextLessonId": "csharp-patrones-03-strategy",
+  "previousLessonId": "csharp-patrones-01-singleton",
+  "contentBlocks": [
+    {
+      "type": "markdown",
+      "content": "### Introducción al Factory Method\nEl Factory Method es un patrón de diseño que permite delegar la lógica de instanciación de objetos a una clase estática creadora. Esto significa que, en lugar de instanciar directamente un objeto, se utiliza una clase que se encarga de crear y devolver diferentes implementaciones de una interfaz o clase base según los parámetros proporcionados.\n\n### ¿Para qué sirve el Factory Method?\nEl Factory Method es útil cuando se necesita crear objetos que comparten una interfaz o clase base común, pero que tienen implementaciones diferentes. Por ejemplo, imagine que estás creando un juego de carreras y necesitas crear diferentes tipos de vehículos, como coches y motos. En lugar de instanciar directamente un coche o una moto, puedes utilizar un Factory Method que te permita crear cualquier tipo de vehículo según los parámetros que se le pasen.\n\n### Analogía del mundo real\nUna fábrica de automóviles es como una clase estática creadora que utiliza el Factory Method. La fábrica puede producir diferentes modelos de automóviles, como sedanes, camionetas o deportivos, según las especificaciones del cliente. De la misma manera, el Factory Method puede crear diferentes implementaciones de una interfaz o clase base según los parámetros proporcionados.\n\n### Tipos de Factory Method\nExisten diferentes tipos de Factory Method, incluyendo:\n\n* **Factory Method simple**: Este es el tipo más común de Factory Method, en el que se utiliza una clase estática creadora para devolver diferentes implementaciones de una interfaz o clase base.\n* **Factory Method parametrizado**: Este tipo de Factory Method permite pasar parámetros para determinar qué implementación se debe crear.\n* **Factory Method abstracto**: Este tipo de Factory Method se utiliza cuando se necesita crear objetos que comparten una interfaz o clase base común, pero que tienen implementaciones diferentes.\n\n### Ejemplo de código\n```csharp\n// Definimos la interfaz IVehiculo\ninterface IVehiculo { void Conducir(); }\n\n// Definimos las implementaciones concretas de IVehiculo\nclass Coche : IVehiculo { public void Conducir() { Console.WriteLine(\"Conduciendo Coche\"); } }\nclass Moto : IVehiculo { public void Conducir() { Console.WriteLine(\"Conduciendo Moto\"); } }\n\n// Definimos la clase estática creadora que utiliza el Factory Method\nclass VehiculoFactory\n{\n    public static IVehiculo CrearVehiculo(string tipo)\n    {\n        if (tipo == \"Coche\")\n            return new Coche();\n        else if (tipo == \"Moto\")\n            return new Moto();\n        else\n            throw new ArgumentException(\"Tipo de vehículo no válido\");\n    }\n}\n\n// Utilizamos la clase estática creadora para crear objetos\nclass Program {\n    static void Main() {\n        IVehiculo vehiculo = VehiculoFactory.CrearVehiculo(\"Coche\");\n        vehiculo.Conducir();\n    }\n}\n```\n\n### Siguiente paso\nAhora es tu turno. En el editor de código que está debajo, escribe lo siguiente:\n```csharp\nusing System;\n\ninterface IVehiculo { void Conducir(); }\n\nclass Coche : IVehiculo { public void Conducir() { Console.WriteLine(\"Conduciendo Coche\"); } }\nclass Moto : IVehiculo { public void Conducir() { Console.WriteLine(\"Conduciendo Moto\"); } }\n\n// 1. Crea la Factory\nclass VehiculoFactory\n{\n    public static IVehiculo CrearVehiculo(string tipo)\n    {\n        // 2. Implementa la lógica para crear objetos según el tipo\n        if (tipo == \"Coche\")\n            return new Coche();\n        else if (tipo == \"Moto\")\n            return new Moto();\n        else\n            throw new ArgumentException(\"Tipo de vehículo no válido\");\n    }\n}\n\nclass Program {\n    static void Main() {\n        // 3. Utiliza la Factory para crear objetos y llamar al método Conducir\n        IVehiculo vehiculo = VehiculoFactory.CrearVehiculo(\"Moto\");\n        vehiculo.Conducir();\n    }\n}\n```\nUna vez que hayas escrito el código, haz clic en el botón verde **\"▶ Ejecutar Código\"** para ver el resultado en la Terminal interactiva. Observa cómo se crea un objeto `Moto` y se llama al método `Conducir` para imprimir el mensaje \"Conduciendo Moto\"."
+    },
+    {
+      "type": "code-editor",
+      "config": {
+        "language": "csharp",
+        "theme": "vs-dark",
+        "readOnly": false,
+        "hints": [
+          "Crea la clase estática VehiculoFactory.",
+          "Método: public static IVehiculo CrearVehiculo(string tipo)",
+          "Usa switch(tipo.ToLower()) para retornar new Coche() o new Moto()."
+        ],
+        "initialCode": "using System;\n\ninterface IVehiculo { void Conducir(); }\n\nclass Coche : IVehiculo { public void Conducir() { Console.WriteLine(\"Conduciendo Coche\"); } }\nclass Moto : IVehiculo { public void Conducir() { Console.WriteLine(\"Conduciendo Moto\"); } }\n\n// 1. Crea la Factory\n\nclass Program {\n    static void Main() {\n        // 2. Úsala\n    }\n}",
+        "solutionCode": "using System;\n\ninterface IVehiculo { void Conducir(); }\n\nclass Coche : IVehiculo { public void Conducir() { Console.WriteLine(\"Conduciendo Coche\"); } }\nclass Moto : IVehiculo { public void Conducir() { Console.WriteLine(\"Conduciendo Moto\"); } }\n\nstatic class VehiculoFactory {\n    public static IVehiculo CrearVehiculo(string tipo) {\n        switch(tipo.ToLower()) {\n            case \"coche\": return new Coche();\n            case \"moto\": return new Moto();\n            default: throw new ArgumentException(\"Desconocido\");\n        }\n    }\n}\n\nclass Program {\n    static void Main() {\n        var v = VehiculoFactory.CrearVehiculo(\"coche\");\n        v.Conducir();\n    }\n}"
+      }
+    }
+  ]
+}

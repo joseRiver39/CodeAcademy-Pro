@@ -1,0 +1,49 @@
+<div class="dashboard-container">
+  <header class="dashboard-header">
+    <a routerLink="/" class="back-home-link">← Inicio</a>
+    <h1>CodeAcademy Pro</h1>
+    <p>Tu ruta hacia el desarrollo profesional</p>
+  </header>
+
+  <div class="language-selector" *ngIf="languages.length > 0">
+    <button 
+      *ngFor="let lang of languages" 
+      (click)="selectLanguage(lang.id)"
+      [class.active]="selectedLanguageId === lang.id">
+      {{ lang.name }}
+    </button>
+  </div>
+
+  <div *ngIf="isLoading" class="loading-state">
+    Cargando contenido...
+  </div>
+
+  <div class="course-content" *ngIf="!isLoading && courseData">
+    <h2>{{ courseData.title }}</h2>
+    
+    <div class="module-card" *ngFor="let module of courseData.modules">
+      <div class="module-header">
+        <h3>{{ module.title }}</h3>
+      </div>
+      
+      <div class="lesson-list">
+        <a 
+          *ngFor="let lesson of module.lessons; let i = index" 
+          [routerLink]="['/lesson', selectedLanguageId, module.id, lesson.id]"
+          class="lesson-item"
+          [class.completed]="isCompleted(lesson.id)">
+          
+          <div class="lesson-info">
+            <span class="lesson-number">{{ i + 1 }}</span>
+            <span class="lesson-title">{{ lesson.title }}</span>
+          </div>
+          
+          <div class="lesson-status">
+            <span *ngIf="isCompleted(lesson.id)" class="status-badge completed">✔ Completada</span>
+            <span *ngIf="!isCompleted(lesson.id)" class="status-badge pending">Pendiente</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

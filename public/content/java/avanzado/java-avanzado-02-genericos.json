@@ -1,0 +1,31 @@
+{
+  "id": "java-avanzado-02-genericos",
+  "title": "Genéricos",
+  "description": "Crea clases y métodos que puedan trabajar con cualquier tipo de dato de forma segura.",
+  "language": "java",
+  "level": "avanzado",
+  "estimatedMinutes": 35,
+  "nextLessonId": "java-avanzado-03-streams",
+  "previousLessonId": "java-avanzado-01-colecciones",
+  "contentBlocks": [
+    {
+      "type": "markdown",
+      "content": "### Introducción a los Genéricos\nLos genéricos son una de las características más poderosas de la programación orientada a objetos. Permiten que los tipos (clases e interfaces) sean parámetros al definir clases, interfaces y métodos. Esto significa que puedes crear clases y métodos que puedan trabajar con cualquier tipo de dato de forma segura.\n\n### ¿Qué son los Genéricos?\nLos genéricos se denotan típicamente con `<T>`, donde `T` es un tipo de dato que se especifica cuando se crea una instancia de la clase o se llama al método. Esto es similar a como funcionan las variables en programación, pero en lugar de almacenar un valor, los genéricos almacenan un tipo de dato.\n\n### Analogía de los Genéricos\nImagina que tienes una caja de mudanza que puedes usar para transportar diferentes tipos de objetos, como ropa, libros o juguetes. La caja es como una clase genérica, y el tipo de objeto que transporta es como el tipo de dato que se especifica cuando se crea una instancia de la clase. Al igual que la caja de mudanza puede ser utilizada para transportar diferentes tipos de objetos, una clase genérica puede ser utilizada para trabajar con diferentes tipos de datos.\n\n### Tipos de Genéricos\nExisten varios tipos de genéricos, incluyendo:\n\n*   **Clases genéricas**: Permiten que las clases sean parámetros al definir otras clases.\n*   **Métodos genéricos**: Permiten que los métodos sean parámetros al definir otras clases o métodos.\n*   **Interfaces genéricas**: Permiten que las interfaces sean parámetros al definir otras interfaces o clases.\n\n### Definición de Clases Genéricas\nUna clase genérica se define utilizando la sintaxis `<T>`, donde `T` es un tipo de dato que se especifica cuando se crea una instancia de la clase. Por ejemplo:\n```java\npublic class Caja<T> {\n    private T contenido;\n\n    public void guardar(T contenido) {\n        this.contenido = contenido;\n    }\n\n    public T getContenido() {\n        return contenido;\n    }\n}\n```\nEn este ejemplo, la clase `Caja` es genérica y puede trabajar con cualquier tipo de dato.\n\n### Ejemplo de Uso de Clases Genéricas\nAquí hay un ejemplo de cómo se puede utilizar la clase `Caja` genérica:\n```java\npublic class Main {\n    public static void main(String[] args) {\n        Caja<String> caja = new Caja<>();\n        caja.guardar(\"Secreto\");\n        System.out.println(caja.getContenido());\n    }\n}\n```\nEn este ejemplo, se crea una instancia de la clase `Caja` con el tipo de dato `String`, y se utiliza para guardar y recuperar un valor de tipo `String`.\n\n### Siguiente Paso\nAhora es tu turno. En el editor de código que está debajo, escribe lo siguiente:\n```java\n// 1. Modifica la clase Caja para que sea Genérica <T>\nclass Caja<T> {\n    private T contenido;\n    \n    public void guardar(T contenido) {\n        this.contenido = contenido;\n    }\n    \n    public T getContenido() {\n        return contenido;\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        // 2. Crea una Caja de tipo String, guarda \"Secreto\" y muéstralo\n        Caja<String> caja = new Caja<>();\n        caja.guardar(\"Secreto\");\n        System.out.println(caja.getContenido());\n    }\n}\n```\nUna vez que hayas escrito el código, haz clic en el botón verde **\"▶ Ejecutar Código\"** para ver el resultado en la Terminal interactiva. Esto te permitirá ver cómo funciona la clase genérica `Caja` en la práctica."
+    },
+    {
+      "type": "code-editor",
+      "config": {
+        "language": "java",
+        "theme": "vs-dark",
+        "readOnly": false,
+        "hints": [
+          "Define la clase así: class Caja<T> { private T contenido; ... }",
+          "Usa T como tipo de retorno en getContenido y como parámetro en guardar.",
+          "Instancia con String: Caja<String> miCaja = new Caja<>();"
+        ],
+        "initialCode": "// 1. Modifica la clase Caja para que sea Genérica <T>\nclass Caja {\n    private Object contenido;\n    \n    public void guardar(Object contenido) {\n        this.contenido = contenido;\n    }\n    \n    public Object getContenido() {\n        return contenido;\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        // 2. Crea una Caja de tipo String, guarda \"Secreto\" y muéstralo\n        \n    }\n}",
+        "solutionCode": "class Caja<T> {\n    private T contenido;\n    \n    public void guardar(T contenido) {\n        this.contenido = contenido;\n    }\n    \n    public T getContenido() {\n        return contenido;\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Caja<String> miCaja = new Caja<>();\n        miCaja.guardar(\"Secreto\");\n        System.out.println(miCaja.getContenido());\n    }\n}"
+      }
+    }
+  ]
+}

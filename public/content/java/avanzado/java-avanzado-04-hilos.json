@@ -1,0 +1,31 @@
+{
+  "id": "java-avanzado-04-hilos",
+  "title": "Hilos y Concurrencia",
+  "description": "Aprende a ejecutar múltiples tareas simultáneamente usando Threads.",
+  "language": "java",
+  "level": "avanzado",
+  "estimatedMinutes": 45,
+  "nextLessonId": "java-patrones-01-singleton",
+  "previousLessonId": "java-avanzado-03-streams",
+  "contentBlocks": [
+    {
+      "type": "markdown",
+      "content": "### Introducción a los Hilos (Threads)\nLos hilos son una forma de ejecutar múltiples tareas simultáneamente en un programa. Imagina que estás en una oficina y tienes varias tareas que debes realizar al mismo tiempo, como responder correos electrónicos, atender llamadas y redactar informes. En lugar de hacer cada tarea una después de la otra, podrías tener varios empleados trabajando en paralelo para que todo se haga de manera más eficiente. De la misma manera, los hilos permiten que un programa ejecute varias tareas al mismo tiempo, lo que puede mejorar significativamente su rendimiento y eficiencia.\n\n### Creando un Hilo (Thread)\nEn Java, la forma más común de crear un hilo es implementando la interfaz `Runnable` y pasándola a un objeto `Thread`. La interfaz `Runnable` es como un contrato que dice: \"Si quieres ser ejecutado como un hilo, debes tener un método `run()` que especifique qué se debe hacer cuando se inicie el hilo\". Un objeto `Thread`, por otro lado, es como un trabajador que puede ejecutar una tarea (en este caso, el método `run()` de la interfaz `Runnable`).\n\nLa analogía sería como una fábrica donde los trabajadores (hilos) pueden realizar diferentes tareas (métodos `run()`) de manera simultánea. Cada trabajador necesita saber qué tarea debe realizar, y para eso, se le da un conjunto de instrucciones (la interfaz `Runnable` con el método `run()`).\n\n### Tipos de Hilos\nHay dos formas principales de crear hilos en Java: implementando la interfaz `Runnable` o extendiendo la clase `Thread`. Ambas formas te permiten crear hilos, pero la primera es más flexible y recomendada, ya que te permite heredar de otra clase si necesitas.\n\n### Ejemplo de Código\n```java\n// Implementando la interfaz Runnable\npublic class MiTarea implements Runnable {\n    @Override\n    public void run() {\n        System.out.println(\"Hilo en ejecución\");\n    }\n}\n```\n\n### Ejecución de un Hilo\nPara ejecutar un hilo, necesitas crear un objeto `Thread` y pasarle la tarea que debe realizar (un objeto que implemente `Runnable`). Luego, llamas al método `start()` del objeto `Thread` para que comience la ejecución del hilo.\n\n```java\npublic class Main {\n    public static void main(String[] args) {\n        // Crear un objeto Thread con la tarea MiTarea\n        Thread hilo = new Thread(new MiTarea());\n        \n        // Iniciar el hilo\n        hilo.start();\n    }\n}\n```\n\n### Siguiente Paso\nAhora es tu turno. En el editor de código que está debajo, escribe lo siguiente:\n1. Crea una clase `MiTarea` que implemente `Runnable`.\n2. En el método `run()`, imprime \"Hilo en ejecución\".\n\n```java\npublic class Main {\n    public static void main(String[] args) {\n        // 3. Crea e inicia el hilo con MiTarea\n        // Tu código aquí\n    }\n}\n```\n\nUna vez que hayas escrito el código, no te olvides de hacer clic en el botón verde **\"▶ Ejecutar Código\"** para ver el resultado en la Terminal interactiva. Esto te permitirá ver cómo se ejecuta el hilo y cómo imprime el mensaje \"Hilo en ejecución\". ¡Buena suerte!"
+    },
+    {
+      "type": "code-editor",
+      "config": {
+        "language": "java",
+        "theme": "vs-dark",
+        "readOnly": false,
+        "hints": [
+          "Implementa Runnable: class MiTarea implements Runnable",
+          "Sobrescribe el método run()",
+          "En main, crea el Thread: Thread hilo = new Thread(new MiTarea()); y luego hilo.start();"
+        ],
+        "initialCode": "// 1. Crea una clase MiTarea que implemente Runnable\n// 2. En el método run(), imprime \"Hilo en ejecución\"\n\n\npublic class Main {\n    public static void main(String[] args) {\n        // 3. Crea e inicia el hilo con MiTarea\n        \n    }\n}",
+        "solutionCode": "class MiTarea implements Runnable {\n    @Override\n    public void run() {\n        System.out.println(\"Hilo en ejecución\");\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Thread hilo = new Thread(new MiTarea());\n        hilo.start();\n    }\n}"
+      }
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "csharp-avanzado-02-linq",
+  "title": "LINQ",
+  "description": "Aprende sobre linq en C#.",
+  "language": "csharp",
+  "level": "avanzado",
+  "estimatedMinutes": 15,
+  "nextLessonId": "csharp-avanzado-03-delegados",
+  "previousLessonId": "csharp-avanzado-01-colecciones",
+  "contentBlocks": [
+    {
+      "type": "markdown",
+      "content": "### Introducción a LINQ\nLINQ (Language Integrated Query) es una tecnología de Microsoft que permite realizar consultas a datos en .NET de una manera más sencilla y elegante. Imagina que tienes una gran biblioteca con miles de libros, y necesitas encontrar todos los libros que tienen un título que comienza con la letra \"A\". Sin LINQ, tendrías que recorrer todos los estantes, libro por libro, y verificar el título de cada uno. Con LINQ, es como tener un asistente que puede buscar entre todos los libros y traerte solo los que cumplen con el criterio que estabas buscando.\n\n### Qué es LINQ\nLINQ es un conjunto de extensiones de lenguaje que permiten realizar consultas a datos en tiempo de ejecución. Esto significa que puedes escribir código que se parece a una consulta SQL, pero que se ejecuta en el lado del cliente, en lugar de en la base de datos. Esto te da mucha más flexibilidad y poder para trabajar con datos en tus aplicaciones.\n\n### Tipos de LINQ\nExisten varios tipos de LINQ, incluyendo:\n* **LINQ to Objects**: permite realizar consultas a colecciones de objetos en memoria.\n* **LINQ to SQL**: permite realizar consultas a bases de datos relacionales.\n* **LINQ to XML**: permite realizar consultas a documentos XML.\n* **LINQ to DataSet**: permite realizar consultas a conjuntos de datos ADO.NET.\n\n### Cómo se define LINQ\nLINQ se define mediante el uso de métodos de extensión que se agregan a las colecciones de objetos. Estos métodos de extensión permiten realizar operaciones como filtrado, ordenamiento, agrupamiento y más. Por ejemplo, el método `Where` se puede usar para filtrar una colección de objetos y obtener solo los que cumplen con un criterio determinado.\n\n```csharp\nint[] números = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };\nvar númerosPares = números.Where(n => n % 2 == 0);\n```\n\n### Ejemplos de código\nAquí hay algunos ejemplos de código que ilustran el uso de LINQ:\n```csharp\n// Filtrar una colección de objetos\nstring[] frutas = { \"manzana\", \"banana\", \"naranja\", \"plátano\" };\nvar frutasQueComienzanConM = frutas.Where(f => f.StartsWith(\"m\"));\n\n// Ordenar una colección de objetos\nint[] números = { 4, 2, 7, 1, 3 };\nvar númerosOrdenados = números.OrderBy(n => n);\n\n// Agrupar una colección de objetos\nstring[] países = { \"España\", \"Francia\", \"Italia\", \"España\", \"Francia\" };\nvar paísesAgrupados = países.GroupBy(p => p);\n```\n\n### Siguiente paso\nAhora es tu turno. En el editor de código que está debajo, escribe lo siguiente:\n```csharp\nusing System;\nusing System.Linq;\n\nclass Program {\n    static void Main() {\n        int[] números = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };\n        var númerosPares = números.Where(n => n % 2 == 0);\n        foreach (var número in númerosPares) {\n            Console.WriteLine(número);\n        }\n    }\n}\n```\nRecuerda que, una vez escribas el código, debes hacer clic en el botón verde **\"▶ Ejecutar Código\"** para ver el resultado en la Terminal interactiva. ¡Buena suerte!"
+    },
+    {
+      "type": "code-editor",
+      "config": {
+        "language": "csharp",
+        "theme": "vs-dark",
+        "readOnly": false,
+        "hints": [
+          "Pista 1: En construcción",
+          "Pista 2: En construcción"
+        ],
+        "initialCode": "using System;\n\nclass Program {\n    static void Main() {\n        // Escribe tu código aquí\n    }\n}",
+        "solutionCode": "using System;\n\nclass Program {\n    static void Main() {\n        // Solución aquí\n    }\n}"
+      }
+    }
+  ]
+}

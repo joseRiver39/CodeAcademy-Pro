@@ -1,0 +1,32 @@
+{
+  "id": "java-basico-06-metodos",
+  "title": "Métodos y Funciones",
+  "description": "Organiza y reutiliza tu código encapsulándolo en métodos.",
+  "language": "java",
+  "level": "basico",
+  "estimatedMinutes": 25,
+  "nextLessonId": "java-intermedio-01-clases",
+  "previousLessonId": "java-basico-05-arrays",
+  "contentBlocks": [
+    {
+      "type": "markdown",
+      "content": "### Introducción a los Métodos\nLos métodos son bloques de código que se pueden reutilizar en diferentes partes de un programa. Son como recetas de cocina: puedes seguir la misma receta para hacer diferentes pasteles, solo cambiando los ingredientes. De esta manera, los métodos te permiten evitar repetir código y hacer que tu programa sea más eficiente y fácil de mantener.\n\n### ¿Qué es un Método?\nUn método es un bloque de código que solo se ejecuta cuando es llamado. Puedes pasarle datos, llamados parámetros, y puede devolver un resultado. Es como una caja de herramientas: puedes meter herramientas dentro de la caja (parámetros) y la caja puede darte una herramienta específica que necesitas (resultado).\n\n### Tipos de Métodos\nExisten dos tipos principales de métodos: los que no devuelven un valor (`void`) y los que devuelven un valor (por ejemplo, `int`, `String`). Los métodos que no devuelven un valor se utilizan para realizar acciones que no necesitan devolver un resultado, como imprimir un mensaje en la pantalla. Los métodos que devuelven un valor se utilizan para realizar cálculos o operaciones que necesitan devolver un resultado.\n\n### Definir un Método\nPara definir un método, debes especificar su nombre, los parámetros que recibe y el tipo de valor que devuelve. Es como etiquetar una caja: debes decirle a la caja qué es y qué contiene. La sintaxis para definir un método es la siguiente:\n```java\ntipo_de_retorno nombre_del_método(parámetros) {\n    // código del método\n}\n```\nPor ejemplo:\n```java\nint suma(int a, int b) {\n    return a + b;\n}\n```\nEn este ejemplo, el método `suma` recibe dos parámetros `a` y `b` de tipo `int` y devuelve la suma de `a` y `b`.\n\n### Ejemplo de Uso de un Método\nSupongamos que queremos escribir un programa que imprima la suma de dos números. Podemos definir un método `suma` que reciba dos números y devuelva su suma, y luego llamar a ese método desde el método `main`.\n```java\npublic class Main {\n    public static int suma(int a, int b) {\n        return a + b;\n    }\n\n    public static void main(String[] args) {\n        int resultado = suma(5, 4);\n        System.out.println(\"La suma es: \" + resultado);\n    }\n}\n```\nEn este ejemplo, el método `suma` se define para recibir dos parámetros `a` y `b` y devuelve su suma. Luego, en el método `main`, llamamos al método `suma` pasándole `5` y `4` como parámetros, y almacenamos el resultado en la variable `resultado`. Finalmente, imprimimos el resultado en la pantalla.\n\n### Ahora es tu Turno\nEn el editor de código que está debajo, escribe lo siguiente:\n```java\npublic class Main {\n    \n    // 1. Crea un método estático llamado 'multiplicar' que reciba dos enteros \n    //    (a, b) y retorne su multiplicación.\n    public static int multiplicar(int a, int b) {\n        // tu código aquí\n    }\n\n    public static void main(String[] args) {\n        // 2. Llama al método multiplicar pasándole 5 y 4, e imprime el resultado.\n        int resultado = multiplicar(5, 4);\n        System.out.println(\"La multiplicación es: \" + resultado);\n    }\n}\n```\nRecuerda que, una vez escribas el código, debes hacer clic en el botón verde **\"▶ Ejecutar Código\"** para ver el resultado en la Terminal interactiva. ¡Buena suerte!"
+    },
+    {
+      "type": "code-editor",
+      "config": {
+        "language": "java",
+        "theme": "vs-dark",
+        "readOnly": false,
+        "hints": [
+          "Crea el método fuera de 'main', pero dentro de la clase 'Main'.",
+          "La firma debe ser: public static int multiplicar(int a, int b)",
+          "Dentro del método simplemente usa: return a * b;",
+          "En el main, llama al método: multiplicar(5, 4);"
+        ],
+        "initialCode": "public class Main {\n    \n    // 1. Crea un método estático llamado 'multiplicar' que reciba dos enteros \n    //    (a, b) y retorne su multiplicación.\n    \n\n    public static void main(String[] args) {\n        // 2. Llama al método multiplicar pasándole 5 y 4, e imprime el resultado.\n        \n    }\n}",
+        "solutionCode": "public class Main {\n    \n    public static int multiplicar(int a, int b) {\n        return a * b;\n    }\n\n    public static void main(String[] args) {\n        int resultado = multiplicar(5, 4);\n        System.out.println(resultado);\n    }\n}"
+      }
+    }
+  ]
+}

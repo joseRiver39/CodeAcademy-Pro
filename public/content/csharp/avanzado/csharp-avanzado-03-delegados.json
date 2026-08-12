@@ -1,0 +1,30 @@
+{
+  "id": "csharp-avanzado-03-delegados",
+  "title": "Delegados y Eventos",
+  "description": "Aprende sobre delegados y eventos en C#.",
+  "language": "csharp",
+  "level": "avanzado",
+  "estimatedMinutes": 15,
+  "nextLessonId": "csharp-avanzado-04-async",
+  "previousLessonId": "csharp-avanzado-02-linq",
+  "contentBlocks": [
+    {
+      "type": "markdown",
+      "content": "### Introducción a Delegados y Eventos\nEn el mundo de la programación, especialmente en lenguajes como C#, es fundamental entender conceptos que nos permitan manejar situaciones complejas de manera eficiente. Dos de estos conceptos son los delegados y los eventos. En este tema, exploraremos qué son, para qué sirven, y cómo se utilizan en la práctica.\n\n### ¿Qué son los Delegados?\nUn delegado en C# es como un representante o un intermediario. Imagina que estás en una ciudad y necesitas realizar una transacción bancaria, pero no puedes ir al banco porque estás ocupado. En este caso, puedes darle a alguien más (un delegado) el poder para que actúe en tu nombre y realice la transacción por ti. De manera similar, en programación, un delegado es un tipo que representa referencias a métodos con una firma específica. En otras palabras, es un tipo de dato que puede \"apuntar\" a cualquier método que tenga la misma estructura (parámetros y tipo de retorno) que el delegado.\n\n### Definición de Delegados\nLa definición de un delegado se realiza utilizando la palabra clave `delegate`. Por ejemplo:\n```csharp\npublic delegate void MiDelegado(string mensaje);\n```\nAquí, `MiDelegado` es un delegado que puede referenciar a cualquier método que no devuelva valor (`void`) y tome un parámetro de tipo `string`.\n\n### ¿Qué son los Eventos?\nUn evento en C# es como un anuncio público. Imagina que estás organizando un concierto y quieres que todos sepan cuándo comenzará. En lugar de ir casa por casa a anunciarlo, puedes simplemente hacer un anuncio público a través de un sistema de sonido o redes sociales. De esta manera, todos los que estén interesados pueden escuchar el anuncio y actuar en consecuencia. En programación, un evento es un notificador que se dispara cuando ocurre algo específico. Los eventos permiten a los objetos notificar a otros objetos sobre cambios en su estado.\n\n### Uso de Delegados con Eventos\nLos delegados y eventos están estrechamente relacionados porque los delegados se utilizan para definir el tipo de métodos que se invocarán cuando se dispara un evento. Un evento es, en esencia, una colección de delegados de tipo específico. Cuando se dispara un evento, todos los métodos referenciados por los delegados asociados con ese evento son invocados.\n\n### Ejemplo de Uso\nUn ejemplo simple podría ser un sistema de notificación de cambios en el estado de un objeto. Por ejemplo:\n```csharp\npublic delegate void EstadoCambiado(string nuevoEstado);\n\npublic class MiClase\n{\n    public event EstadoCambiado OnEstadoCambiado;\n\n    private string estado;\n\n    public void CambiarEstado(string nuevoEstado)\n    {\n        estado = nuevoEstado;\n        OnEstadoCambiado?.Invoke(nuevoEstado);\n    }\n}\n\nclass Program\n{\n    static void Main()\n    {\n        MiClase instancia = new MiClase();\n        instancia.OnEstadoCambiado += (nuevoEstado) => Console.WriteLine($\"El estado ha cambiado a: {nuevoEstado}\");\n        instancia.CambiarEstado(\"Estado 1\");\n    }\n}\n```\nEn este ejemplo, `EstadoCambiado` es un delegado, y `OnEstadoCambiado` es un evento que utiliza este delegado. Cuando se cambia el estado de `MiClase`, se dispara el evento `OnEstadoCambiado`, notificando a todos los métodos registrados (en este caso, un método anónimo que escribe en la consola).\n\n### Práctica\nAhora es tu turno. En el editor de código que está debajo, escribe lo siguiente:\n```csharp\nusing System;\n\npublic delegate void Saludar(string nombre);\n\nclass Program\n{\n    static void Main()\n    {\n        // Registra un método que saludará a una persona cuando se dispare el evento.\n        Saludar saludar = (nombre) => Console.WriteLine($\"Hola, {nombre}!\");\n        \n        // Dispara el evento para saludar a \"Juan\".\n        saludar(\"Juan\");\n    }\n}\n```\nUna vez que hayas escrito el código, haz clic en el botón verde **\"▶ Ejecutar Código\"** para ver el resultado en la Terminal interactiva. Esto te permitirá experimentar cómo funciona un delegado en la práctica. Recuerda que, al igual que en la vida real, los delegados y eventos son fundamentales para la comunicación y coordinación entre diferentes partes de un sistema."
+    },
+    {
+      "type": "code-editor",
+      "config": {
+        "language": "csharp",
+        "theme": "vs-dark",
+        "readOnly": false,
+        "hints": [
+          "Pista 1: En construcción",
+          "Pista 2: En construcción"
+        ],
+        "initialCode": "using System;\n\nclass Program {\n    static void Main() {\n        // Escribe tu código aquí\n    }\n}",
+        "solutionCode": "using System;\n\nclass Program {\n    static void Main() {\n        // Solución aquí\n    }\n}"
+      }
+    }
+  ]
+}

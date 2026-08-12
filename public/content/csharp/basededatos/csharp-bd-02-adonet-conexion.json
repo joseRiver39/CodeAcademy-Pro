@@ -1,0 +1,31 @@
+{
+  "id": "csharp-bd-02-adonet-conexion",
+  "title": "Conexión a Base de Datos con ADO.NET",
+  "description": "Conecta tu aplicación C# a SQL Server usando ADO.NET.",
+  "language": "csharp",
+  "level": "basededatos",
+  "estimatedMinutes": 25,
+  "nextLessonId": "csharp-bd-03-crud",
+  "previousLessonId": "csharp-bd-01-sql-basico",
+  "contentBlocks": [
+    {
+      "type": "markdown",
+      "content": "\n### Introducción a ADO.NET\n\nADO.NET es un conjunto de bibliotecas de .NET que permiten interactuar con bases de datos. Es como un puente entre tu aplicación y la base de datos, permitiéndote enviar y recibir datos.\n\n### Tipos de Conexiones\n\nExisten dos tipos principales de conexiones en ADO.NET:\n- **ConexiónDirecta**: La aplicación se conecta directamente a la base de datos.\n- **ConexiónDiscreta**: La aplicación se conecta a la base de datos a través de un servidor intermediario.\n\n### Cómo Funciona\n\nImagina que estás en un restaurante y quieres pedir un plato. Tú (la aplicación) le pides al mesero (ADO.NET) que te traiga el plato (datos) de la cocina (base de datos). El mesero se encarga de llevar tu pedido a la cocina y traerte el plato listo.\n\n### Ejemplo de Código\n\n```csharp\nusing System;\nusing System.Data.SqlClient;\n\nclass ConexionBD\n{\n    static void Main(string[] args)\n    {\n        // Cadena de conexión\n        string connectionString = \"Data Source=(local);Initial Catalog=MiBaseDeDatos;Integrated Security=True;\";\n        \n        // Crear una conexión\n        using (SqlConnection connection = new SqlConnection(connectionString))\n        {\n            // Abrir la conexión\n            connection.Open();\n            \n            // Consulta SQL\n            string query = \"SELECT * FROM MiTabla;\";\n            \n            // Crear un comando\n            SqlCommand command = new SqlCommand(query, connection);\n            \n            // Ejecutar la consulta y leer los resultados\n            using (SqlDataReader reader = command.ExecuteReader())\n            {\n                while (reader.Read())\n                {\n                    Console.WriteLine(reader[0].ToString());\n                }\n            }\n        }\n    }\n}\n```\n\n### Ejercicio\n\nAhora es tu turno de practicar. En el editor de código, crea una conexión a una base de datos y realiza una consulta para obtener todos los registros de una tabla. No te preocupes por la base de datos real, simula los datos con una lista en memoria.\n\n### Siguiente Paso\n\nUna vez que hayas completado el ejercicio, presiona \"▶ Ejecutar Código\" para ver los resultados."
+    },
+    {
+      "type": "code-editor",
+      "config": {
+        "language": "csharp",
+        "theme": "vs-dark",
+        "readOnly": false,
+        "hints": [
+          "Importa el namespace System.Data.SqlClient",
+          "Crea una cadena de conexión",
+          "Utiliza un bloque using para la conexión"
+        ],
+        "initialCode": "\n// Simula una BD con lista en memoria para poder ejecutar\nusing System;\nusing System.Data.SqlClient;\nusing System.Collections.Generic;\n\nclass ConexionBD\n{\n    static void Main(string[] args)\n    {\n        // 1. Importa el namespace System.Data.SqlClient\n        // 2. Crea una cadena de conexión (reemplaza los valores con los tuyos)\n        string connectionString = \"Data Source=(local);Initial Catalog=MiBaseDeDatos;Integrated Security=True;\";\n        \n        // 3. Crea una conexión\n        using (SqlConnection connection = new SqlConnection(connectionString))\n        {\n            // 4. Abrir la conexión\n            connection.Open();\n            \n            // 5. Consulta SQL\n            string query = \"SELECT * FROM MiTabla;\";\n            \n            // 6. Crear un comando\n            SqlCommand command = new SqlCommand(query, connection);\n            \n            // 7. Ejecutar la consulta y leer los resultados\n            using (SqlDataReader reader = command.ExecuteReader())\n            {\n                while (reader.Read())\n                {\n                    Console.WriteLine(reader[0].ToString());\n                }\n            }\n        }\n    }\n}\n",
+        "solutionCode": "\nusing System;\nusing System.Data.SqlClient;\nusing System.Collections.Generic;\n\nclass ConexionBD\n{\n    static void Main(string[] args)\n    {\n        // Simula una BD con lista en memoria para poder ejecutar\n        List<string> datos = new List<string> { \"Dato1\", \"Dato2\", \"Dato3\" };\n        \n        foreach (var dato in datos)\n        {\n            Console.WriteLine(dato);\n        }\n    }\n}\n"
+      }
+    }
+  ]
+}

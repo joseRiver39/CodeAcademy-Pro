@@ -1,0 +1,32 @@
+{
+  "id": "csharp-bd-01-sql-basico",
+  "title": "SQL Básico para Desarrolladores C#",
+  "description": "Aprende los comandos SQL fundamentales: SELECT, INSERT, UPDATE, DELETE.",
+  "language": "csharp",
+  "level": "basededatos",
+  "estimatedMinutes": 20,
+  "nextLessonId": "csharp-bd-02-adonet-conexion",
+  "previousLessonId": "",
+  "contentBlocks": [
+    {
+      "type": "markdown",
+      "content": "\n### Introducción a SQL\n\nSQL (Structured Query Language) es un lenguaje de programación utilizado para gestionar y manipular datos en bases de datos relacionales. Sirve para crear, modificar y consultar datos de una base de datos.\n\n### Tipos de Comandos SQL\n\nExisten varios tipos de comandos SQL, incluyendo:\n- **SELECT**: Se utiliza para seleccionar datos de una base de datos.\n- **INSERT**: Se utiliza para insertar nuevos datos en una base de datos.\n- **UPDATE**: Se utiliza para actualizar datos existentes en una base de datos.\n- **DELETE**: Se utiliza para eliminar datos de una base de datos.\n\n### Analogía del Mundo Real\n\nImagina que tienes un archivo de contactos en tu teléfono. Quieres encontrar a una persona en particular, agregar un nuevo contacto, actualizar el número de teléfono de alguien o eliminar un contacto. En este caso, el archivo de contactos es como una base de datos y los comandos SQL son como las acciones que realizas en el archivo.\n\n### Ejemplo de Código\n\n```csharp\n// Simula una BD con lista en memoria para poder ejecutar\nList<Persona> personas = new List<Persona>\n{\n    new Persona { Id = 1, Nombre = \"Juan\" },\n    new Persona { Id = 2, Nombre = \"María\" }\n};\n\n// Seleccionar todos los registros\nforeach (var persona in personas)\n{\n    Console.WriteLine(persona.Nombre);\n}\n\n// Insertar un nuevo registro\npersonas.Add(new Persona { Id = 3, Nombre = \"Pedro\" });\n\n// Actualizar un registro existente\nvar personaActualizar = personas.Find(p => p.Id == 1);\nif (personaActualizar != null)\n{\n    personaActualizar.Nombre = \"Juanito\";\n}\n\n// Eliminar un registro\nvar personaEliminar = personas.Find(p => p.Id == 2);\nif (personaEliminar != null)\n{\n    personas.Remove(personaEliminar);\n}\n```\n\n### Siguiente Paso\n\nAhora que has visto los conceptos básicos de SQL, es tiempo de practicar. En el editor de código a continuación, intenta realizar las acciones que se te piden. Recuerda presionar \"▶ Ejecutar Código\" para ver los resultados."
+    },
+    {
+      "type": "code-editor",
+      "config": {
+        "language": "csharp",
+        "theme": "vs-dark",
+        "readOnly": false,
+        "hints": [
+          "Utiliza el comando SELECT para obtener todos los registros",
+          "Utiliza el comando INSERT para agregar un nuevo registro",
+          "Utiliza el comando UPDATE para actualizar un registro existente",
+          "Utiliza el comando DELETE para eliminar un registro"
+        ],
+        "initialCode": "\n// Simula una BD con lista en memoria para poder ejecutar\nList<Persona> personas = new List<Persona>\n{\n    new Persona { Id = 1, Nombre = \"Juan\" },\n    new Persona { Id = 2, Nombre = \"María\" }\n};\n\n// Intenta seleccionar todos los registros\n// foreach (var persona in personas)\n// {\n//     Console.WriteLine(persona.Nombre);\n// }\n\n// Intenta insertar un nuevo registro\n// personas.Add(new Persona { Id = 3, Nombre = \"Pedro\" });\n\n// Intenta actualizar un registro existente\n// var personaActualizar = personas.Find(p => p.Id == 1);\n// if (personaActualizar != null)\n// {\n//     personaActualizar.Nombre = \"Juanito\";\n// }\n\n// Intenta eliminar un registro\n// var personaEliminar = personas.Find(p => p.Id == 2);\n// if (personaEliminar != null)\n// {\n//     personas.Remove(personaEliminar);\n// }\n",
+        "solutionCode": "\n// Simula una BD con lista en memoria para poder ejecutar\nList<Persona> personas = new List<Persona>\n{\n    new Persona { Id = 1, Nombre = \"Juan\" },\n    new Persona { Id = 2, Nombre = \"María\" }\n};\n\n// Seleccionar todos los registros\nforeach (var persona in personas)\n{\n    Console.WriteLine(persona.Nombre);\n}\n\n// Insertar un nuevo registro\npersonas.Add(new Persona { Id = 3, Nombre = \"Pedro\" });\n\n// Actualizar un registro existente\nvar personaActualizar = personas.Find(p => p.Id == 1);\nif (personaActualizar != null)\n{\n    personaActualizar.Nombre = \"Juanito\";\n}\n\n// Eliminar un registro\nvar personaEliminar = personas.Find(p => p.Id == 2);\nif (personaEliminar != null)\n{\n    personas.Remove(personaEliminar);\n}\n"
+      }
+    }
+  ]
+}
