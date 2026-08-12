@@ -18,7 +18,6 @@
         "language": "typescript",
         "theme": "vs-dark",
         "readOnly": true,
-        "hints": [],
         "initialCode": "// ¡Felicidades por llegar hasta aquí!\n// El código de esta lección es para ejecutarlo en tu computadora con Node.js y Angular CLI.\n// Este es el paso final que conecta tu backend C# con una Interfaz Web real.",
         "solutionCode": "// ¡Felicidades por llegar hasta aquí!\n// El código de esta lección es para ejecutarlo en tu computadora con Node.js y Angular CLI.\n// Este es el paso final que conecta tu backend C# con una Interfaz Web real."
       }

@@ -18,8 +18,7 @@
         "language": "java",
         "theme": "vs-dark",
         "readOnly": true,
-        "hints": [],
-        "initialCode": "// ¡Felicidades por llegar hasta aquí!\n// El código de esta lección es para ejecutarlo en tu computadora con NetBeans.\n// Guarda esta guía y empieza a construir tus propias APIs profesionales.",
+        "initialCode": "// Has construido:\n// 1. Arquitectura Profesional (Model, Repository, Controller)\n// 2. ORM con Spring Data JPA y Lombok\n// 3. API REST configurada con CORS y Swagger\n// Guarda esta guía y empieza a construir tus propias APIs profesionales.",
         "solutionCode": "// ¡Felicidades por llegar hasta aquí!\n// El código de esta lección es para ejecutarlo en tu computadora con NetBeans.\n// Guarda esta guía y empieza a construir tus propias APIs profesionales."
       }
     }

@@ -18,7 +18,6 @@
         "language": "csharp",
         "theme": "vs-dark",
         "readOnly": true,
-        "hints": [],
         "initialCode": "// ¡NIVEL EXPERTO ALCANZADO!\n// Has construido:\n// 1. Arquitectura Limpia (Domain, Infrastructure, API)\n// 2. ORM con Entity Framework Core aislado de la presentación\n// 3. Orquestación multicontenedor con VS Docker Tools",
         "solutionCode": "// ¡NIVEL EXPERTO ALCANZADO!\n// Has construido:\n// 1. Arquitectura Limpia (Domain, Infrastructure, API)\n// 2. ORM con Entity Framework Core aislado de la presentación\n// 3. Orquestación multicontenedor con VS Docker Tools"
       }
