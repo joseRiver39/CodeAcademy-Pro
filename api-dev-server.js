@@ -27,11 +27,11 @@ app.post('/api/evaluate', async (req, res) => {
   const { code, language, context } = req.body;
   if (!code) return res.status(400).json({ error: 'Code is required' });
 
-  const apiKey = process.env.GROQ_API_KEY;
+  const apiKey = process.env.OPENROUTER_API_KEY;
   if (!apiKey) {
-    console.warn('[DEV] GROQ_API_KEY no definida. Devolviendo feedback simulado.');
+    console.warn('[DEV] OPENROUTER_API_KEY no definida. Devolviendo feedback simulado.');
     return res.status(200).json({
-      feedback: 'Sin API Key configurada. Agrega GROQ_API_KEY en tu archivo .env (gratis en console.groq.com).',
+      feedback: 'Sin API Key configurada. Agrega OPENROUTER_API_KEY en tu archivo .env (gratis en openrouter.ai).',
       suggestions: ['Declara la variable con el tipo correcto (ej. int, String)', 'Recuerda el punto y coma al final de cada instrucción'],
       goodPractices: ['Usaste un nombre de variable descriptivo']
     });
@@ -53,14 +53,14 @@ Revisa este código cualitativamente. No lo ejecutes. Responde SOLO con un objet
   "goodPractices": ["Buena práctica identificada"]
 }`;
 
-    const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+    const response = await fetch(`${process.env.OPENROUTER_BASE_URL || 'https://openrouter.ai/api/v1'}/chat/completions`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${apiKey}`
       },
       body: JSON.stringify({
-        model: 'llama-3.3-70b-versatile',
+        model: process.env.OPENROUTER_MODEL || 'openrouter/free',
         messages: [{ role: 'user', content: prompt }],
         response_format: { type: 'json_object' },
         max_tokens: 500,
@@ -69,13 +69,13 @@ Revisa este código cualitativamente. No lo ejecutes. Responde SOLO con un objet
     });
 
     const data = await response.json();
-    if (!response.ok) throw new Error(data.error?.message || 'Groq API error');
+    if (!response.ok) throw new Error(data.error?.message || 'OpenRouter API error');
 
     const raw = data.choices[0].message.content;
     console.log('[DEV] Groq respondió OK');
     res.status(200).json(JSON.parse(raw));
   } catch (error) {
-    console.error('[DEV] Error llamando a Groq:', error.message);
+    console.error('[DEV] Error llamando a OpenRouter:', error.message);
     res.status(500).json({ error: 'Error generando feedback', details: error.message });
   }
 });
@@ -93,10 +93,10 @@ app.post('/api/run', async (req, res) => {
   const { code, language } = req.body;
   if (!code) return res.status(400).json({ error: 'Code is required' });
 
-  const apiKey = process.env.GROQ_API_KEY;
+  const apiKey = process.env.OPENROUTER_API_KEY;
   if (!apiKey) {
     return res.status(200).json({
-      output: 'Mock Console Output: Hello World\n(GROQ_API_KEY missing in .env)',
+      output: 'Mock Console Output: Hello World\n(OPENROUTER_API_KEY missing in .env)',
       isError: false
     });
   }
@@ -115,14 +115,14 @@ REGLAS ESTRICTAS:
 4. Si el código tiene un error de sintaxis o runtime, tu respuesta debe ser ÚNICAMENTE el mensaje de error (simulando stderr). Comienza el error con la palabra "Error:".
 5. Si el programa no imprime nada, responde con "SUCCESS_NO_OUTPUT".`;
 
-    const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+    const response = await fetch(`${process.env.OPENROUTER_BASE_URL || 'https://openrouter.ai/api/v1'}/chat/completions`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${apiKey}`
       },
       body: JSON.stringify({
-        model: 'llama-3.3-70b-versatile',
+        model: process.env.OPENROUTER_MODEL || 'openrouter/free',
         messages: [{ role: 'user', content: prompt }],
         max_tokens: 500,
         temperature: 0.1
@@ -130,7 +130,7 @@ REGLAS ESTRICTAS:
     });
 
     const data = await response.json();
-    if (!response.ok) throw new Error(data.error?.message || 'Groq API error');
+    if (!response.ok) throw new Error(data.error?.message || 'OpenRouter API error');
 
     let raw = data.choices[0].message.content.trim();
     
@@ -151,5 +151,5 @@ REGLAS ESTRICTAS:
 
 app.listen(3000, () => {
   console.log('✅ API dev server en http://localhost:3000');
-  console.log('   GROQ_API_KEY:', process.env.GROQ_API_KEY ? '✅ configurada' : '❌ no encontrada (usará mock)');
+  console.log('   OPENROUTER_API_KEY:', process.env.OPENROUTER_API_KEY ? '✅ configurada' : '❌ no encontrada (usará mock)');
 });

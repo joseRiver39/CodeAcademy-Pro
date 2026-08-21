@@ -2,8 +2,8 @@ const fs = require('fs');
 const path = require('path');
 require('dotenv').config();
 
-const GROQ_API_KEY = process.env.GROQ_API_KEY;
-if (!GROQ_API_KEY) { console.error("No GROQ_API_KEY found"); process.exit(1); }
+const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
+if (!OPENROUTER_API_KEY) { console.error("No OPENROUTER_API_KEY found"); process.exit(1); }
 const delay = ms => new Promise(res => setTimeout(res, ms));
 
 async function generateLesson(topic) {
@@ -59,14 +59,14 @@ REGLAS PARA EL CÓDIGO (initialCode y solutionCode):
 - La solutionCode debe ser completa y funcional.`;
 
   try {
-    const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+    const response = await fetch(`${process.env.OPENROUTER_BASE_URL || 'https://openrouter.ai/api/v1'}/chat/completions`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${GROQ_API_KEY}`
+        'Authorization': `Bearer ${OPENROUTER_API_KEY}`
       },
       body: JSON.stringify({
-        model: 'llama-3.3-70b-versatile',
+        model: process.env.OPENROUTER_MODEL || 'openrouter/free',
         messages: [{ role: 'user', content: prompt }],
         temperature: 0.4,
         max_tokens: 3000,

@@ -24,9 +24,9 @@ export default async function handler(req, res) {
   }
 
   try {
-    const apiKey = process.env.GROQ_API_KEY;
+    const apiKey = process.env.OPENROUTER_API_KEY;
   if (!apiKey) {
-    return res.status(500).json({ error: 'GROQ_API_KEY not configured on server' });
+    return res.status(500).json({ error: 'OPENROUTER_API_KEY not configured on server' });
   }
 
     // Usamos el prompt estructurado para forzar salida JSON usando el nuevo esquema de Gemini
@@ -46,14 +46,14 @@ Devuelve tu feedback en formato JSON válido con la siguiente estructura:
   "goodPractices": ["Buena práctica identificada 1"]
 }`;
 
-    const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+    const response = await fetch(`${process.env.OPENROUTER_BASE_URL || 'https://openrouter.ai/api/v1'}/chat/completions`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${apiKey}`
       },
       body: JSON.stringify({
-        model: 'llama-3.3-70b-versatile',
+        model: process.env.OPENROUTER_MODEL || 'openrouter/free',
         messages: [{ role: 'user', content: prompt }],
         response_format: { type: 'json_object' },
         max_tokens: 500,
@@ -64,7 +64,7 @@ Devuelve tu feedback en formato JSON válido con la siguiente estructura:
     const data = await response.json();
     
     if (!response.ok) {
-        throw new Error(data.error?.message || 'Error from Groq API');
+        throw new Error(data.error?.message || 'Error from OpenRouter API');
     }
 
     const rawContent = data.choices[0].message.content;

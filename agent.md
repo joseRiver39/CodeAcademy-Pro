@@ -11,7 +11,7 @@ Este documento sirve como bitácora de los cambios arquitectónicos, implementac
 - Rediseño de la `Landing Page` para saludar al usuario y mostrar su progreso, habilitando la función "Continuar Aprendiendo".
 
 ### 2. Motor de Ejecución Simulado por IA
-- Implementación del endpoint `/api/run` usando **Groq** (modelo `llama-3.3-70b-versatile`).
+- Implementación del endpoint `/api/run` usando **OpenRouter** (modelo `openrouter/free`).
 - Capacidad de simular la ejecución de código Java y C# directamente desde el frontend y capturar la salida en una terminal simulada.
 - Manejo avanzado del estado de la lección (feedback, logs de consola, estados de carga).
 
@@ -32,7 +32,7 @@ Se generó el módulo equivalente para C# y .NET:
 - **Guía Final (Visual Studio 2026 + Docker)**: Instructivo paso a paso para orquestar la API con `docker-compose`, incluyendo base de datos MySQL, CORS, Swagger y arquitectura de directorios (`Models`, `Data`, `Controllers`).
 
 ### 5. Gestión Dinámica de Contenidos
-- Script automatizado en Node.js (`generate-db-lessons.js` y `generate-springboot-lessons.js`) para crear el contenido JSON de las lecciones haciendo llamadas a la API de Groq respetando los límites de rate-limit.
+- Script automatizado en Node.js (`generate-db-lessons.js` y `generate-springboot-lessons.js`) para crear el contenido JSON de las lecciones haciendo llamadas a la API de OpenRouter respetando los límites de rate-limit.
 - Actualización en tiempo real de los índices (`index.json` en Java y C#) para que el frontend renderice dinámicamente los módulos de los cursos.
 
 ---

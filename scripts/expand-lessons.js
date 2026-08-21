@@ -2,9 +2,9 @@ const fs = require('fs');
 const path = require('path');
 require('dotenv').config();
 
-const GROQ_API_KEY = process.env.GROQ_API_KEY;
-if (!GROQ_API_KEY) {
-  console.error("No GROQ_API_KEY found in .env");
+const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
+if (!OPENROUTER_API_KEY) {
+  console.error("No OPENROUTER_API_KEY found in .env");
   process.exit(1);
 }
 
@@ -33,14 +33,14 @@ REGLAS ESTRICTAS PARA TU RESPUESTA:
 6. Devuelve ÚNICAMENTE el texto Markdown generado. Nada de saludos, nada de etiquetas HTML, solo el Markdown listo para ser inyectado. Asegúrate de usar subtítulos (###) para organizar la lectura.`;
 
   try {
-    const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+    const response = await fetch(`${process.env.OPENROUTER_BASE_URL || 'https://openrouter.ai/api/v1'}/chat/completions`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${GROQ_API_KEY}`
+        'Authorization': `Bearer ${OPENROUTER_API_KEY}`
       },
       body: JSON.stringify({
-        model: 'llama-3.3-70b-versatile',
+        model: process.env.OPENROUTER_MODEL || 'openrouter/free',
         messages: [{ role: 'user', content: prompt }],
         temperature: 0.7,
         max_tokens: 1500
@@ -48,7 +48,7 @@ REGLAS ESTRICTAS PARA TU RESPUESTA:
     });
 
     const data = await response.json();
-    if (!response.ok) throw new Error(data.error?.message || 'Groq API error');
+    if (!response.ok) throw new Error(data.error?.message || 'OpenRouter API error');
 
     let expanded = data.choices[0].message.content.trim();
     return expanded;
